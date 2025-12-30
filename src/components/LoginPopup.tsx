@@ -42,7 +42,8 @@ declare global {
 const FREE_CREDITS = APP_CONFIG.FREE_CREDITS;
 const GOOGLE_CLIENT_ID = OAUTH_CONFIG.GOOGLE_CLIENT_ID;
 const GITHUB_CLIENT_ID = OAUTH_CONFIG.GITHUB_CLIENT_ID;
-const GITHUB_REDIRECT_URI = OAUTH_CONFIG.GITHUB_REDIRECT_URI;
+// GitHub redirect URI must point to /auth/github/callback route
+const GITHUB_REDIRECT_URI = `${window.location.origin}/auth/github/callback`;
 
 interface GoogleCredentialResponse {
   credential: string;

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<!--
+  AiVedha Guard - 中文网站地图
+  网站安全审计 | 人工智能网络安全扫描器
+-->
+<url>
+  <loc>https://aivedha.ai/?lang=zh</loc>
+  <lastmod>2025-12-03</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+    <image:loc>https://aivedha.ai/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png</image:loc>
+    <image:title>AiVedha Guardian - 人工智能网络安全审计平台</image:title>
+  </image:image>
+</url>
+<url><loc>https://aivedha.ai/security-audit?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.98</priority></url>
+<url><loc>https://aivedha.ai/pricing?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.95</priority></url>
+<url><loc>https://aivedha.ai/login?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.85</priority></url>
+<url><loc>https://aivedha.ai/signup?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.85</priority></url>
+<url><loc>https://aivedha.ai/faq?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.80</priority></url>
+<url><loc>https://aivedha.ai/website-security-audit?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.92</priority></url>
+<url><loc>https://aivedha.ai/vulnerability-scanner?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.92</priority></url>
+<url><loc>https://aivedha.ai/penetration-testing?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.90</priority></url>
+<url><loc>https://aivedha.ai/owasp-compliance?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.90</priority></url>
+<url><loc>https://aivedha.ai/free-security-scan?lang=zh</loc><lastmod>2025-12-03</lastmod><priority>0.88</priority></url>
+</urlset>

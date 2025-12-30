@@ -1,0 +1,597 @@
+[
+  {
+    "path": "/api/addons",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/addons/purchase",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/api-keys/create",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/api-keys/list",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/api-keys/revoke",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/api-keys/validate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/audit/start",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/audit/status/{reportId}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/auth/github",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/auth/github/status",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/auth/github/status",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/auth/google",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/auth/login",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/auth/register",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/badge/{certificateNumber}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/badge/{certificateNumber}/embed",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/badge/{certificateNumber}/script",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/addons",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/addons",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/addons",
+    "method": "PUT",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/addons",
+    "method": "DELETE",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/addons/public",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/coupons",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/coupons",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/coupons",
+    "method": "PUT",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/coupons",
+    "method": "DELETE",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/coupons/validate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/plans",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/plans",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/plans",
+    "method": "PUT",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/plans",
+    "method": "DELETE",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/plans/public",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/billing/sync",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/blogs",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/blogs/categories",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/blogs/comment",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/blogs/comment/like",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/blogs/rate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/blogs/view",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/blogs/{slug}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/cert/{reportId}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/certificate/{certificateNumber}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/cicd/audit",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/coupons/validate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/credits/purchase",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/customer/onboarding",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/download/{reportId}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/email",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/embed-code/{reportId}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/health",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/newsletter/subscribe",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/activate-subscription",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/cancel",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/cancel-subscription",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/capture",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/capture-order",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/coupons",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/create-order",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/create-subscription",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/credit-packs",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/credits",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/plans",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/status",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/subscribe",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/sync-user",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/transactions",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/validate-coupon",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/paypal/webhook",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/pdf/{reportId}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/pdf/{reportId}/download-link",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/plans",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/recaptcha/verify",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/referral",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/referral/activate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/referral/generate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/referral/share-content",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/referral/share-content",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/referral/stats",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/referral/stats",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/referral/validate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/settings/bulk-update",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/settings/categories",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/settings/category/{category}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/settings/export",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/settings/import",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/settings/test-connection",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/settings/update",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/startup/register",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/account/check-deletion",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/account/delete",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/activate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/auto-renew",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/cancel",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/checkout",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/confirm",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/current",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/invoices",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/plans",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/portal-token",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/portal-token",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/reactivate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/status",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/sync",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/update-payment",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/upgrade",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/subscription/webhook",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/support/check-ticket",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/support/create-ticket",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/url-validator/validate",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/user/addons",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/user/credits",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/user/dashboard",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/user/delete-account",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/user/onboarding",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/user/onboarding",
+    "method": "POST",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/user/profile",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/user/profile",
+    "method": "PUT",
+    "has_api_key": false
+  },
+  {
+    "path": "/api/verify/{certificateNumber}",
+    "method": "GET",
+    "has_api_key": false
+  },
+  {
+    "path": "/url-validator/validate",
+    "method": "POST",
+    "has_api_key": false
+  }
+]

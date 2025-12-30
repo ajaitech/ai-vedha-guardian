@@ -1,0 +1,66 @@
+# AiVedha Guard Robots.txt
+# https://aivedha.ai
+# AI-Powered Website Security Audit Platform
+
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-Image
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 1
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: *
+Allow: /
+Crawl-delay: 2
+
+# Disallow admin and sensitive paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /diagnostics
+
+# Sitemaps - Main and Multilingual
+Sitemap: https://aivedha.ai/sitemap.xml
+Sitemap: https://aivedha.ai/sitemap-index.xml
+Sitemap: https://aivedha.ai/sitemap-es.xml
+Sitemap: https://aivedha.ai/sitemap-zh.xml
+Sitemap: https://aivedha.ai/sitemap-ar.xml
+Sitemap: https://aivedha.ai/sitemap-hi.xml
+Sitemap: https://aivedha.ai/sitemap-fr.xml
+Sitemap: https://aivedha.ai/sitemap-ga.xml
+Sitemap: https://aivedha.ai/sitemap-de.xml
+Sitemap: https://aivedha.ai/sitemap-ru.xml
+Sitemap: https://aivedha.ai/sitemap-pl.xml
+Sitemap: https://aivedha.ai/sitemap-sv.xml
+Sitemap: https://aivedha.ai/sitemap-ur.xml
+
+# Host
+Host: https://aivedha.ai

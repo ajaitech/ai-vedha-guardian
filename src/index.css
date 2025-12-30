@@ -1,0 +1,3066 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AiVedha Guard Design System - Professional Cybersecurity Theme */
+
+@layer base {
+  :root {
+    /* Core theme colors */
+    --background: 0 0% 100%;
+    --foreground: 210 40% 15%;
+    
+    /* Card system */
+    --card: 0 0% 100%;
+    --card-foreground: 210 40% 15%;
+    
+    /* Popover system */
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 40% 8%;
+    
+    /* Primary brand colors - Deep security blue */
+    --primary: 210 100% 20%;
+    --primary-foreground: 0 0% 98%;
+    --primary-hover: 210 100% 25%;
+    
+    /* Secondary colors - Professional teal */
+    --secondary: 180 25% 90%;
+    --secondary-foreground: 210 40% 8%;
+    
+    /* Muted colors */
+    --muted: 210 40% 96%;
+    --muted-foreground: 210 30% 35%;
+    
+    /* Accent colors - Cybersecurity teal */
+    --accent: 180 100% 35%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 36%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 50%;
+    --warning-foreground: 0 0% 98%;
+    
+    /* UI elements */
+    --border: 210 40% 85%;
+    --input: 210 40% 96%;
+    --ring: 210 100% 20%;
+    
+    /* Security gradient */
+    --gradient-primary: linear-gradient(135deg, hsl(210, 100%, 20%), hsl(180, 100%, 35%));
+    --gradient-hero: linear-gradient(135deg, hsl(280 60% 85%) 0%, hsl(270 50% 90%) 25%, hsl(260 40% 95%) 50%, hsl(250 45% 92%) 75%, hsl(240 55% 88%) 100%);
+    
+    /* Glass effect */
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+    
+    /* Shadows */
+    --shadow-elegant: 0 10px 40px -10px hsl(210 100% 20% / 0.3);
+    --shadow-glow: 0 0 40px hsl(180 100% 35% / 0.4);
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    
+    --radius: 0.75rem;
+    
+    /* 3D Effect */
+    --shadow-3d: 0 8px 16px -4px rgba(0, 0, 0, 0.1), 0 4px 8px -4px rgba(0, 0, 0, 0.06);
+    --shadow-3d-hover: 0 12px 24px -6px rgba(0, 0, 0, 0.15), 0 6px 12px -6px rgba(0, 0, 0, 0.1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    /* Dark theme - Deep security colors */
+    --background: 210 20% 6%;
+    --foreground: 0 0% 98%;
+    
+    /* Card system */
+    --card: 210 20% 8%;
+    --card-foreground: 0 0% 98%;
+    
+    /* Popover system */
+    --popover: 210 20% 8%;
+    --popover-foreground: 0 0% 98%;
+    
+    /* Primary colors */
+    --primary: 180 100% 50%;
+    --primary-foreground: 210 20% 6%;
+    --primary-hover: 180 100% 55%;
+    
+    /* Secondary colors */
+    --secondary: 210 20% 15%;
+    --secondary-foreground: 0 0% 98%;
+    
+    /* Muted colors */
+    --muted: 210 20% 12%;
+    --muted-foreground: 210 20% 75%;
+    
+    /* Accent colors */
+    --accent: 210 100% 40%;
+    --accent-foreground: 0 0% 98%;
+    
+    /* Status colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --success: 142 76% 46%;
+    --success-foreground: 0 0% 98%;
+    --warning: 38 92% 60%;
+    --warning-foreground: 0 0% 98%;
+    
+    /* UI elements */
+    --border: 210 20% 20%;
+    --input: 210 20% 12%;
+    --ring: 180 100% 50%;
+    
+    /* Security gradient */
+    --gradient-primary: linear-gradient(135deg, hsl(210, 100%, 15%), hsl(180, 100%, 25%));
+    --gradient-hero: linear-gradient(135deg, hsl(220 30% 8%) 0%, hsl(230 25% 10%) 25%, hsl(240 20% 12%) 50%, hsl(250 25% 10%) 75%, hsl(260 30% 8%) 100%);
+    
+    /* Glass effect */
+    --glass-bg: 0 0% 100% / 0.05;
+    --glass-border: 0 0% 100% / 0.1;
+    
+    /* Dark mode 3D Effect */
+    --shadow-3d: 0 8px 16px -4px rgba(0, 0, 0, 0.3), 0 4px 8px -4px rgba(0, 0, 0, 0.2);
+    --shadow-3d-hover: 0 12px 24px -6px rgba(0, 0, 0, 0.4), 0 6px 12px -6px rgba(0, 0, 0, 0.3);
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+/* Cybersecurity 3D Animation Keyframes */
+@keyframes float {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(5deg); }
+}
+
+@keyframes pulse-glow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.1); }
+}
+
+@keyframes drift {
+  0% { transform: translateX(0px) translateY(0px); }
+  25% { transform: translateX(10px) translateY(-15px); }
+  50% { transform: translateX(-5px) translateY(-10px); }
+  75% { transform: translateX(-10px) translateY(-5px); }
+  100% { transform: translateX(0px) translateY(0px); }
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* Cybersecurity Animation Classes */
+.cyber-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.cyber-pulse {
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.cyber-drift {
+  animation: drift 8s ease-in-out infinite;
+}
+
+.cyber-rotate {
+  animation: rotate-slow 20s linear infinite;
+}
+
+.shimmer-effect {
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.4) 50%, transparent 100%);
+  background-size: 200% 100%;
+  animation: shimmer 3s ease-in-out infinite;
+}
+
+/* Animation Duration Utility Classes */
+.animate-spin-2s {
+  animation: spin 2s linear infinite;
+}
+
+.animate-spin-3s {
+  animation: spin 3s linear infinite;
+}
+
+.animate-spin-reverse-2s {
+  animation: spin 2s linear infinite reverse;
+}
+
+.animate-ping-2s {
+  animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+/* Progress Bar Styles */
+.progress-bar {
+  @apply h-full rounded-full transition-all duration-300;
+}
+
+.progress-bar-critical { @apply bg-purple-500; }
+.progress-bar-high { @apply bg-red-500; }
+.progress-bar-medium { @apply bg-yellow-500; }
+.progress-bar-low { @apply bg-blue-500; }
+.progress-bar-info { @apply bg-gray-500; }
+
+/* Vulnerability Chart Bar */
+.vuln-bar {
+  @apply rounded-t-lg cursor-pointer transition-opacity flex items-end justify-center pb-2 relative;
+  min-height: 40px;
+}
+
+.vuln-bar:hover {
+  @apply opacity-80;
+}
+
+/* Dynamic Size Containers - use CSS custom properties */
+.icon-container {
+  --icon-size: 80px;
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+/* Compact button Styles with 3D Hover Effects */
+.btn-compact {
+  @apply px-6 py-2 rounded-lg font-medium transition-all duration-300;
+  box-shadow: var(--shadow-3d);
+  transform: translateY(0);
+}
+
+.btn-compact:hover {
+  box-shadow: var(--shadow-3d-hover);
+  transform: translateY(-3px);
+}
+
+.btn-compact:active {
+  transform: translateY(0);
+  box-shadow: var(--shadow-3d);
+}
+
+.btn-primary-compact {
+  @apply btn-compact bg-primary text-primary-foreground border-2 border-primary;
+}
+
+.btn-primary-compact:hover {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--primary)) !important;
+  border-color: hsl(var(--primary)) !important;
+}
+
+.btn-secondary-compact {
+  @apply btn-compact bg-secondary text-secondary-foreground border-2 border-secondary;
+}
+
+.btn-secondary-compact:hover {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--secondary)) !important;
+  border-color: hsl(var(--secondary)) !important;
+}
+
+.btn-outline-compact {
+  @apply btn-compact border-2 border-primary bg-background text-primary;
+}
+
+.btn-outline-compact:hover {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  border-color: hsl(var(--primary)) !important;
+}
+
+.btn-login-dark {
+  @apply btn-compact border-2 border-foreground text-foreground bg-transparent;
+}
+
+.btn-login-dark:hover {
+  background-color: hsl(var(--foreground)) !important;
+  color: hsl(var(--background)) !important;
+  border-color: hsl(var(--foreground)) !important;
+}
+
+/* Global button Hover - Color Inversion + 3D Effect */
+button, .btn, [role="button"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+button:not(:disabled):hover, .btn:not(:disabled):hover, [role="button"]:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+}
+
+.font-guardian {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Creative font styling */
+.font-creative {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+/* Enhanced audit button styling */
+.btn-audit-now {
+  @apply bg-gradient-to-r from-primary to-accent text-white font-semibold py-4 px-10 rounded-2xl transition-all duration-300 shadow-lg;
+  box-shadow: var(--shadow-3d), 0 0 20px hsl(180 100% 50% / 0.3);
+  transform: translateY(0);
+}
+
+.btn-audit-now:hover:not(:disabled) {
+  @apply from-accent to-primary;
+  box-shadow: var(--shadow-3d-hover), 0 0 30px hsl(180 100% 50% / 0.5);
+  transform: translateY(-4px) scale(1.02);
+}
+
+.btn-audit-now:active:not(:disabled) {
+  transform: translateY(0) scale(1);
+  box-shadow: var(--shadow-3d);
+}
+
+.btn-audit-now:disabled {
+  @apply opacity-60 cursor-not-allowed;
+  transform: none;
+}
+
+/* Primary button with 3D Hover Effect - Full inversion: bg, text, border */
+.btn-primary {
+  @apply bg-primary text-primary-foreground border-2 border-primary font-semibold rounded-xl transition-all duration-300;
+  box-shadow: var(--shadow-3d);
+  transform: translateY(0);
+}
+
+.btn-primary:hover:not(:disabled) {
+  @apply bg-background text-primary border-primary;
+  box-shadow: var(--shadow-3d-hover);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(0) scale(1);
+}
+
+/* Outline button with Invert Hover - 3 property change (bg, text, border) */
+.btn-outline-hover {
+  @apply border-2 border-primary bg-transparent text-primary font-semibold rounded-xl transition-all duration-300;
+  box-shadow: var(--shadow-3d);
+}
+
+.btn-outline-hover:hover:not(:disabled) {
+  @apply bg-primary text-primary-foreground border-primary;
+  box-shadow: var(--shadow-3d-hover);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* ═══════════════════════════════════════════════════════════════════════════
+   🎨 AIVEDHA UNIFIED BUTTON SYSTEM
+   All buttons use consistent styling with enriched hover effects
+   ═══════════════════════════════════════════════════════════════════════════ */
+
+/* Base button styles - shared by all button types */
+.btn-base {
+  @apply inline-flex items-center justify-center gap-2 font-semibold rounded-xl transition-all duration-300 relative overflow-hidden;
+  transform: translateY(0);
+}
+
+.btn-base:disabled {
+  @apply opacity-50 cursor-not-allowed;
+  transform: none !important;
+  filter: grayscale(30%);
+}
+
+.btn-base svg,
+.btn-base span {
+  position: relative;
+  z-index: 1;
+}
+
+/* Shine sweep animation for all buttons */
+.btn-base::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent 30%, rgba(255, 255, 255, 0.2) 50%, transparent 70%);
+  transform: translateX(-100%) rotate(45deg);
+  transition: transform 0.5s ease;
+}
+
+.btn-base:hover:not(:disabled)::before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   🔵 PRIMARY - Main CTA buttons (Cyan/Blue gradient)
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-primary {
+  @apply btn-base;
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #22d3ee 100%);
+  color: #ffffff !important;
+  border: 2px solid rgba(6, 182, 212, 0.5);
+  box-shadow:
+    0 4px 15px rgba(6, 182, 212, 0.4),
+    0 0 20px rgba(34, 211, 238, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0e7490 0%, #0891b2 50%, #06b6d4 100%);
+  border-color: rgba(34, 211, 238, 0.8);
+  box-shadow:
+    0 6px 25px rgba(6, 182, 212, 0.5),
+    0 0 40px rgba(34, 211, 238, 0.4),
+    0 0 60px rgba(6, 182, 212, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-primary:active:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-primary svg,
+.btn-primary span {
+  color: #ffffff !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   💜 CTA - Purple/Pink gradient for special CTAs
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-cta {
+  @apply btn-base;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
+  color: #ffffff !important;
+  border: 2px solid rgba(139, 92, 246, 0.5);
+  box-shadow:
+    0 4px 15px rgba(99, 102, 241, 0.4),
+    0 0 20px rgba(139, 92, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-cta:hover:not(:disabled) {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #c026d3 100%);
+  border-color: rgba(167, 139, 250, 0.8);
+  box-shadow:
+    0 6px 25px rgba(99, 102, 241, 0.5),
+    0 0 40px rgba(139, 92, 246, 0.4),
+    0 0 60px rgba(217, 70, 239, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-cta:active:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-cta svg,
+.btn-cta span {
+  color: #ffffff !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ⬜ SECONDARY - Outline style with glow effect
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-secondary {
+  @apply btn-base;
+  background: transparent;
+  color: #06b6d4 !important;
+  border: 2px solid rgba(6, 182, 212, 0.6);
+  box-shadow: 0 0 10px rgba(6, 182, 212, 0.1);
+}
+
+.btn-secondary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 100%);
+  color: #ffffff !important;
+  border-color: rgba(34, 211, 238, 0.8);
+  box-shadow:
+    0 4px 20px rgba(6, 182, 212, 0.4),
+    0 0 30px rgba(34, 211, 238, 0.3);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-secondary:active:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-secondary svg,
+.btn-secondary span {
+  transition: color 0.3s ease;
+}
+
+.btn-secondary:hover:not(:disabled) svg,
+.btn-secondary:hover:not(:disabled) span {
+  color: #ffffff !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   👻 GHOST - Transparent with subtle hover
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-ghost {
+  @apply btn-base;
+  background: transparent;
+  color: currentColor;
+  border: 2px solid transparent;
+}
+
+.btn-ghost:hover:not(:disabled) {
+  background: rgba(6, 182, 212, 0.1);
+  border-color: rgba(6, 182, 212, 0.3);
+  color: #06b6d4 !important;
+  box-shadow: 0 0 15px rgba(6, 182, 212, 0.15);
+  transform: translateY(-1px);
+}
+
+.btn-ghost:active:not(:disabled) {
+  transform: translateY(0);
+  background: rgba(6, 182, 212, 0.15);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   🔴 DANGER - Red gradient for destructive actions
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-danger {
+  @apply btn-base;
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #f87171 100%);
+  color: #ffffff !important;
+  border: 2px solid rgba(239, 68, 68, 0.5);
+  box-shadow:
+    0 4px 15px rgba(239, 68, 68, 0.4),
+    0 0 20px rgba(248, 113, 113, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-danger:hover:not(:disabled) {
+  background: linear-gradient(135deg, #b91c1c 0%, #dc2626 50%, #ef4444 100%);
+  border-color: rgba(248, 113, 113, 0.8);
+  box-shadow:
+    0 6px 25px rgba(239, 68, 68, 0.5),
+    0 0 40px rgba(248, 113, 113, 0.4),
+    0 0 60px rgba(239, 68, 68, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-danger:active:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-danger svg,
+.btn-danger span {
+  color: #ffffff !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   🟢 SUCCESS - Green gradient for positive actions
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-success {
+  @apply btn-base;
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #34d399 100%);
+  color: #ffffff !important;
+  border: 2px solid rgba(16, 185, 129, 0.5);
+  box-shadow:
+    0 4px 15px rgba(16, 185, 129, 0.4),
+    0 0 20px rgba(52, 211, 153, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-success:hover:not(:disabled) {
+  background: linear-gradient(135deg, #047857 0%, #059669 50%, #10b981 100%);
+  border-color: rgba(52, 211, 153, 0.8);
+  box-shadow:
+    0 6px 25px rgba(16, 185, 129, 0.5),
+    0 0 40px rgba(52, 211, 153, 0.4),
+    0 0 60px rgba(16, 185, 129, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-success:active:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-success svg,
+.btn-success span {
+  color: #ffffff !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   ⚪ OUTLINE - Simple outline with fill on hover
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-outline {
+  @apply btn-base;
+  background: transparent;
+  color: #64748b;
+  border: 2px solid #cbd5e1;
+}
+
+.btn-outline:hover:not(:disabled) {
+  background: #f1f5f9;
+  border-color: #94a3b8;
+  color: #334155;
+  box-shadow: 0 4px 15px rgba(100, 116, 139, 0.2);
+  transform: translateY(-2px);
+}
+
+.btn-outline:active:not(:disabled) {
+  transform: translateY(-1px);
+  background: #e2e8f0;
+}
+
+/* Dark mode outline */
+.dark .btn-outline {
+  color: #94a3b8;
+  border-color: #475569;
+}
+
+.dark .btn-outline:hover:not(:disabled) {
+  background: #334155;
+  border-color: #64748b;
+  color: #e2e8f0;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   🌊 GLOW - Intense cyan glow effect
+   ───────────────────────────────────────────────────────────────────────────── */
+.btn-glow {
+  @apply btn-base;
+  background: linear-gradient(135deg, #0e7490 0%, #06b6d4 100%);
+  color: #ffffff !important;
+  border: 2px solid #22d3ee;
+  box-shadow:
+    0 0 10px rgba(34, 211, 238, 0.5),
+    0 0 20px rgba(6, 182, 212, 0.3),
+    0 0 30px rgba(6, 182, 212, 0.1);
+  animation: glow-pulse 2s ease-in-out infinite;
+}
+
+.btn-glow:hover:not(:disabled) {
+  box-shadow:
+    0 0 20px rgba(34, 211, 238, 0.8),
+    0 0 40px rgba(6, 182, 212, 0.5),
+    0 0 60px rgba(6, 182, 212, 0.3);
+  transform: translateY(-3px) scale(1.03);
+  animation: none;
+}
+
+.btn-glow:active:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+}
+
+.btn-glow svg,
+.btn-glow span {
+  color: #ffffff !important;
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 10px rgba(34, 211, 238, 0.5),
+      0 0 20px rgba(6, 182, 212, 0.3),
+      0 0 30px rgba(6, 182, 212, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 0 15px rgba(34, 211, 238, 0.7),
+      0 0 30px rgba(6, 182, 212, 0.4),
+      0 0 45px rgba(6, 182, 212, 0.2);
+  }
+}
+
+/* ⚡ VAJRA Thunder button - Powerful action buttons with lightning effect */
+.btn-thunder {
+  @apply font-bold rounded-xl transition-all duration-300 relative overflow-hidden;
+  background: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ea580c 100%);
+  color: #ffffff !important;
+  border: 2px solid rgba(251, 191, 36, 0.5);
+  box-shadow:
+    0 4px 15px rgba(245, 158, 11, 0.4),
+    0 0 20px rgba(251, 191, 36, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(0);
+}
+
+/* Lightning pulse animation */
+.btn-thunder::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.3) 50%,
+    transparent 70%
+  );
+  transform: translateX(-100%) rotate(45deg);
+  transition: transform 0.6s ease;
+}
+
+.btn-thunder:hover:not(:disabled)::before {
+  transform: translateX(100%) rotate(45deg);
+}
+
+.btn-thunder:hover:not(:disabled) {
+  background: linear-gradient(135deg, #fbbf24 0%, #fb923c 50%, #f97316 100%);
+  border-color: rgba(251, 191, 36, 0.8);
+  box-shadow:
+    0 6px 25px rgba(245, 158, 11, 0.5),
+    0 0 40px rgba(251, 191, 36, 0.4),
+    0 0 60px rgba(249, 115, 22, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  transform: translateY(-3px) scale(1.02);
+}
+
+.btn-thunder:active:not(:disabled) {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow:
+    0 2px 10px rgba(245, 158, 11, 0.4),
+    0 0 15px rgba(251, 191, 36, 0.3);
+}
+
+.btn-thunder:disabled {
+  @apply opacity-50 cursor-not-allowed;
+  transform: none;
+  filter: grayscale(30%);
+}
+
+.btn-thunder svg,
+.btn-thunder span {
+  color: #ffffff !important;
+  position: relative;
+  z-index: 1;
+}
+
+/* 🌀 Portal Entry - Creative animated gateway (NOT a button) */
+.portal-entry {
+  @apply relative inline-flex items-center justify-center;
+  width: 56px;
+  height: 56px;
+}
+
+.portal-ring {
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: conic-gradient(from 0deg, #06b6d4, #8b5cf6, #ec4899, #06b6d4);
+  animation: portal-spin 3s linear infinite;
+  opacity: 0.8;
+}
+
+.portal-ring::before {
+  content: '';
+  position: absolute;
+  inset: 2px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+}
+
+.portal-core {
+  @apply relative z-10 flex flex-col items-center justify-center;
+  color: #ffffff;
+  padding: 4px;
+}
+
+.portal-text {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: #ffffff;
+  text-shadow: 0 0 10px rgba(6, 182, 212, 0.8);
+  text-transform: uppercase;
+  line-height: 1.1;
+}
+
+.portal-arrow {
+  width: 14px;
+  height: 14px;
+  stroke: #22d3ee;
+  transition: transform 0.3s ease, stroke 0.3s ease;
+  filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.6));
+  margin-top: 2px;
+}
+
+/* Hover state */
+.portal-entry:hover .portal-ring {
+  animation-duration: 1s;
+  opacity: 1;
+  box-shadow: 0 0 30px rgba(6, 182, 212, 0.5), 0 0 60px rgba(139, 92, 246, 0.3);
+}
+
+.portal-entry:hover .portal-text {
+  text-shadow: 0 0 20px rgba(6, 182, 212, 1);
+}
+
+.portal-entry:hover .portal-arrow {
+  transform: translateX(4px);
+  stroke: #ffffff;
+}
+
+/* Focus state for accessibility */
+.portal-entry:focus-visible {
+  outline: 2px solid #22d3ee;
+  outline-offset: 4px;
+  border-radius: 9999px;
+}
+
+@keyframes portal-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* ✨ Plan button shine effects for Raksha & Chakra */
+.btn-plan-shine {
+  @apply relative overflow-hidden;
+}
+
+.btn-plan-shine::after {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.btn-plan-shine.raksha::after {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4, #3b82f6);
+  background-size: 200% 200%;
+  animation: shine-pulse 2s ease infinite;
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.5);
+}
+
+.btn-plan-shine.chakra::after {
+  background: linear-gradient(135deg, #f43f5e, #ec4899, #f43f5e);
+  background-size: 200% 200%;
+  animation: shine-pulse 2s ease infinite;
+  box-shadow: 0 0 20px rgba(244, 63, 94, 0.5);
+}
+
+.btn-plan-shine:hover::after {
+  opacity: 1;
+}
+
+@keyframes shine-pulse {
+  0%, 100% { background-position: 0% 50%; opacity: 0.8; }
+  50% { background-position: 100% 50%; opacity: 1; }
+}
+
+/* Card with 3D Hover Effect */
+.card-3d-hover {
+  @apply transition-all duration-300;
+  box-shadow: var(--shadow-3d);
+}
+
+.card-3d-hover:hover {
+  box-shadow: var(--shadow-3d-hover);
+  transform: translateY(-4px);
+}
+
+/* Tab with 3D Hover Effect */
+.tab-3d {
+  @apply transition-all duration-300 rounded-xl;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-3d:hover {
+  box-shadow: var(--shadow-3d-hover);
+  transform: translateY(-2px);
+}
+
+.tab-3d[data-state="active"] {
+  box-shadow: var(--shadow-3d);
+  transform: translateY(-1px);
+}
+
+/* Water Flow Animation for Header */
+@keyframes water-flow {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes wave-motion {
+  0%, 100% {
+    d: path("M0,50 Q25,30 50,50 T100,50 T150,50 T200,50 V100 H0 Z");
+  }
+  50% {
+    d: path("M0,50 Q25,70 50,50 T100,50 T150,50 T200,50 V100 H0 Z");
+  }
+}
+
+@keyframes liquid-wave {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Header water flow effect - Light theme: dark water, Dark theme: light water */
+.water-flow-header {
+  position: relative;
+  overflow: hidden;
+}
+
+.water-flow-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 15%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--foreground) / 0.08) 20%,
+    hsl(var(--foreground) / 0.15) 40%,
+    hsl(var(--foreground) / 0.2) 50%,
+    hsl(var(--foreground) / 0.15) 60%,
+    hsl(var(--foreground) / 0.08) 80%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  animation: liquid-wave 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Dark theme - light colored water */
+.dark .water-flow-header::before {
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--primary) / 0.1) 20%,
+    hsl(var(--primary) / 0.2) 40%,
+    hsl(var(--accent) / 0.25) 50%,
+    hsl(var(--primary) / 0.2) 60%,
+    hsl(var(--primary) / 0.1) 80%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+}
+
+/* Legacy liquid blob - keep for compatibility */
+.liquid-blob {
+  animation: liquid-wave 4s ease-in-out infinite;
+  background: linear-gradient(90deg, transparent, hsl(var(--foreground) / 0.15), transparent);
+  background-size: 200% 100%;
+}
+
+.dark .liquid-blob {
+  background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.2), hsl(var(--accent) / 0.15), transparent);
+  background-size: 200% 100%;
+}
+
+/* Hero 3D Background Animation */
+@keyframes hero-3d-float {
+  0%, 100% {
+    transform: translateZ(0) rotateX(0deg) rotateY(0deg);
+  }
+  25% {
+    transform: translateZ(20px) rotateX(5deg) rotateY(-5deg);
+  }
+  50% {
+    transform: translateZ(40px) rotateX(-5deg) rotateY(5deg);
+  }
+  75% {
+    transform: translateZ(20px) rotateX(3deg) rotateY(-3deg);
+  }
+}
+
+.hero-3d-bg {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.hero-3d-element {
+  animation: hero-3d-float 10s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* Shield Spin Animation */
+@keyframes shield-spin {
+  0% { transform: rotateY(0deg); }
+  100% { transform: rotateY(360deg); }
+}
+
+.shield-animate {
+  animation: shield-spin 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* Key Bounce Animation */
+@keyframes key-bounce {
+  0%, 100% { transform: translateY(0) rotate(-15deg); }
+  50% { transform: translateY(-10px) rotate(-15deg); }
+}
+
+.key-animate {
+  animation: key-bounce 2s ease-in-out infinite;
+}
+
+/* ============================================================================
+ * COMPREHENSIVE BUTTON HOVER EFFECTS - Color Inversion for Dual Theme
+ * All buttons across the project should invert: background, text, border
+ * ============================================================================ */
+
+/* Base button transition for all buttons */
+button,
+.btn,
+[role="button"],
+a[class*="btn"] {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Default button hover - invert colors */
+button:not(:disabled):hover,
+.btn:not(:disabled):hover,
+[role="button"]:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.2);
+}
+
+/* Primary button - bg to transparent, text to primary */
+.btn-primary-compact:hover,
+button[class*="bg-primary"]:not(:disabled):hover,
+.bg-primary:not(:disabled):hover {
+  background-color: transparent !important;
+  color: hsl(var(--primary)) !important;
+  border-color: hsl(var(--primary)) !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+
+/* Outline button - transparent to filled */
+.btn-outline-compact:hover,
+button[class*="border-primary"][class*="bg-transparent"]:not(:disabled):hover,
+.border-primary.bg-transparent:not(:disabled):hover {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  border-color: hsl(var(--primary)) !important;
+}
+
+/* Secondary button hover */
+.btn-secondary-compact:hover,
+button[class*="bg-secondary"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: hsl(var(--secondary-foreground)) !important;
+  border-color: hsl(var(--border)) !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+
+/* Ghost button hover - fill with muted */
+button[class*="variant-ghost"]:not(:disabled):hover,
+.ghost:not(:disabled):hover {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Destructive button hover */
+button[class*="bg-destructive"]:not(:disabled):hover,
+.bg-destructive:not(:disabled):hover {
+  background-color: transparent !important;
+  color: hsl(var(--destructive)) !important;
+  border-color: hsl(var(--destructive)) !important;
+  border-width: 2px !important;
+  border-style: solid !important;
+}
+
+/* Gradient button hover - Full 3-color inversion (bg, text, border) */
+button[class*="bg-gradient"]:not(:disabled):not(.no-invert):hover,
+.bg-gradient-to-r:not(:disabled):not(.no-invert):hover {
+  background-image: none !important;
+  background-color: transparent !important;
+  color: hsl(var(--primary)) !important;
+  border: 2px solid hsl(var(--primary)) !important;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Popup/Dialog specific button styles - Full 3-color inversion */
+.popup-btn-primary,
+.dialog-btn-primary {
+  @apply bg-gradient-to-r from-primary to-accent text-white font-semibold rounded-xl transition-all duration-300;
+  border: 2px solid transparent;
+}
+
+.popup-btn-primary:hover:not(:disabled),
+.dialog-btn-primary:hover:not(:disabled) {
+  background-image: none !important;
+  background-color: transparent !important;
+  color: hsl(var(--primary)) !important;
+  border: 2px solid hsl(var(--primary)) !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 8px 20px -4px hsl(var(--primary) / 0.3);
+}
+
+/* "I Agree" and consent button styles */
+.btn-consent,
+.btn-agree {
+  @apply transition-all duration-300;
+  border: 2px solid transparent;
+}
+
+.btn-consent:hover:not(:disabled),
+.btn-agree:hover:not(:disabled) {
+  background-image: none !important;
+  background-color: transparent !important;
+  color: hsl(var(--primary)) !important;
+  border: 2px solid hsl(var(--primary)) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Green success buttons (Download PDF, etc) */
+button[class*="bg-green"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(34, 197, 94) !important;
+  border: 2px solid rgb(34, 197, 94) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Warning close dialog buttons */
+.dialog-warning-btn:hover:not(:disabled) {
+  background-color: transparent !important;
+  color: hsl(var(--destructive)) !important;
+  border: 2px solid hsl(var(--destructive)) !important;
+}
+
+/* Card selection buttons in pricing */
+.plan-select-btn:not(:disabled):hover {
+  background-color: transparent !important;
+  color: hsl(var(--primary)) !important;
+  border: 2px solid hsl(var(--primary)) !important;
+  transform: translateY(-3px) scale(1.02);
+}
+
+/* Select plan button active state */
+.plan-select-btn.selected {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--primary-foreground)) !important;
+  border: 2px solid hsl(var(--primary)) !important;
+}
+
+/* Icon buttons */
+button[class*="size-icon"]:not(:disabled):hover,
+.size-icon:not(:disabled):hover {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--primary)) !important;
+  transform: scale(1.1);
+}
+
+/* Link buttons */
+a.btn:not(:disabled):hover,
+a[class*="btn-"]:not(:disabled):hover {
+  transform: translateY(-2px);
+}
+
+/* Tab buttons */
+button[role="tab"]:not([data-state="active"]):hover {
+  background-color: hsl(var(--muted) / 0.5) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Dropdown menu items */
+[role="menuitem"]:hover {
+  background-color: hsl(var(--muted)) !important;
+  color: hsl(var(--foreground)) !important;
+}
+
+/* Toggle buttons */
+button[data-state]:hover:not(:disabled) {
+  filter: brightness(1.05);
+}
+
+/* Social login buttons */
+.social-login-btn:hover {
+  background-color: hsl(var(--muted)) !important;
+  border-color: hsl(var(--primary)) !important;
+  transform: translateY(-2px);
+}
+
+/* CTA buttons with special styling */
+.cta-btn:not(:disabled):hover {
+  background: linear-gradient(135deg, hsl(var(--accent)), hsl(var(--primary))) !important;
+  color: white !important;
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 12px 32px -8px hsl(var(--primary) / 0.4);
+}
+
+/* Input focus states */
+input:focus,
+textarea:focus,
+select:focus,
+[role="combobox"]:focus {
+  outline: none !important;
+  border-color: hsl(var(--primary)) !important;
+  box-shadow: 0 0 0 3px hsl(var(--primary) / 0.1) !important;
+}
+
+/* Checkbox and Radio hover */
+[type="checkbox"]:hover,
+[type="radio"]:hover,
+button[role="checkbox"]:hover,
+button[role="radio"]:hover {
+  border-color: hsl(var(--primary)) !important;
+}
+
+/* Badge hover */
+.badge:hover,
+[class*="Badge"]:hover {
+  filter: brightness(1.1);
+  transform: scale(1.02);
+}
+
+/* Card hover effects */
+.card:hover,
+[class*="Card"]:hover {
+  box-shadow: 0 12px 28px -8px rgba(0, 0, 0, 0.15);
+}
+
+/* Clickable card hover */
+.card-clickable:hover,
+.cursor-pointer.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px -8px rgba(0, 0, 0, 0.2);
+  border-color: hsl(var(--primary) / 0.3) !important;
+}
+
+/* Dark mode specific button hover adjustments */
+.dark button[class*="bg-primary"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: hsl(var(--primary)) !important;
+  border-color: hsl(var(--primary)) !important;
+}
+
+.dark .btn-outline-compact:hover {
+  background-color: hsl(var(--primary)) !important;
+  color: hsl(var(--background)) !important;
+}
+
+/* Select trigger hover */
+button[role="combobox"]:hover {
+  border-color: hsl(var(--primary)) !important;
+}
+
+/* Accordion trigger hover */
+button[class*="AccordionTrigger"]:hover,
+.accordion-trigger:hover {
+  background-color: hsl(var(--muted) / 0.5) !important;
+}
+
+/* Navigation link hover */
+nav a:hover,
+.nav-link:hover {
+  color: hsl(var(--primary)) !important;
+}
+
+/* Pricing card CTA button */
+.pricing-cta-btn:not(:disabled):hover {
+  background-color: hsl(var(--background)) !important;
+  color: hsl(var(--primary)) !important;
+  border: 2px solid hsl(var(--primary)) !important;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px -6px hsl(var(--primary) / 0.3);
+}
+
+/* Color-specific button hover - Invert bg, text, border */
+button[class*="bg-primary"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: hsl(var(--primary)) !important;
+  border: 2px solid hsl(var(--primary)) !important;
+}
+
+button[class*="bg-emerald"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(16, 185, 129) !important;
+  border: 2px solid rgb(16, 185, 129) !important;
+}
+
+button[class*="bg-blue"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(59, 130, 246) !important;
+  border: 2px solid rgb(59, 130, 246) !important;
+}
+
+button[class*="bg-violet"]:not(:disabled):hover,
+button[class*="from-violet"]:not(:disabled):hover {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: rgb(139, 92, 246) !important;
+  border: 2px solid rgb(139, 92, 246) !important;
+}
+
+button[class*="bg-amber"]:not(:disabled):hover,
+button[class*="from-amber"]:not(:disabled):hover {
+  background-color: transparent !important;
+  background-image: none !important;
+  color: rgb(245, 158, 11) !important;
+  border: 2px solid rgb(245, 158, 11) !important;
+}
+
+button[class*="bg-rose"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(244, 63, 94) !important;
+  border: 2px solid rgb(244, 63, 94) !important;
+}
+
+button[class*="bg-indigo"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(99, 102, 241) !important;
+  border: 2px solid rgb(99, 102, 241) !important;
+}
+
+button[class*="bg-purple"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(168, 85, 247) !important;
+  border: 2px solid rgb(168, 85, 247) !important;
+}
+
+button[class*="bg-cyan"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(6, 182, 212) !important;
+  border: 2px solid rgb(6, 182, 212) !important;
+}
+
+button[class*="bg-teal"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(20, 184, 166) !important;
+  border: 2px solid rgb(20, 184, 166) !important;
+}
+
+button[class*="bg-orange"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(249, 115, 22) !important;
+  border: 2px solid rgb(249, 115, 22) !important;
+}
+
+button[class*="bg-slate"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(100, 116, 139) !important;
+  border: 2px solid rgb(100, 116, 139) !important;
+}
+
+button[class*="bg-gray-900"]:not(:disabled):hover,
+button[class*="bg-gray-800"]:not(:disabled):hover {
+  background-color: transparent !important;
+  color: rgb(31, 41, 55) !important;
+  border: 2px solid rgb(31, 41, 55) !important;
+}
+
+/* Floating action button hover fix */
+.fixed button:not(:disabled):hover {
+  transform: translateY(-3px) !important;
+  box-shadow: 0 12px 28px -6px rgba(0, 0, 0, 0.3) !important;
+}
+
+/* Compact inputs - focused width */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+textarea,
+select {
+  max-width: 400px;
+}
+
+/* Input border visibility - ensure borders are CLEARLY visible in all themes */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+textarea,
+select,
+[role="combobox"] {
+  border: 1.5px solid hsl(210 25% 55%) !important;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Light mode hover */
+input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):hover:not(:focus),
+textarea:hover:not(:focus),
+select:hover:not(:focus),
+[role="combobox"]:hover:not(:focus) {
+  border-color: hsl(210 30% 45%) !important;
+}
+
+/* Dark mode - VISIBLE lighter border */
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="range"]),
+.dark textarea,
+.dark select,
+.dark [role="combobox"] {
+  border-color: hsl(210 30% 50%) !important;
+}
+
+/* Dark mode hover */
+.dark input:not([type="checkbox"]):not([type="radio"]):not([type="range"]):hover:not(:focus),
+.dark textarea:hover:not(:focus),
+.dark select:hover:not(:focus),
+.dark [role="combobox"]:hover:not(:focus) {
+  border-color: hsl(210 35% 60%) !important;
+}
+
+/* Dropdown menu items - Enhanced hover contrast */
+[role="menuitem"],
+[role="option"],
+[data-radix-collection-item] {
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+[role="menuitem"]:hover,
+[role="menuitem"]:focus,
+[role="menuitem"][data-highlighted],
+[role="option"]:hover,
+[role="option"]:focus,
+[data-radix-collection-item]:hover,
+[data-radix-collection-item]:focus {
+  background-color: hsl(var(--primary) / 0.15) !important;
+  color: hsl(var(--primary)) !important;
+}
+
+.dark [role="menuitem"]:hover,
+.dark [role="menuitem"]:focus,
+.dark [role="menuitem"][data-highlighted],
+.dark [role="option"]:hover,
+.dark [role="option"]:focus,
+.dark [data-radix-collection-item]:hover,
+.dark [data-radix-collection-item]:focus {
+  background-color: hsl(var(--primary) / 0.25) !important;
+  color: hsl(var(--primary-foreground)) !important;
+}
+
+/* Centered form inputs */
+.form-input-centered {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-input-centered input,
+.form-input-centered textarea,
+.form-input-centered select {
+  width: 100%;
+  max-width: 350px;
+}
+
+/* Error messages - static display only (not buttons or interactive elements) */
+.error-message-static,
+p.error-message,
+span.error-message {
+  cursor: default;
+}
+
+/* ================================================================
+   GLOBAL CURVED EDGES - NO SHARP EDGES ALLOWED
+   ================================================================ */
+
+/* Cards - ensure all have rounded corners */
+.card,
+[class*="Card"],
+[class*="card"] {
+  border-radius: 1rem !important;
+}
+
+/* Sections with backgrounds */
+section[class*="bg-"],
+div[class*="bg-muted"],
+div[class*="bg-card"] {
+  border-radius: 1.5rem;
+}
+
+/* buttons - all rounded */
+button:not([class*="rounded"]) {
+  border-radius: 0.75rem;
+}
+
+/* Modal/Dialog containers */
+[role="dialog"],
+[data-state="open"],
+.modal,
+.dialog {
+  border-radius: 1.25rem !important;
+}
+
+/* Dropdowns */
+[role="menu"],
+[role="listbox"] {
+  border-radius: 0.75rem !important;
+}
+
+/* Images and media */
+img:not([class*="rounded"]) {
+  border-radius: 0.5rem;
+}
+
+/* Badges */
+.badge,
+[class*="Badge"] {
+  border-radius: 9999px;
+}
+
+/* Alerts and notifications */
+[role="alert"],
+.toast,
+.notification {
+  border-radius: 1rem !important;
+}
+
+/* Tables - rounded corners */
+table {
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+table th:first-child {
+  border-top-left-radius: 0.75rem;
+}
+
+table th:last-child {
+  border-top-right-radius: 0.75rem;
+}
+
+table tbody tr:last-child td:first-child {
+  border-bottom-left-radius: 0.75rem;
+}
+
+table tbody tr:last-child td:last-child {
+  border-bottom-right-radius: 0.75rem;
+}
+
+/* Progress bars */
+[role="progressbar"],
+.progress,
+progress {
+  border-radius: 9999px !important;
+  overflow: hidden;
+}
+
+/* Tabs */
+[role="tablist"],
+[role="tab"] {
+  border-radius: 0.75rem;
+}
+
+/* Tooltips */
+[role="tooltip"] {
+  border-radius: 0.5rem !important;
+}
+
+/* Separators with rounded ends */
+hr,
+[role="separator"] {
+  border-radius: 9999px;
+}
+
+/* Code blocks and pre */
+pre,
+code {
+  border-radius: 0.5rem;
+}
+
+/* Popovers */
+[data-radix-popper-content-wrapper] > div {
+  border-radius: 0.75rem !important;
+}
+
+/* Checkbox and radio - circular/rounded */
+input[type="checkbox"] {
+  border-radius: 0.25rem;
+}
+
+input[type="radio"] {
+  border-radius: 9999px;
+}
+
+/* Slider/Range */
+input[type="range"] {
+  border-radius: 9999px;
+}
+
+/* Avatar images */
+.avatar,
+[class*="avatar"],
+[class*="Avatar"] {
+  border-radius: 9999px;
+}
+
+/* Sheet/Drawer */
+[data-state="open"][role="dialog"],
+.sheet,
+.drawer {
+  border-radius: 1.5rem 1.5rem 0 0;
+}
+
+/* Command palette */
+[cmdk-root],
+[cmdk-list] {
+  border-radius: 0.75rem !important;
+}
+
+/* Skeleton loaders */
+.skeleton,
+[class*="skeleton"] {
+  border-radius: 0.5rem;
+}
+
+/* Accordion */
+[data-state="open"][data-orientation="vertical"],
+[data-state="closed"][data-orientation="vertical"] {
+  border-radius: 0.75rem;
+}
+
+/* Global fallback - any element with border should be rounded */
+*[style*="border"]:not([style*="border-radius"]):not(table):not(tr):not(td):not(th) {
+  border-radius: 0.5rem;
+}
+
+/* ================================================================
+   CUSTOM SCROLLBAR STYLING - Slim, Theme-Aware, Auto-Hide
+   ================================================================ */
+
+/* Base scrollbar styling */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+/* Show scrollbar on scroll (via JS class or hover) */
+*:hover {
+  scrollbar-color: hsl(var(--muted-foreground) / 0.3) transparent;
+}
+
+/* Webkit browsers (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+}
+
+/* Show thumb on hover/scroll */
+*:hover::-webkit-scrollbar-thumb,
+*:focus::-webkit-scrollbar-thumb,
+*:active::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+}
+
+*:hover::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb {
+  background: transparent;
+}
+
+.dark *:hover::-webkit-scrollbar-thumb,
+.dark *:focus::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.3);
+}
+
+.dark *:hover::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.5);
+}
+
+/* Modal/Dialog scrollbar - always visible but slim */
+[role="dialog"] ::-webkit-scrollbar,
+.overflow-y-auto::-webkit-scrollbar,
+.overflow-auto::-webkit-scrollbar {
+  width: 4px;
+}
+
+[role="dialog"] ::-webkit-scrollbar-thumb,
+.overflow-y-auto::-webkit-scrollbar-thumb,
+.overflow-auto::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.2);
+  border-radius: 10px;
+}
+
+[role="dialog"] ::-webkit-scrollbar-thumb:hover,
+.overflow-y-auto::-webkit-scrollbar-thumb:hover,
+.overflow-auto::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.4);
+}
+
+.dark [role="dialog"] ::-webkit-scrollbar-thumb,
+.dark .overflow-y-auto::-webkit-scrollbar-thumb,
+.dark .overflow-auto::-webkit-scrollbar-thumb {
+  background: hsl(var(--primary) / 0.2);
+}
+
+.dark [role="dialog"] ::-webkit-scrollbar-thumb:hover,
+.dark .overflow-y-auto::-webkit-scrollbar-thumb:hover,
+.dark .overflow-auto::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--primary) / 0.4);
+}
+
+/* ================================================================
+   TERMINAL SCROLL - Colorful gradient scrollbar, visible on scroll
+   ================================================================ */
+.terminal-scroll {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+}
+
+.terminal-scroll:hover,
+.terminal-scroll:focus,
+.terminal-scroll:active,
+.terminal-scroll.scrolling {
+  scrollbar-color: #06b6d4 transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb {
+  background: transparent;
+  border-radius: 3px;
+  transition: background 0.3s ease;
+}
+
+.terminal-scroll:hover::-webkit-scrollbar-thumb,
+.terminal-scroll:focus::-webkit-scrollbar-thumb,
+.terminal-scroll:active::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4 0%, #3b82f6 50%, #8b5cf6 100%);
+}
+
+.terminal-scroll::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #22d3ee 0%, #60a5fa 50%, #a78bfa 100%);
+}
+
+/* ================================================================
+   DROPDOWN/SELECT HOVER FIXES - Proper contrast in both themes
+   ================================================================ */
+
+/* Select content - dropdown background */
+[data-radix-select-viewport],
+[role="listbox"],
+[cmdk-list] {
+  background: hsl(var(--popover)) !important;
+}
+
+/* Light theme dropdown hover - dark background with light text */
+[data-radix-select-item]:hover,
+[data-radix-select-item][data-highlighted],
+[role="option"]:hover,
+[role="option"][data-highlighted],
+[cmdk-item]:hover,
+[cmdk-item][data-selected="true"],
+[cmdk-item][aria-selected="true"] {
+  background: hsl(210 40% 15%) !important;
+  color: hsl(0 0% 98%) !important;
+}
+
+/* Dark theme dropdown hover - light background with dark text */
+.dark [data-radix-select-item]:hover,
+.dark [data-radix-select-item][data-highlighted],
+.dark [role="option"]:hover,
+.dark [role="option"][data-highlighted],
+.dark [cmdk-item]:hover,
+.dark [cmdk-item][data-selected="true"],
+.dark [cmdk-item][aria-selected="true"] {
+  background: hsl(0 0% 95%) !important;
+  color: hsl(210 40% 15%) !important;
+}
+
+/* Command/Combobox input */
+[cmdk-input],
+.combobox-input {
+  background: hsl(var(--background)) !important;
+  border-color: hsl(var(--border)) !important;
+}
+
+/* Selected item indicator - Light theme */
+[data-radix-select-item][data-state="checked"] {
+  background: hsl(210 40% 15%) !important;
+  color: hsl(0 0% 98%) !important;
+}
+
+/* Selected item indicator - Dark theme */
+.dark [data-radix-select-item][data-state="checked"] {
+  background: hsl(0 0% 95%) !important;
+  color: hsl(210 40% 15%) !important;
+}
+
+/* ================================================================
+   DROPDOWN MENU HOVER - Cursor & Color Inversion
+   ================================================================ */
+
+/* All dropdown menu items - cursor pointer */
+[role="menuitem"],
+[role="menuitemcheckbox"],
+[role="menuitemradio"],
+[data-radix-collection-item],
+.dropdown-item {
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
+}
+
+/* Light theme - dropdown item hover: dark bg, light text */
+[role="menuitem"]:hover,
+[role="menuitem"]:focus,
+[role="menuitem"][data-highlighted],
+[role="menuitemcheckbox"]:hover,
+[role="menuitemradio"]:hover,
+[data-radix-collection-item]:hover {
+  background-color: hsl(210 40% 15%) !important;
+  color: hsl(0 0% 98%) !important;
+}
+
+/* Light theme - dropdown item hover icon colors */
+[role="menuitem"]:hover svg,
+[role="menuitem"]:focus svg,
+[role="menuitem"][data-highlighted] svg {
+  color: hsl(0 0% 98%) !important;
+}
+
+/* Dark theme - dropdown item hover: light bg, dark text */
+.dark [role="menuitem"]:hover,
+.dark [role="menuitem"]:focus,
+.dark [role="menuitem"][data-highlighted],
+.dark [role="menuitemcheckbox"]:hover,
+.dark [role="menuitemradio"]:hover,
+.dark [data-radix-collection-item]:hover {
+  background-color: hsl(0 0% 95%) !important;
+  color: hsl(210 40% 15%) !important;
+}
+
+/* Dark theme - dropdown item hover icon colors */
+.dark [role="menuitem"]:hover svg,
+.dark [role="menuitem"]:focus svg,
+.dark [role="menuitem"][data-highlighted] svg {
+  color: hsl(210 40% 15%) !important;
+}
+
+/* Destructive menu item special handling */
+[role="menuitem"].text-destructive:hover,
+[role="menuitem"][class*="destructive"]:hover {
+  background-color: hsl(0 84% 60%) !important;
+  color: white !important;
+}
+
+.dark [role="menuitem"].text-destructive:hover,
+.dark [role="menuitem"][class*="destructive"]:hover {
+  background-color: hsl(0 84% 60%) !important;
+  color: white !important;
+}
+
+/* ================================================================
+   3D SHINING BORDER HOVER EFFECTS FOR CARDS
+   ================================================================ */
+
+/* Base card transition */
+.card-3d-shine,
+[class*="Card"],
+.card {
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* 3D shining border effect on hover */
+.card-3d-shine:hover,
+.card-hover-3d:hover {
+  transform: translateY(-8px) scale(1.02) !important;
+  box-shadow:
+    0 20px 40px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px hsl(var(--primary) / 0.3),
+    inset 0 1px 0 hsl(0 0% 100% / 0.1) !important;
+}
+
+/* Shining border animation */
+@keyframes shine-border {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.card-3d-shine::before,
+.card-hover-3d::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: inherit;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    hsl(var(--primary) / 0.5) 25%,
+    hsl(var(--accent) / 0.8) 50%,
+    hsl(var(--primary) / 0.5) 75%,
+    transparent 100%
+  );
+  background-size: 200% 100%;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-3d-shine:hover::before,
+.card-hover-3d:hover::before {
+  opacity: 1;
+  animation: shine-border 2s linear infinite;
+}
+
+/* Card color inversion on hover */
+.card-invert-hover:hover {
+  background-color: hsl(var(--foreground)) !important;
+  color: hsl(var(--background)) !important;
+}
+
+.card-invert-hover:hover h1,
+.card-invert-hover:hover h2,
+.card-invert-hover:hover h3,
+.card-invert-hover:hover h4,
+.card-invert-hover:hover p,
+.card-invert-hover:hover span:not(.badge) {
+  color: hsl(var(--background)) !important;
+}
+
+.card-invert-hover:hover svg {
+  color: hsl(var(--background)) !important;
+}
+
+/* Dark mode card inversion */
+.dark .card-invert-hover:hover {
+  background-color: hsl(0 0% 95%) !important;
+  color: hsl(210 40% 15%) !important;
+}
+
+.dark .card-invert-hover:hover h1,
+.dark .card-invert-hover:hover h2,
+.dark .card-invert-hover:hover h3,
+.dark .card-invert-hover:hover h4,
+.dark .card-invert-hover:hover p,
+.dark .card-invert-hover:hover span:not(.badge) {
+  color: hsl(210 40% 15%) !important;
+}
+
+.dark .card-invert-hover:hover svg {
+  color: hsl(210 40% 15%) !important;
+}
+
+/* button color inversion on hover - inverts background, text, and border */
+.btn-invert-hover {
+  transition: all 0.3s ease !important;
+}
+
+.btn-invert-hover:hover {
+  background-color: hsl(var(--foreground)) !important;
+  color: hsl(var(--background)) !important;
+  border-color: hsl(var(--background)) !important;
+}
+
+.dark .btn-invert-hover:hover {
+  background-color: hsl(0 0% 95%) !important;
+  color: hsl(210 40% 15%) !important;
+  border-color: hsl(210 40% 15%) !important;
+}
+
+/* Compact button width */
+.btn-compact {
+  width: auto !important;
+  padding-left: 1.5rem !important;
+  padding-right: 1.5rem !important;
+}
+
+/* ================================================================
+   PRICING PAGE SECTION STYLING
+   ================================================================ */
+
+/* Reduce gaps between sections */
+.pricing-section {
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+/* Round edges for all sections */
+.pricing-section,
+.section-rounded {
+  border-radius: 1.5rem;
+}
+
+/* Compact "Ready to Secure" section */
+.cta-section-compact {
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  margin-top: 1rem !important;
+}
+
+/* ================================================================
+   ICON/IMAGE THEME ADAPTATION
+   ================================================================ */
+
+/* Light theme - dark icons/illustrations */
+.theme-icon,
+.illustration-icon {
+  filter: brightness(0.2) !important;
+}
+
+/* Dark theme - light icons/illustrations */
+.dark .theme-icon,
+.dark .illustration-icon {
+  filter: brightness(1.8) invert(1) !important;
+}
+
+/* Remove backgrounds from icon containers */
+.icon-no-bg {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+/* ================================================================
+   ZOOZOO ANIMATION POSITIONING
+   ================================================================ */
+
+/* Force zoozoo to sides */
+.zoozoo-container {
+  display: flex !important;
+  justify-content: space-between !important;
+  align-items: center !important;
+}
+
+.zoozoo-left {
+  position: absolute !important;
+  left: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+.zoozoo-right {
+  position: absolute !important;
+  right: 0 !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+}
+
+/* ================================================================
+   LIGHT THEME 3D SHADOW BORDERS - Always visible (not just on hover)
+   Applied to cards, containers, group boxes across all pages
+   ================================================================ */
+
+/* Light theme - 3D elevated shadow border for cards - DARKER BORDERS */
+:root:not(.dark) .card,
+:root:not(.dark) [class*="Card"],
+:root:not(.dark) .group-box,
+:root:not(.dark) [class*="rounded-lg"][class*="border"],
+:root:not(.dark) [class*="rounded-xl"][class*="border"],
+:root:not(.dark) [class*="rounded-2xl"][class*="border"] {
+  box-shadow:
+    0 2px 4px rgba(0, 0, 0, 0.08),
+    0 6px 16px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.04) !important;
+  border: 1px solid rgba(0, 0, 0, 0.12) !important;
+}
+
+/* Light theme containers with background - ENHANCED SHADOWS */
+:root:not(.dark) [class*="bg-card"],
+:root:not(.dark) [class*="bg-background"],
+:root:not(.dark) [class*="bg-white"],
+:root:not(.dark) [class*="bg-muted"] {
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.06),
+    0 10px 24px rgba(0, 0, 0, 0.10),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98) !important;
+}
+
+/* Light theme - enhanced 3D border for specific containers - DARKER ACCENT */
+:root:not(.dark) .light-3d-border,
+:root:not(.dark) [data-light-3d="true"] {
+  position: relative;
+  box-shadow:
+    0 3px 10px rgba(0, 0, 0, 0.10),
+    0 10px 30px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(59, 130, 246, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.98),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.05) !important;
+  border: 1px solid rgba(59, 130, 246, 0.18) !important;
+}
+
+/* Light theme - glossy top edge highlight */
+:root:not(.dark) .card::before,
+:root:not(.dark) [class*="Card"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 255, 255, 0.8) 30%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0.8) 70%, transparent 100%);
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+/* Light theme card hover - enhanced 3D effect - MORE DEPTH */
+:root:not(.dark) .card:hover,
+:root:not(.dark) [class*="Card"]:hover {
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.12),
+    0 16px 40px rgba(0, 0, 0, 0.16),
+    0 0 0 1px rgba(59, 130, 246, 0.20),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 0 rgba(0, 0, 0, 0.04) !important;
+  transform: translateY(-3px);
+  border-color: rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Light theme - form containers and input groups */
+:root:not(.dark) .form-container,
+:root:not(.dark) [class*="space-y"][class*="rounded"],
+:root:not(.dark) form[class*="rounded"] {
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.04),
+    0 6px 16px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Light theme - table containers */
+:root:not(.dark) table,
+:root:not(.dark) [class*="table-container"] {
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.05),
+    0 6px 20px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light theme - dialog/modal containers */
+:root:not(.dark) [role="dialog"] > div,
+:root:not(.dark) .modal-content,
+:root:not(.dark) [data-radix-dialog-content] {
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 24px 64px rgba(0, 0, 0, 0.16),
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Light theme - dropdown containers */
+:root:not(.dark) [role="menu"],
+:root:not(.dark) [role="listbox"],
+:root:not(.dark) [data-radix-select-viewport] {
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 12px 32px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light theme - stats cards */
+:root:not(.dark) .stats-card,
+:root:not(.dark) [class*="stats-"] {
+  box-shadow:
+    0 2px 6px rgba(0, 0, 0, 0.04),
+    0 8px 20px rgba(0, 0, 0, 0.06),
+    0 0 0 1px rgba(59, 130, 246, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Light theme - tab containers */
+:root:not(.dark) [role="tablist"] {
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.04),
+    0 4px 12px rgba(0, 0, 0, 0.06),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+  border: 1px solid rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Light theme - active tab */
+:root:not(.dark) [role="tab"][data-state="active"] {
+  box-shadow:
+    0 2px 8px rgba(59, 130, 246, 0.15),
+    0 4px 12px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 1) !important;
+}
+
+/* Light theme - accordion items */
+:root:not(.dark) [data-orientation="vertical"],
+:root:not(.dark) .accordion-item {
+  box-shadow:
+    0 1px 4px rgba(0, 0, 0, 0.03),
+    0 4px 12px rgba(0, 0, 0, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Light theme - alert/toast containers */
+:root:not(.dark) [role="alert"],
+:root:not(.dark) .toast,
+:root:not(.dark) .alert {
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.08),
+    0 8px 24px rgba(0, 0, 0, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Light theme - pricing cards special styling */
+:root:not(.dark) .pricing-card,
+:root:not(.dark) [class*="pricing"] {
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.08),
+    0 12px 32px rgba(0, 0, 0, 0.1),
+    0 0 0 1px rgba(59, 130, 246, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -2px 0 rgba(59, 130, 246, 0.05) !important;
+}
+
+/* Light theme - section backgrounds with prominent dark borders */
+:root:not(.dark) section[class*="bg-"],
+:root:not(.dark) .section-container {
+  box-shadow:
+    0 -1px 0 rgba(0, 0, 0, 0.08),
+    0 1px 0 rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.9),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+/* Light theme - explicit bottom border for sections */
+:root:not(.dark) section {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Light theme - hero and feature sections with darker bottom edge */
+:root:not(.dark) .hero-section,
+:root:not(.dark) [class*="hero"],
+:root:not(.dark) .features-section,
+:root:not(.dark) .pricing-section {
+  position: relative;
+}
+
+:root:not(.dark) .hero-section::after,
+:root:not(.dark) [class*="hero"]::after,
+:root:not(.dark) .features-section::after,
+:root:not(.dark) .pricing-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  right: 5%;
+  height: 2px;
+  background: linear-gradient(90deg,
+    transparent 0%,
+    rgba(0, 0, 0, 0.08) 20%,
+    rgba(0, 0, 0, 0.12) 50%,
+    rgba(0, 0, 0, 0.08) 80%,
+    transparent 100%
+  );
+  border-radius: 1px;
+}
+
+/* Dark theme - maintain existing subtle shadows */
+.dark .card,
+.dark [class*="Card"] {
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.2),
+    0 0 0 1px rgba(255, 255, 255, 0.05),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+/* Dark theme card hover */
+.dark .card:hover,
+.dark [class*="Card"]:hover {
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 16px 40px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(34, 211, 238, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(34, 211, 238, 0.3) !important;
+}
+
+/* ================================================================
+   UNIVERSAL 3D BORDER CLASS - Use .border-3d for any element
+   ================================================================ */
+
+.border-3d {
+  position: relative;
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.06),
+    0 8px 24px rgba(0, 0, 0, 0.08),
+    0 0 0 1px rgba(59, 130, 246, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.95),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.03) !important;
+  border: 1px solid rgba(59, 130, 246, 0.15) !important;
+  border-radius: 0.75rem;
+}
+
+.border-3d:hover {
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.1),
+    0 16px 40px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(59, 130, 246, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 1),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.02) !important;
+  border-color: rgba(59, 130, 246, 0.25) !important;
+  transform: translateY(-2px);
+}
+
+.dark .border-3d {
+  box-shadow:
+    0 2px 8px rgba(0, 0, 0, 0.3),
+    0 8px 24px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(34, 211, 238, 0.15),
+    inset 0 1px 0 rgba(255, 255, 255, 0.05) !important;
+  border: 1px solid rgba(34, 211, 238, 0.2) !important;
+}
+
+.dark .border-3d:hover {
+  box-shadow:
+    0 4px 16px rgba(0, 0, 0, 0.4),
+    0 16px 40px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(34, 211, 238, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+  border-color: rgba(34, 211, 238, 0.4) !important;
+}
+
+/* ================================================================
+   GLOSSY SHINE BORDER CLASS - .border-glossy
+   ================================================================ */
+
+.border-glossy {
+  position: relative;
+  overflow: hidden;
+}
+
+.border-glossy::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.4) 50%,
+    transparent 100%
+  );
+  animation: glossy-shine 3s ease-in-out infinite;
+}
+
+@keyframes glossy-shine {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 150%;
+  }
+}
+
+/* ================================================================
+   CSS CUSTOM PROPERTY UTILITIES - Dynamic Values via CSS Variables
+   Use className + style={{ '--var-name': value }} pattern
+   ================================================================ */
+
+/* Dynamic Width - use with style={{ '--dynamic-width': '50%' }} */
+.dynamic-width {
+  width: var(--dynamic-width, 100%);
+}
+
+/* Dynamic Height - use with style={{ '--dynamic-height': '100px' }} */
+.dynamic-height {
+  height: var(--dynamic-height, auto);
+}
+
+/* Dynamic Size (width & height) - use with style={{ '--dynamic-size': '80px' }} */
+.dynamic-size {
+  width: var(--dynamic-size, auto);
+  height: var(--dynamic-size, auto);
+}
+
+/* Dynamic Color - use with style={{ '--dynamic-color': '#ff0000' }} */
+.dynamic-color {
+  color: var(--dynamic-color, currentColor);
+}
+
+/* Dynamic Background Color - use with style={{ '--dynamic-bg': '#ff0000' }} */
+.dynamic-bg {
+  background-color: var(--dynamic-bg, transparent);
+}
+
+/* Dynamic Background with opacity - use with style={{ '--dynamic-bg': '#ff000015' }} */
+.dynamic-bg-opacity {
+  background-color: var(--dynamic-bg, transparent);
+}
+
+/* Dynamic Border Color - use with style={{ '--dynamic-border': '#ff0000' }} */
+.dynamic-border-color {
+  border-color: var(--dynamic-border, currentColor);
+}
+
+/* Dynamic SVG Fill - use with style={{ '--dynamic-fill': 'url(#gradient)' }} */
+.dynamic-fill {
+  fill: var(--dynamic-fill, currentColor);
+}
+
+/* Dynamic SVG Stroke - use with style={{ '--dynamic-stroke': '#ff0000' }} */
+.dynamic-stroke {
+  stroke: var(--dynamic-stroke, currentColor);
+}
+
+/* Dynamic Transform Origin - use with style={{ '--transform-origin': '50px 50px' }} */
+.dynamic-transform-origin {
+  transform-origin: var(--transform-origin, center);
+}
+
+/* Dynamic Font Size - use with style={{ '--dynamic-font-size': '16px' }} */
+.dynamic-font-size {
+  font-size: var(--dynamic-font-size, inherit);
+}
+
+/* Dynamic Min Height - use with style={{ '--dynamic-min-height': '40px' }} */
+.dynamic-min-height {
+  min-height: var(--dynamic-min-height, 0);
+}
+
+/* Dynamic Max Width - use with style={{ '--dynamic-max-width': '200px' }} */
+.dynamic-max-width {
+  max-width: var(--dynamic-max-width, none);
+}
+
+/* Dynamic Padding - use with style={{ '--dynamic-padding': '10px' }} */
+.dynamic-padding {
+  padding: var(--dynamic-padding, 0);
+}
+
+/* Dynamic Margin - use with style={{ '--dynamic-margin': '10px' }} */
+.dynamic-margin {
+  margin: var(--dynamic-margin, 0);
+}
+
+/* Dynamic Gap - use with style={{ '--dynamic-gap': '10px' }} */
+.dynamic-gap {
+  gap: var(--dynamic-gap, 0);
+}
+
+/* Dynamic Top Position - use with style={{ '--dynamic-top': '10px' }} */
+.dynamic-top {
+  top: var(--dynamic-top, auto);
+}
+
+/* Dynamic Left Position - use with style={{ '--dynamic-left': '10%' }} */
+.dynamic-left {
+  left: var(--dynamic-left, auto);
+}
+
+/* Dynamic Top Position - use with style={{ '--dynamic-top': '10px' }} */
+.dynamic-top-pos {
+  top: var(--dynamic-top, auto);
+}
+
+/* Dynamic Opacity - use with style={{ '--dynamic-opacity': '0.5' }} */
+.dynamic-opacity {
+  opacity: var(--dynamic-opacity, 1);
+}
+
+/* ================================================================
+   PROGRESS BAR UTILITIES - Dynamic Width Bars
+   ================================================================ */
+
+.progress-bar-dynamic {
+  width: var(--progress-width, 0%);
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.5s ease-out;
+}
+
+/* Vulnerability Chart Bar - Dynamic Height */
+.vuln-chart-bar {
+  height: var(--bar-height, 40px);
+  min-height: 40px;
+  border-radius: 0.5rem 0.5rem 0 0;
+  cursor: pointer;
+  transition: opacity 0.2s ease;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding-bottom: 0.5rem;
+  position: relative;
+}
+
+.vuln-chart-bar:hover {
+  opacity: 0.8;
+}
+
+/* ================================================================
+   SVG ICON UTILITIES - Dynamic Sizing
+   ================================================================ */
+
+.svg-icon-dynamic {
+  width: var(--icon-size, 24px);
+  height: var(--icon-size, 24px);
+}
+
+.svg-container-dynamic {
+  width: var(--container-size, 80px);
+  height: var(--container-size, 80px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* SVG Transform Origin for Animations */
+.svg-transform-center {
+  transform-origin: var(--svg-origin, center);
+}
+
+/* SVG Fill with CSS Variable (for gradients) */
+.svg-fill-var {
+  fill: var(--svg-fill, currentColor);
+}
+
+/* SVG Text Size */
+.svg-text-lg {
+  font-size: 16px;
+}
+
+/* ================================================================
+   ANIMATED PLAN ICON UTILITIES
+   Size presets to reduce inline styles. Use CSS custom property
+   --plan-icon-size for custom sizes not covered by presets.
+   ================================================================ */
+
+.plan-icon-container {
+  width: var(--plan-icon-size, 80px);
+  height: var(--plan-icon-size, 80px);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Plan Icon Size Presets */
+.plan-icon-xs { --plan-icon-size: 40px; }
+.plan-icon-sm { --plan-icon-size: 60px; }
+.plan-icon-md { --plan-icon-size: 80px; }
+.plan-icon-lg { --plan-icon-size: 100px; }
+.plan-icon-xl { --plan-icon-size: 120px; }
+.plan-icon-2xl { --plan-icon-size: 150px; }
+
+/* SVG Transform Origin Presets (50px = center for 100x100 viewBox) */
+.svg-origin-center { --svg-origin: 50px 50px; }
+.svg-origin-top { --svg-origin: 50px 0px; }
+.svg-origin-bottom { --svg-origin: 50px 100px; }
+.svg-origin-45 { --svg-origin: 50px 45px; }
+.svg-origin-50 { --svg-origin: 50px 50px; }
+.svg-origin-55 { --svg-origin: 50px 55px; }
+
+/* Dynamic Size Container - use with data-size attribute or CSS variable */
+.icon-size-dynamic {
+  width: var(--icon-size, 80px);
+  height: var(--icon-size, 80px);
+}
+
+/* ================================================================
+   SECURITY BADGE EMBEDDABLE STYLES
+   These use CSS custom properties for theming while remaining
+   self-contained for embeddability
+   ================================================================ */
+
+.security-badge-embed {
+  --badge-bg: var(--embed-bg, linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%));
+  --badge-border: var(--embed-border, rgba(0, 212, 255, 0.3));
+  --badge-text: var(--embed-text, #ffffff);
+  --badge-accent: var(--embed-accent, #00d4ff);
+
+  background: var(--badge-bg);
+  border: 1px solid var(--badge-border);
+  color: var(--badge-text);
+  font-family: var(--embed-font, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  border-radius: var(--embed-radius, 12px);
+  padding: var(--embed-padding, 16px);
+  box-shadow: var(--embed-shadow, 0 8px 32px rgba(0, 0, 0, 0.3));
+}
+
+.security-badge-compact {
+  padding: var(--embed-padding, 8px 12px);
+}
+
+/* ================================================================
+   FLOATING ORB - Dynamic Size for Background Animations
+   ================================================================ */
+
+.floating-orb {
+  width: var(--orb-size, 300px);
+  height: var(--orb-size, 300px);
+}
+
+/* ================================================================
+   3D GRID BACKGROUND - Perspective Grid Effect
+   ================================================================ */
+
+.grid-3d-perspective {
+  background-image:
+    linear-gradient(to right, currentColor 1px, transparent 1px),
+    linear-gradient(to bottom, currentColor 1px, transparent 1px);
+  background-size: 60px 60px;
+  transform: perspective(500px) rotateX(60deg) scale(2.5);
+  transform-origin: center top;
+}
+
+/* ================================================================
+   PRICING CARD HOVER STATES
+   ================================================================ */
+
+.pricing-card-base {
+  transform: translateY(0);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.pricing-card-hovered {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* ================================================================
+   FEATURE ICON BACKGROUNDS - Dynamic Color with Opacity
+   ================================================================ */
+
+.feature-icon-bg {
+  background-color: var(--icon-bg-color, transparent);
+  width: var(--icon-bg-size, 64px);
+  height: var(--icon-bg-size, 64px);
+  border-radius: var(--icon-bg-radius, 1rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.feature-icon-glow {
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: var(--glow-color, transparent);
+}
+
+/* ================================================================
+   CHECK ICON WITH DYNAMIC COLOR
+   ================================================================ */
+
+.check-icon-dynamic {
+  color: var(--check-color, currentColor);
+  flex-shrink: 0;
+}
+
+/* ================================================================
+   AUDIT POPUP CHART UTILITIES
+   ================================================================ */
+
+.audit-chart-bar {
+  height: var(--chart-height, 0px);
+  min-height: 8px;
+  transition: height 0.3s ease-out;
+}
+
+/* ================================================================
+   PURCHASE PAGE DYNAMIC STYLES
+   ================================================================ */
+
+.plan-details-bg {
+  background-color: var(--plan-bg-color, transparent);
+  padding: 1rem;
+  border-radius: 0.75rem;
+}
+
+.total-price-color {
+  color: var(--price-color, inherit);
+}
+
+/* ================================================================
+   DYNAMIC GRADIENT AND PLAN CARD UTILITIES
+   ================================================================ */
+
+/* Dynamic Background Gradient - use with style={{ '--dynamic-gradient': 'linear-gradient(...)' }} */
+.dynamic-gradient {
+  background: var(--dynamic-gradient, transparent);
+}
+
+/* Plan Icon Container Background - use with style={{ '--icon-bg': '#3B82F620' }} */
+.plan-icon-bg {
+  background-color: var(--icon-bg, rgba(59, 130, 246, 0.2));
+}
+
+/* Plan Header Gradient - use with style={{ '--header-gradient': 'linear-gradient(...)' }} */
+.plan-header-gradient {
+  background: var(--header-gradient, transparent);
+}
+
+/* Table Cell Background - use with style={{ '--cell-bg': '#3B82F605' }} */
+.table-cell-bg {
+  background-color: var(--cell-bg, transparent);
+}
+
+/* Dynamic Filter - use with style={{ '--dynamic-filter': 'drop-shadow(...)' }} */
+.dynamic-filter {
+  filter: var(--dynamic-filter, none);
+}
+
+/* Dynamic Transform - use with style={{ '--dynamic-transform': 'translateX(...)' }} */
+.dynamic-transform {
+  transform: var(--dynamic-transform, none);
+}
+
+/* ================================================================
+   FOOTER GLASS MORPHISM EFFECT
+   ================================================================ */
+
+.footer-glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 50%, rgba(59,130,246,0.04) 100%);
+  backdrop-filter: blur(20px) saturate(180%);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  box-shadow:
+    0 -4px 30px rgba(0, 0, 0, 0.1),
+    0 -8px 32px rgba(59, 130, 246, 0.1),
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 1px 0 rgba(255, 255, 255, 0.05) inset,
+    0 -20px 40px -10px rgba(59, 130, 246, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-bottom: none;
+}
+
+/* ================================================================
+   HERO AND NAVIGATION POSITIONING UTILITIES
+   ================================================================ */
+
+/* Dynamic Position - use with style={{ '--pos-left': '10%', '--pos-top': '50%' }} */
+.dynamic-position {
+  left: var(--pos-left, auto);
+  top: var(--pos-top, auto);
+}
+
+/* Dynamic Width - use with style={{ '--dynamic-width': '50%' }} */
+.dynamic-width {
+  width: var(--dynamic-width, auto);
+}
+
+/* ================================================================
+   HERO SECTION GLASS MORPHISM AND PATTERNS
+   ================================================================ */
+
+/* Hero Animated Grid Pattern */
+.hero-grid-pattern {
+  background-image: linear-gradient(hsl(var(--primary)) 1px, transparent 1px),
+                    linear-gradient(90deg, hsl(var(--primary)) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Hero Hex Pattern */
+.hero-hex-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill='none' stroke='%2300d4ff' stroke-width='0.5'/%3E%3C/svg%3E");
+  background-size: 60px 60px;
+}
+
+/* Hero Glass Container - 3D Enhanced Effect */
+.hero-glass-container {
+  background: linear-gradient(145deg, rgba(255,255,255,0.05) 0%, rgba(255,255,255,0.02) 30%, rgba(59,130,246,0.03) 70%, rgba(139,92,246,0.03) 100%);
+  backdrop-filter: blur(10px);
+  box-shadow:
+    0 25px 50px -12px rgba(0, 0, 0, 0.15),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 50px 100px -20px rgba(59, 130, 246, 0.1),
+    0 -50px 100px -20px rgba(139, 92, 246, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* Stats Card Glass Effect */
+.stats-card-glass {
+  background: linear-gradient(145deg, rgba(255,255,255,0.08) 0%, rgba(255,255,255,0.03) 50%, rgba(59,130,246,0.05) 100%);
+  backdrop-filter: blur(12px);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.12),
+    0 0 0 1px rgba(255, 255, 255, 0.1) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.1) inset,
+    0 4px 12px rgba(59, 130, 246, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Floating Icon Drop Shadows */
+.icon-glow-primary {
+  filter: drop-shadow(0 0 10px hsl(var(--primary) / 0.3));
+}
+
+.icon-glow-primary-strong {
+  filter: drop-shadow(0 0 8px hsl(var(--primary) / 0.4));
+}
+
+.icon-glow-accent {
+  filter: drop-shadow(0 0 10px hsl(var(--accent) / 0.3));
+}
+
+.icon-glow-accent-strong {
+  filter: drop-shadow(0 0 12px hsl(var(--accent) / 0.4));
+}
+
+.icon-glow-green {
+  filter: drop-shadow(0 0 10px rgb(34 197 94 / 0.3));
+}
+
+.icon-glow-yellow {
+  filter: drop-shadow(0 0 10px rgb(234 179 8 / 0.3));
+}
+
+.icon-glow-red {
+  filter: drop-shadow(0 0 10px rgb(239 68 68 / 0.3));
+}
+
+.icon-glow-cyan {
+  filter: drop-shadow(0 0 10px rgb(6 182 212 / 0.4));
+}
+
+/* Particle Position - use with style={{ '--particle-left': '50%', '--particle-top': '50%' }} */
+.particle-position {
+  left: var(--particle-left, 0%);
+  top: var(--particle-top, 0%);
+}
+
+/* Particle Size - use with style={{ '--particle-size': '10px' }} */
+.particle-size {
+  width: var(--particle-size, 8px);
+  height: var(--particle-size, 8px);
+}
+
+/* ================================================================
+   NAVIGATION HEADER GLASS MORPHISM
+   ================================================================ */
+
+.nav-glass {
+  border-radius: 0 0 2rem 2rem;
+  background: linear-gradient(180deg, rgba(15, 23, 42, 0.97) 0%, rgba(15, 23, 42, 0.92) 50%, rgba(30, 41, 59, 0.90) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  box-shadow:
+    0 4px 30px rgba(0, 0, 0, 0.25),
+    0 8px 40px rgba(0, 0, 0, 0.15),
+    0 1px 0 rgba(255, 255, 255, 0.15) inset,
+    0 -1px 0 rgba(255, 255, 255, 0.08) inset;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: none;
+}
+
+/* Nav Matte Overlay */
+.nav-matte-overlay {
+  background: linear-gradient(180deg, rgba(255,255,255,0.02) 0%, rgba(255,255,255,0.005) 40%, transparent 100%);
+}
+
+/* Nav Noise Texture */
+.nav-noise-texture {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* Nav Bottom Edge Shine */
+.nav-bottom-edge {
+  border-radius: 0 0 2rem 2rem;
+  background: linear-gradient(90deg, rgba(100, 200, 255, 0.1) 0%, rgba(6, 182, 212, 0.5) 20%, rgba(34, 211, 238, 0.8) 35%, rgba(255, 255, 255, 0.95) 50%, rgba(34, 211, 238, 0.8) 65%, rgba(6, 182, 212, 0.5) 80%, rgba(100, 200, 255, 0.1) 100%);
+  box-shadow:
+    0 0 8px rgba(34, 211, 238, 0.6),
+    0 0 16px rgba(6, 182, 212, 0.4),
+    0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Nav Secondary Glow */
+.nav-secondary-glow {
+  border-radius: 0 0 1.5rem 1.5rem;
+  background: linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.3) 30%, rgba(34, 211, 238, 0.5) 50%, rgba(6, 182, 212, 0.3) 70%, transparent 100%);
+}
+
+/* Nav Outer Glow */
+.nav-outer-glow {
+  border-radius: 0 0 1rem 1rem;
+  background: linear-gradient(90deg, transparent 0%, rgba(6, 182, 212, 0.2) 40%, rgba(34, 211, 238, 0.3) 50%, rgba(6, 182, 212, 0.2) 60%, transparent 100%);
+}
+
+/* Shield Icon Glow */
+.shield-icon-glow {
+  filter: drop-shadow(0 0 4px rgba(34, 211, 238, 0.5));
+}
+
+/* Logo Text Glow */
+.logo-text-glow {
+  text-shadow: 0 0 10px rgba(34, 211, 238, 0.5), 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Logo Text GUARD Glow */
+.logo-guard-glow {
+  text-shadow: 0 0 8px rgba(34, 211, 238, 0.6);
+}
+
+/* ================================================================
+   CERTIFICATE PAGE FONTS
+   ================================================================ */
+
+/* Nunito font for certificates */
+.font-nunito {
+  font-family: 'Nunito', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ================================================================
+   ZOOZOO LOADER ANIMATIONS
+   ================================================================ */
+
+/* ZooZoo Bounce Animation */
+@keyframes zoozoo-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
+
+.zoozoo-bounce-anim {
+  animation: zoozoo-bounce 1s ease-in-out infinite;
+}
+
+/* ZooZoo Jump Animation */
+@keyframes zoozoo-jump {
+  0%, 100% { transform: translateY(0) scale(1); }
+  30% { transform: translateY(-20px) scale(1.05); }
+  50% { transform: translateY(-25px) scale(1.02); }
+  70% { transform: translateY(-15px) scale(1); }
+}
+
+.zoozoo-jump-anim {
+  animation: zoozoo-jump 1.5s ease-in-out infinite;
+}
+
+/* ZooZoo Wave Animation */
+@keyframes zoozoo-wave {
+  0%, 100% { transform: rotate(-10deg); }
+  25% { transform: rotate(-40deg); }
+  75% { transform: rotate(10deg); }
+}
+
+.zoozoo-wave-anim {
+  animation: zoozoo-wave 0.8s ease-in-out infinite;
+}
+
+/* ZooZoo Blink Animation */
+@keyframes zoozoo-blink {
+  0%, 90%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.1); }
+}
+
+.zoozoo-blink-anim {
+  animation: zoozoo-blink 3s ease-in-out infinite;
+}
+
+/* ZooZoo Shield Glow Animation */
+@keyframes zoozoo-shield-glow {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px hsl(var(--primary)));
+    transform: scale(1);
+  }
+  50% {
+    filter: drop-shadow(0 0 12px hsl(var(--primary)));
+    transform: scale(1.1);
+  }
+}
+
+.zoozoo-shield-anim {
+  animation: zoozoo-shield-glow 2s ease-in-out infinite;
+}
+
+/* ZooZoo Leg Tap Animation */
+@keyframes zoozoo-leg-tap {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(5deg); }
+}
+
+.zoozoo-leg-anim {
+  animation: zoozoo-leg-tap 0.4s ease-in-out infinite;
+}
+
+/* ZooZoo Float Animation */
+@keyframes zoozoo-float {
+  0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.4; }
+  50% { transform: translateY(-10px) rotate(180deg); opacity: 0.8; }
+}
+
+.zoozoo-float-anim {
+  animation: zoozoo-float 3s ease-in-out infinite;
+}
+
+/* ZooZoo Fade In/Out Animation */
+@keyframes zoozoo-fade {
+  0% { opacity: 0; transform: translateY(5px); }
+  20%, 80% { opacity: 1; transform: translateY(0); }
+  100% { opacity: 0; transform: translateY(-5px); }
+}
+
+.zoozoo-fade-anim {
+  animation: zoozoo-fade 2.5s ease-in-out;
+}
+
+/* ZooZoo Progress Slide Animation */
+@keyframes zoozoo-progress {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0%); }
+  100% { transform: translateX(100%); }
+}
+
+.zoozoo-progress-anim {
+  animation: zoozoo-progress 2s ease-in-out infinite;
+}

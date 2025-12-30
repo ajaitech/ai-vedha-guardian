@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AiVedha Guardian - Chakra Plan Icon (Wheel/Infinite) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <defs>
+    <linearGradient id="chakraCenterGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f43f5e"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Outer glow -->
+  <circle cx="50" cy="50" r="46" fill="rgba(244, 63, 94, 0.1)"/>
+
+  <!-- Outer ring -->
+  <circle cx="50" cy="50" r="38" stroke="#fb7185" stroke-width="3" fill="none"/>
+
+  <!-- Outer spokes (12 spokes) -->
+  <g stroke="#f43f5e" stroke-width="2">
+    <line x1="71.65" y1="50" x2="88" y2="50"/>
+    <line x1="68.84" y1="62.5" x2="82.91" y2="69.5"/>
+    <line x1="62.5" y1="71.65" x2="69.5" y2="82.91"/>
+    <line x1="50" y1="75" x2="50" y2="88"/>
+    <line x1="37.5" y1="71.65" x2="30.5" y2="82.91"/>
+    <line x1="31.16" y1="62.5" x2="17.09" y2="69.5"/>
+    <line x1="28.35" y1="50" x2="12" y2="50"/>
+    <line x1="31.16" y1="37.5" x2="17.09" y2="30.5"/>
+    <line x1="37.5" y1="28.35" x2="30.5" y2="17.09"/>
+    <line x1="50" y1="25" x2="50" y2="12"/>
+    <line x1="62.5" y1="28.35" x2="69.5" y2="17.09"/>
+    <line x1="68.84" y1="37.5" x2="82.91" y2="30.5"/>
+  </g>
+
+  <!-- Inner ring -->
+  <circle cx="50" cy="50" r="22" stroke="#f59e0b" stroke-width="2" fill="none"/>
+
+  <!-- Inner ring dots (6 dots) -->
+  <circle cx="72" cy="50" r="4" fill="#fbbf24"/>
+  <circle cx="61" cy="69.05" r="4" fill="#fbbf24"/>
+  <circle cx="39" cy="69.05" r="4" fill="#fbbf24"/>
+  <circle cx="28" cy="50" r="4" fill="#fbbf24"/>
+  <circle cx="39" cy="30.95" r="4" fill="#fbbf24"/>
+  <circle cx="61" cy="30.95" r="4" fill="#fbbf24"/>
+
+  <!-- Center circle with infinity -->
+  <circle cx="50" cy="50" r="12" fill="url(#chakraCenterGradient)"/>
+  <text x="50" y="56" text-anchor="middle" fill="white" font-size="16" font-weight="bold" font-family="sans-serif">&#8734;</text>
+
+  <!-- Orbiting particles -->
+  <circle cx="82" cy="50" r="2.5" fill="#fda4af"/>
+  <circle cx="50" cy="82" r="2.5" fill="#fda4af"/>
+  <circle cx="18" cy="50" r="2.5" fill="#fda4af"/>
+  <circle cx="50" cy="18" r="2.5" fill="#fda4af"/>
+</svg>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AiVedha Guardian - Vajra Plan Icon (Thunderbolt) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <defs>
+    <radialGradient id="vajraOrbGradient" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#fcd34d"/>
+      <stop offset="100%" stop-color="#f97316"/>
+    </radialGradient>
+    <linearGradient id="boltGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fde047"/>
+      <stop offset="100%" stop-color="#fbbf24"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Energy rings -->
+  <circle cx="50" cy="50" r="40" stroke="#fbbf24" stroke-width="2" stroke-dasharray="10 5" fill="none"/>
+  <circle cx="50" cy="50" r="32" stroke="#fb923c" stroke-width="1.5" stroke-dasharray="8 4" fill="none"/>
+
+  <!-- Central power orb -->
+  <circle cx="50" cy="50" r="18" fill="url(#vajraOrbGradient)"/>
+
+  <!-- Thunderbolt -->
+  <path d="M50 20 L42 45 L50 45 L46 80 L58 48 L50 48 L58 20 Z" fill="url(#boltGradient)"/>
+
+  <!-- Electric sparks at 5 positions around the circle -->
+  <circle cx="88" cy="50" r="3" fill="#fef08a"/>
+  <circle cx="61.76" cy="86.18" r="3" fill="#fef08a"/>
+  <circle cx="26.18" cy="73.51" r="3" fill="#fef08a"/>
+  <circle cx="26.18" cy="26.49" r="3" fill="#fef08a"/>
+  <circle cx="61.76" cy="13.82" r="3" fill="#fef08a"/>
+</svg>

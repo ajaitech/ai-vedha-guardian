@@ -1,0 +1,1416 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ASIA -->
+  <!-- India - Hindi -->
+  <url>
+    <loc>https://aivedha.ai/?country=india</loc>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/?country=india"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- China - Chinese -->
+  <url>
+    <loc>https://aivedha.ai/?country=china</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aivedha.ai/?country=china"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Japan - Japanese -->
+  <url>
+    <loc>https://aivedha.ai/?country=japan</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://aivedha.ai/?country=japan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- South Korea - Korean -->
+  <url>
+    <loc>https://aivedha.ai/?country=south-korea</loc>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://aivedha.ai/?country=south-korea"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Indonesia - Indonesian -->
+  <url>
+    <loc>https://aivedha.ai/?country=indonesia</loc>
+    <xhtml:link rel="alternate" hreflang="id" href="https://aivedha.ai/?country=indonesia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Thailand - Thai -->
+  <url>
+    <loc>https://aivedha.ai/?country=thailand</loc>
+    <xhtml:link rel="alternate" hreflang="th" href="https://aivedha.ai/?country=thailand"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Vietnam - Vietnamese -->
+  <url>
+    <loc>https://aivedha.ai/?country=vietnam</loc>
+    <xhtml:link rel="alternate" hreflang="vi" href="https://aivedha.ai/?country=vietnam"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Philippines - Filipino -->
+  <url>
+    <loc>https://aivedha.ai/?country=philippines</loc>
+    <xhtml:link rel="alternate" hreflang="fil" href="https://aivedha.ai/?country=philippines"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Malaysia - Malay -->
+  <url>
+    <loc>https://aivedha.ai/?country=malaysia</loc>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aivedha.ai/?country=malaysia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Singapore - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=singapore</loc>
+    <xhtml:link rel="alternate" hreflang="en-SG" href="https://aivedha.ai/?country=singapore"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Pakistan - Urdu -->
+  <url>
+    <loc>https://aivedha.ai/?country=pakistan</loc>
+    <xhtml:link rel="alternate" hreflang="ur" href="https://aivedha.ai/?country=pakistan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Bangladesh - Bengali -->
+  <url>
+    <loc>https://aivedha.ai/?country=bangladesh</loc>
+    <xhtml:link rel="alternate" hreflang="bn" href="https://aivedha.ai/?country=bangladesh"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Sri Lanka - Sinhala -->
+  <url>
+    <loc>https://aivedha.ai/?country=sri-lanka</loc>
+    <xhtml:link rel="alternate" hreflang="si" href="https://aivedha.ai/?country=sri-lanka"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Nepal - Nepali -->
+  <url>
+    <loc>https://aivedha.ai/?country=nepal</loc>
+    <xhtml:link rel="alternate" hreflang="ne" href="https://aivedha.ai/?country=nepal"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Myanmar - Burmese -->
+  <url>
+    <loc>https://aivedha.ai/?country=myanmar</loc>
+    <xhtml:link rel="alternate" hreflang="my" href="https://aivedha.ai/?country=myanmar"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Cambodia - Khmer -->
+  <url>
+    <loc>https://aivedha.ai/?country=cambodia</loc>
+    <xhtml:link rel="alternate" hreflang="km" href="https://aivedha.ai/?country=cambodia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Laos - Lao -->
+  <url>
+    <loc>https://aivedha.ai/?country=laos</loc>
+    <xhtml:link rel="alternate" hreflang="lo" href="https://aivedha.ai/?country=laos"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Mongolia - Mongolian -->
+  <url>
+    <loc>https://aivedha.ai/?country=mongolia</loc>
+    <xhtml:link rel="alternate" hreflang="mn" href="https://aivedha.ai/?country=mongolia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Brunei - Malay -->
+  <url>
+    <loc>https://aivedha.ai/?country=brunei</loc>
+    <xhtml:link rel="alternate" hreflang="ms" href="https://aivedha.ai/?country=brunei"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Bhutan - Dzongkha -->
+  <url>
+    <loc>https://aivedha.ai/?country=bhutan</loc>
+    <xhtml:link rel="alternate" hreflang="dz" href="https://aivedha.ai/?country=bhutan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Maldives - Dhivehi -->
+  <url>
+    <loc>https://aivedha.ai/?country=maldives</loc>
+    <xhtml:link rel="alternate" hreflang="dv" href="https://aivedha.ai/?country=maldives"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Taiwan - Chinese -->
+  <url>
+    <loc>https://aivedha.ai/?country=taiwan</loc>
+    <xhtml:link rel="alternate" hreflang="zh-TW" href="https://aivedha.ai/?country=taiwan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Hong Kong - Chinese -->
+  <url>
+    <loc>https://aivedha.ai/?country=hong-kong</loc>
+    <xhtml:link rel="alternate" hreflang="zh-HK" href="https://aivedha.ai/?country=hong-kong"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Macau - Chinese -->
+  <url>
+    <loc>https://aivedha.ai/?country=macau</loc>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://aivedha.ai/?country=macau"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Timor-Leste - Portuguese -->
+  <url>
+    <loc>https://aivedha.ai/?country=timor-leste</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/?country=timor-leste"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- MIDDLE EAST -->
+  <!-- United Arab Emirates - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=uae</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=uae"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Saudi Arabia - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=saudi-arabia</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=saudi-arabia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Israel - Hebrew -->
+  <url>
+    <loc>https://aivedha.ai/?country=israel</loc>
+    <xhtml:link rel="alternate" hreflang="he" href="https://aivedha.ai/?country=israel"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Turkey - Turkish -->
+  <url>
+    <loc>https://aivedha.ai/?country=turkey</loc>
+    <xhtml:link rel="alternate" hreflang="tr" href="https://aivedha.ai/?country=turkey"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Iran - Persian -->
+  <url>
+    <loc>https://aivedha.ai/?country=iran</loc>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://aivedha.ai/?country=iran"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Iraq - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=iraq</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=iraq"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Kuwait - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=kuwait</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=kuwait"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Qatar - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=qatar</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=qatar"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Bahrain - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=bahrain</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=bahrain"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Oman - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=oman</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=oman"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Jordan - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=jordan</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=jordan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Lebanon - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=lebanon</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=lebanon"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Syria - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=syria</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=syria"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Yemen - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=yemen</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=yemen"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Palestine - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=palestine</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=palestine"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Afghanistan - Dari/Pashto -->
+  <url>
+    <loc>https://aivedha.ai/?country=afghanistan</loc>
+    <xhtml:link rel="alternate" hreflang="ps" href="https://aivedha.ai/?country=afghanistan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- EUROPE -->
+  <!-- United Kingdom - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=united-kingdom</loc>
+    <xhtml:link rel="alternate" hreflang="en-GB" href="https://aivedha.ai/?country=united-kingdom"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Germany - German -->
+  <url>
+    <loc>https://aivedha.ai/?country=germany</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/?country=germany"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- France - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=france</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=france"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Italy - Italian -->
+  <url>
+    <loc>https://aivedha.ai/?country=italy</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aivedha.ai/?country=italy"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Spain - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=spain</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=spain"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Netherlands - Dutch -->
+  <url>
+    <loc>https://aivedha.ai/?country=netherlands</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://aivedha.ai/?country=netherlands"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Belgium - Dutch/French -->
+  <url>
+    <loc>https://aivedha.ai/?country=belgium</loc>
+    <xhtml:link rel="alternate" hreflang="nl-BE" href="https://aivedha.ai/?country=belgium"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Switzerland - German/French/Italian -->
+  <url>
+    <loc>https://aivedha.ai/?country=switzerland</loc>
+    <xhtml:link rel="alternate" hreflang="de-CH" href="https://aivedha.ai/?country=switzerland"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Austria - German -->
+  <url>
+    <loc>https://aivedha.ai/?country=austria</loc>
+    <xhtml:link rel="alternate" hreflang="de-AT" href="https://aivedha.ai/?country=austria"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Sweden - Swedish -->
+  <url>
+    <loc>https://aivedha.ai/?country=sweden</loc>
+    <xhtml:link rel="alternate" hreflang="sv" href="https://aivedha.ai/?country=sweden"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Norway - Norwegian -->
+  <url>
+    <loc>https://aivedha.ai/?country=norway</loc>
+    <xhtml:link rel="alternate" hreflang="no" href="https://aivedha.ai/?country=norway"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Denmark - Danish -->
+  <url>
+    <loc>https://aivedha.ai/?country=denmark</loc>
+    <xhtml:link rel="alternate" hreflang="da" href="https://aivedha.ai/?country=denmark"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Finland - Finnish -->
+  <url>
+    <loc>https://aivedha.ai/?country=finland</loc>
+    <xhtml:link rel="alternate" hreflang="fi" href="https://aivedha.ai/?country=finland"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Iceland - Icelandic -->
+  <url>
+    <loc>https://aivedha.ai/?country=iceland</loc>
+    <xhtml:link rel="alternate" hreflang="is" href="https://aivedha.ai/?country=iceland"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Ireland - English/Irish -->
+  <url>
+    <loc>https://aivedha.ai/?country=ireland</loc>
+    <xhtml:link rel="alternate" hreflang="en-IE" href="https://aivedha.ai/?country=ireland"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Portugal - Portuguese -->
+  <url>
+    <loc>https://aivedha.ai/?country=portugal</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/?country=portugal"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Greece - Greek -->
+  <url>
+    <loc>https://aivedha.ai/?country=greece</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aivedha.ai/?country=greece"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Poland - Polish -->
+  <url>
+    <loc>https://aivedha.ai/?country=poland</loc>
+    <xhtml:link rel="alternate" hreflang="pl" href="https://aivedha.ai/?country=poland"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Czech Republic - Czech -->
+  <url>
+    <loc>https://aivedha.ai/?country=czech-republic</loc>
+    <xhtml:link rel="alternate" hreflang="cs" href="https://aivedha.ai/?country=czech-republic"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Slovakia - Slovak -->
+  <url>
+    <loc>https://aivedha.ai/?country=slovakia</loc>
+    <xhtml:link rel="alternate" hreflang="sk" href="https://aivedha.ai/?country=slovakia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Hungary - Hungarian -->
+  <url>
+    <loc>https://aivedha.ai/?country=hungary</loc>
+    <xhtml:link rel="alternate" hreflang="hu" href="https://aivedha.ai/?country=hungary"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Romania - Romanian -->
+  <url>
+    <loc>https://aivedha.ai/?country=romania</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://aivedha.ai/?country=romania"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Bulgaria - Bulgarian -->
+  <url>
+    <loc>https://aivedha.ai/?country=bulgaria</loc>
+    <xhtml:link rel="alternate" hreflang="bg" href="https://aivedha.ai/?country=bulgaria"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Croatia - Croatian -->
+  <url>
+    <loc>https://aivedha.ai/?country=croatia</loc>
+    <xhtml:link rel="alternate" hreflang="hr" href="https://aivedha.ai/?country=croatia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Slovenia - Slovenian -->
+  <url>
+    <loc>https://aivedha.ai/?country=slovenia</loc>
+    <xhtml:link rel="alternate" hreflang="sl" href="https://aivedha.ai/?country=slovenia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Serbia - Serbian -->
+  <url>
+    <loc>https://aivedha.ai/?country=serbia</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://aivedha.ai/?country=serbia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Bosnia and Herzegovina - Bosnian -->
+  <url>
+    <loc>https://aivedha.ai/?country=bosnia-herzegovina</loc>
+    <xhtml:link rel="alternate" hreflang="bs" href="https://aivedha.ai/?country=bosnia-herzegovina"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Montenegro - Montenegrin -->
+  <url>
+    <loc>https://aivedha.ai/?country=montenegro</loc>
+    <xhtml:link rel="alternate" hreflang="sr" href="https://aivedha.ai/?country=montenegro"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- North Macedonia - Macedonian -->
+  <url>
+    <loc>https://aivedha.ai/?country=north-macedonia</loc>
+    <xhtml:link rel="alternate" hreflang="mk" href="https://aivedha.ai/?country=north-macedonia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Albania - Albanian -->
+  <url>
+    <loc>https://aivedha.ai/?country=albania</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://aivedha.ai/?country=albania"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Kosovo - Albanian -->
+  <url>
+    <loc>https://aivedha.ai/?country=kosovo</loc>
+    <xhtml:link rel="alternate" hreflang="sq" href="https://aivedha.ai/?country=kosovo"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Estonia - Estonian -->
+  <url>
+    <loc>https://aivedha.ai/?country=estonia</loc>
+    <xhtml:link rel="alternate" hreflang="et" href="https://aivedha.ai/?country=estonia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Latvia - Latvian -->
+  <url>
+    <loc>https://aivedha.ai/?country=latvia</loc>
+    <xhtml:link rel="alternate" hreflang="lv" href="https://aivedha.ai/?country=latvia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Lithuania - Lithuanian -->
+  <url>
+    <loc>https://aivedha.ai/?country=lithuania</loc>
+    <xhtml:link rel="alternate" hreflang="lt" href="https://aivedha.ai/?country=lithuania"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Ukraine - Ukrainian -->
+  <url>
+    <loc>https://aivedha.ai/?country=ukraine</loc>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://aivedha.ai/?country=ukraine"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Belarus - Belarusian -->
+  <url>
+    <loc>https://aivedha.ai/?country=belarus</loc>
+    <xhtml:link rel="alternate" hreflang="be" href="https://aivedha.ai/?country=belarus"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Moldova - Romanian -->
+  <url>
+    <loc>https://aivedha.ai/?country=moldova</loc>
+    <xhtml:link rel="alternate" hreflang="ro" href="https://aivedha.ai/?country=moldova"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Russia - Russian -->
+  <url>
+    <loc>https://aivedha.ai/?country=russia</loc>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://aivedha.ai/?country=russia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Luxembourg - French/German -->
+  <url>
+    <loc>https://aivedha.ai/?country=luxembourg</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=luxembourg"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Malta - Maltese -->
+  <url>
+    <loc>https://aivedha.ai/?country=malta</loc>
+    <xhtml:link rel="alternate" hreflang="mt" href="https://aivedha.ai/?country=malta"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Cyprus - Greek -->
+  <url>
+    <loc>https://aivedha.ai/?country=cyprus</loc>
+    <xhtml:link rel="alternate" hreflang="el" href="https://aivedha.ai/?country=cyprus"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Monaco - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=monaco</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=monaco"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Liechtenstein - German -->
+  <url>
+    <loc>https://aivedha.ai/?country=liechtenstein</loc>
+    <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/?country=liechtenstein"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Andorra - Catalan -->
+  <url>
+    <loc>https://aivedha.ai/?country=andorra</loc>
+    <xhtml:link rel="alternate" hreflang="ca" href="https://aivedha.ai/?country=andorra"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- San Marino - Italian -->
+  <url>
+    <loc>https://aivedha.ai/?country=san-marino</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aivedha.ai/?country=san-marino"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Vatican City - Italian -->
+  <url>
+    <loc>https://aivedha.ai/?country=vatican-city</loc>
+    <xhtml:link rel="alternate" hreflang="it" href="https://aivedha.ai/?country=vatican-city"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+  <!-- NORTH AMERICA -->
+  <!-- United States - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=united-states</loc>
+    <xhtml:link rel="alternate" hreflang="en-US" href="https://aivedha.ai/?country=united-states"/>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Canada - English/French -->
+  <url>
+    <loc>https://aivedha.ai/?country=canada</loc>
+    <xhtml:link rel="alternate" hreflang="en-CA" href="https://aivedha.ai/?country=canada"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Mexico - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=mexico</loc>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://aivedha.ai/?country=mexico"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <!-- CENTRAL AMERICA & CARIBBEAN -->
+  <!-- Guatemala - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=guatemala</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=guatemala"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Belize - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=belize</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=belize"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Honduras - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=honduras</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=honduras"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- El Salvador - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=el-salvador</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=el-salvador"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Nicaragua - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=nicaragua</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=nicaragua"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Costa Rica - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=costa-rica</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=costa-rica"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Panama - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=panama</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=panama"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Cuba - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=cuba</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=cuba"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Jamaica - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=jamaica</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=jamaica"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Haiti - French/Creole -->
+  <url>
+    <loc>https://aivedha.ai/?country=haiti</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=haiti"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Dominican Republic - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=dominican-republic</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=dominican-republic"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Puerto Rico - Spanish/English -->
+  <url>
+    <loc>https://aivedha.ai/?country=puerto-rico</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=puerto-rico"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Trinidad and Tobago - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=trinidad-tobago</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=trinidad-tobago"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Bahamas - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=bahamas</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=bahamas"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Barbados - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=barbados</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=barbados"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Saint Lucia - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=saint-lucia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=saint-lucia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Grenada - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=grenada</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=grenada"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Saint Vincent - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=saint-vincent</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=saint-vincent"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Antigua and Barbuda - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=antigua-barbuda</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=antigua-barbuda"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Dominica - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=dominica</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=dominica"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Saint Kitts and Nevis - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=saint-kitts-nevis</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=saint-kitts-nevis"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- SOUTH AMERICA -->
+  <!-- Brazil - Portuguese -->
+  <url>
+    <loc>https://aivedha.ai/?country=brazil</loc>
+    <xhtml:link rel="alternate" hreflang="pt-BR" href="https://aivedha.ai/?country=brazil"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Argentina - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=argentina</loc>
+    <xhtml:link rel="alternate" hreflang="es-AR" href="https://aivedha.ai/?country=argentina"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Colombia - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=colombia</loc>
+    <xhtml:link rel="alternate" hreflang="es-CO" href="https://aivedha.ai/?country=colombia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Chile - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=chile</loc>
+    <xhtml:link rel="alternate" hreflang="es-CL" href="https://aivedha.ai/?country=chile"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Peru - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=peru</loc>
+    <xhtml:link rel="alternate" hreflang="es-PE" href="https://aivedha.ai/?country=peru"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Venezuela - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=venezuela</loc>
+    <xhtml:link rel="alternate" hreflang="es-VE" href="https://aivedha.ai/?country=venezuela"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Ecuador - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=ecuador</loc>
+    <xhtml:link rel="alternate" hreflang="es-EC" href="https://aivedha.ai/?country=ecuador"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Bolivia - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=bolivia</loc>
+    <xhtml:link rel="alternate" hreflang="es-BO" href="https://aivedha.ai/?country=bolivia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Paraguay - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=paraguay</loc>
+    <xhtml:link rel="alternate" hreflang="es-PY" href="https://aivedha.ai/?country=paraguay"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Uruguay - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=uruguay</loc>
+    <xhtml:link rel="alternate" hreflang="es-UY" href="https://aivedha.ai/?country=uruguay"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Guyana - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=guyana</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=guyana"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Suriname - Dutch -->
+  <url>
+    <loc>https://aivedha.ai/?country=suriname</loc>
+    <xhtml:link rel="alternate" hreflang="nl" href="https://aivedha.ai/?country=suriname"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- AFRICA -->
+  <!-- South Africa - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=south-africa</loc>
+    <xhtml:link rel="alternate" hreflang="en-ZA" href="https://aivedha.ai/?country=south-africa"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Nigeria - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=nigeria</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=nigeria"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Egypt - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=egypt</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=egypt"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Kenya - English/Swahili -->
+  <url>
+    <loc>https://aivedha.ai/?country=kenya</loc>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://aivedha.ai/?country=kenya"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Morocco - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=morocco</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=morocco"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Algeria - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=algeria</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=algeria"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Tunisia - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=tunisia</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=tunisia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Libya - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=libya</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=libya"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Ghana - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=ghana</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=ghana"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Ethiopia - Amharic -->
+  <url>
+    <loc>https://aivedha.ai/?country=ethiopia</loc>
+    <xhtml:link rel="alternate" hreflang="am" href="https://aivedha.ai/?country=ethiopia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Tanzania - Swahili -->
+  <url>
+    <loc>https://aivedha.ai/?country=tanzania</loc>
+    <xhtml:link rel="alternate" hreflang="sw" href="https://aivedha.ai/?country=tanzania"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Uganda - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=uganda</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=uganda"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Rwanda - Kinyarwanda -->
+  <url>
+    <loc>https://aivedha.ai/?country=rwanda</loc>
+    <xhtml:link rel="alternate" hreflang="rw" href="https://aivedha.ai/?country=rwanda"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Senegal - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=senegal</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=senegal"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Ivory Coast - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=ivory-coast</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=ivory-coast"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Cameroon - French/English -->
+  <url>
+    <loc>https://aivedha.ai/?country=cameroon</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=cameroon"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Angola - Portuguese -->
+  <url>
+    <loc>https://aivedha.ai/?country=angola</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/?country=angola"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Mozambique - Portuguese -->
+  <url>
+    <loc>https://aivedha.ai/?country=mozambique</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/?country=mozambique"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Zimbabwe - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=zimbabwe</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=zimbabwe"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Zambia - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=zambia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=zambia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Botswana - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=botswana</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=botswana"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Namibia - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=namibia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=namibia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Mauritius - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=mauritius</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=mauritius"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Madagascar - Malagasy -->
+  <url>
+    <loc>https://aivedha.ai/?country=madagascar</loc>
+    <xhtml:link rel="alternate" hreflang="mg" href="https://aivedha.ai/?country=madagascar"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Seychelles - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=seychelles</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=seychelles"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Sudan - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=sudan</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=sudan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- South Sudan - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=south-sudan</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=south-sudan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Democratic Republic of Congo - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=dr-congo</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=dr-congo"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Republic of Congo - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=congo</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=congo"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Gabon - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=gabon</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=gabon"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Mali - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=mali</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=mali"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Burkina Faso - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=burkina-faso</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=burkina-faso"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Niger - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=niger</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=niger"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Chad - French/Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=chad</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=chad"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Mauritania - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=mauritania</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=mauritania"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Benin - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=benin</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=benin"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Togo - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=togo</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=togo"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Sierra Leone - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=sierra-leone</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=sierra-leone"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Liberia - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=liberia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=liberia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Guinea - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=guinea</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=guinea"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Guinea-Bissau - Portuguese -->
+  <url>
+    <loc>https://aivedha.ai/?country=guinea-bissau</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/?country=guinea-bissau"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Gambia - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=gambia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=gambia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Cape Verde - Portuguese -->
+  <url>
+    <loc>https://aivedha.ai/?country=cape-verde</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/?country=cape-verde"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Equatorial Guinea - Spanish -->
+  <url>
+    <loc>https://aivedha.ai/?country=equatorial-guinea</loc>
+    <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?country=equatorial-guinea"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Central African Republic - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=central-african-republic</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=central-african-republic"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Burundi - French -->
+  <url>
+    <loc>https://aivedha.ai/?country=burundi</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=burundi"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Eritrea - Tigrinya -->
+  <url>
+    <loc>https://aivedha.ai/?country=eritrea</loc>
+    <xhtml:link rel="alternate" hreflang="ti" href="https://aivedha.ai/?country=eritrea"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Djibouti - French/Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=djibouti</loc>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?country=djibouti"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Somalia - Somali -->
+  <url>
+    <loc>https://aivedha.ai/?country=somalia</loc>
+    <xhtml:link rel="alternate" hreflang="so" href="https://aivedha.ai/?country=somalia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Comoros - Arabic -->
+  <url>
+    <loc>https://aivedha.ai/?country=comoros</loc>
+    <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?country=comoros"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Malawi - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=malawi</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=malawi"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Lesotho - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=lesotho</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=lesotho"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Eswatini - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=eswatini</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=eswatini"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Sao Tome and Principe - Portuguese -->
+  <url>
+    <loc>https://aivedha.ai/?country=sao-tome-principe</loc>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/?country=sao-tome-principe"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- OCEANIA -->
+  <!-- Australia - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=australia</loc>
+    <xhtml:link rel="alternate" hreflang="en-AU" href="https://aivedha.ai/?country=australia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- New Zealand - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=new-zealand</loc>
+    <xhtml:link rel="alternate" hreflang="en-NZ" href="https://aivedha.ai/?country=new-zealand"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Fiji - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=fiji</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=fiji"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Papua New Guinea - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=papua-new-guinea</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=papua-new-guinea"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Solomon Islands - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=solomon-islands</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=solomon-islands"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Vanuatu - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=vanuatu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=vanuatu"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Samoa - Samoan -->
+  <url>
+    <loc>https://aivedha.ai/?country=samoa</loc>
+    <xhtml:link rel="alternate" hreflang="sm" href="https://aivedha.ai/?country=samoa"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Tonga - Tongan -->
+  <url>
+    <loc>https://aivedha.ai/?country=tonga</loc>
+    <xhtml:link rel="alternate" hreflang="to" href="https://aivedha.ai/?country=tonga"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Kiribati - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=kiribati</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=kiribati"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Micronesia - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=micronesia</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=micronesia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Marshall Islands - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=marshall-islands</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=marshall-islands"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Palau - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=palau</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=palau"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Nauru - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=nauru</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=nauru"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <!-- Tuvalu - English -->
+  <url>
+    <loc>https://aivedha.ai/?country=tuvalu</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/?country=tuvalu"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.4</priority>
+  </url>
+
+  <!-- CENTRAL ASIA -->
+  <!-- Kazakhstan - Kazakh -->
+  <url>
+    <loc>https://aivedha.ai/?country=kazakhstan</loc>
+    <xhtml:link rel="alternate" hreflang="kk" href="https://aivedha.ai/?country=kazakhstan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Uzbekistan - Uzbek -->
+  <url>
+    <loc>https://aivedha.ai/?country=uzbekistan</loc>
+    <xhtml:link rel="alternate" hreflang="uz" href="https://aivedha.ai/?country=uzbekistan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Turkmenistan - Turkmen -->
+  <url>
+    <loc>https://aivedha.ai/?country=turkmenistan</loc>
+    <xhtml:link rel="alternate" hreflang="tk" href="https://aivedha.ai/?country=turkmenistan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Tajikistan - Tajik -->
+  <url>
+    <loc>https://aivedha.ai/?country=tajikistan</loc>
+    <xhtml:link rel="alternate" hreflang="tg" href="https://aivedha.ai/?country=tajikistan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Kyrgyzstan - Kyrgyz -->
+  <url>
+    <loc>https://aivedha.ai/?country=kyrgyzstan</loc>
+    <xhtml:link rel="alternate" hreflang="ky" href="https://aivedha.ai/?country=kyrgyzstan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <!-- Azerbaijan - Azerbaijani -->
+  <url>
+    <loc>https://aivedha.ai/?country=azerbaijan</loc>
+    <xhtml:link rel="alternate" hreflang="az" href="https://aivedha.ai/?country=azerbaijan"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Georgia - Georgian -->
+  <url>
+    <loc>https://aivedha.ai/?country=georgia</loc>
+    <xhtml:link rel="alternate" hreflang="ka" href="https://aivedha.ai/?country=georgia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <!-- Armenia - Armenian -->
+  <url>
+    <loc>https://aivedha.ai/?country=armenia</loc>
+    <xhtml:link rel="alternate" hreflang="hy" href="https://aivedha.ai/?country=armenia"/>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+
+</urlset>

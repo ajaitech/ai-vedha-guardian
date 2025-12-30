@@ -1,0 +1,31 @@
+{
+  "IdentityPool": {
+    "IdentityPoolId": "ap-south-1:31e9def2-28b8-4d8e-b84d-2bbeaba721a1",
+    "IdentityPoolName": "aivedha.net.login",
+    "Region": "ap-south-1",
+    "AllowUnauthenticatedIdentities": false,
+    "AllowClassicFlow": true,
+    "SupportedLoginProviders": {
+      "accounts.google.com": "1014104264793-ooara6clsmrgk5psbbfiloqg6gfibr1p.apps.googleusercontent.com"
+    }
+  },
+  "Roles": {
+    "authenticated": "arn:aws:iam::783764610283:role/service-role/supabase-vmc"
+  },
+  "GoogleOAuth": {
+    "ClientId": "1014104264793-ooara6clsmrgk5psbbfiloqg6gfibr1p.apps.googleusercontent.com",
+    "ProjectId": "aivedha-io",
+    "AuthorizedJavaScriptOrigins": [
+      "https://aivedha.ai",
+      "https://www.aivedha.ai"
+    ],
+    "AuthorizedRedirectURIs": [
+      "https://www.aivedha.ai/dashboard"
+    ]
+  },
+  "Notes": {
+    "Updated": "2025-12-01",
+    "AppleLoginRemoved": true,
+    "GoogleLoginEnabled": true
+  }
+}

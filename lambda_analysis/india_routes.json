@@ -1,0 +1,538 @@
+[
+    {
+        "path": "/api/recaptcha",
+        "id": "0ceyh8"
+    },
+    {
+        "path": "/api/subscription/auto-renew",
+        "id": "0eiqz3"
+    },
+    {
+        "path": "/api/health",
+        "id": "0xrdzm"
+    },
+    {
+        "path": "/api/paypal/coupons",
+        "id": "1cqvm6"
+    },
+    {
+        "path": "/api/download",
+        "id": "1d5k7m"
+    },
+    {
+        "path": "/api/settings/import",
+        "id": "1dpho0"
+    },
+    {
+        "path": "/api/support",
+        "id": "1md5jc"
+    },
+    {
+        "path": "/api/referral",
+        "id": "1r82wl"
+    },
+    {
+        "path": "/api/api-keys/revoke",
+        "id": "1z6hzj"
+    },
+    {
+        "path": "/api/subscription/current",
+        "id": "24wpfq"
+    },
+    {
+        "path": "/api/paypal/create-order",
+        "id": "2dfpjc"
+    },
+    {
+        "path": "/api/certificate",
+        "id": "2jyki3"
+    },
+    {
+        "path": "/api/referral/generate",
+        "id": "2te068"
+    },
+    {
+        "path": "/api/api-keys/validate",
+        "id": "2ub1dn"
+    },
+    {
+        "path": "/api/cert",
+        "id": "34n0vj"
+    },
+    {
+        "path": "/",
+        "id": "378tv94odl"
+    },
+    {
+        "path": "/api/paypal/subscribe",
+        "id": "3dzufx"
+    },
+    {
+        "path": "/api/paypal/cancel",
+        "id": "3wb7x2"
+    },
+    {
+        "path": "/api/auth/google",
+        "id": "4bdfkj"
+    },
+    {
+        "path": "/api/verify",
+        "id": "4e9jei"
+    },
+    {
+        "path": "/api/startup/register",
+        "id": "5034cf"
+    },
+    {
+        "path": "/api/blogs/categories",
+        "id": "53uxdo"
+    },
+    {
+        "path": "/api/user/dashboard",
+        "id": "5i1do3"
+    },
+    {
+        "path": "/api/settings/category",
+        "id": "5szk68"
+    },
+    {
+        "path": "/api/paypal/status",
+        "id": "5ynt7d"
+    },
+    {
+        "path": "/api/audit/start",
+        "id": "6ag6xp"
+    },
+    {
+        "path": "/api/settings/bulk-update",
+        "id": "6djt6b"
+    },
+    {
+        "path": "/api/subscription/update-payment",
+        "id": "75i65l"
+    },
+    {
+        "path": "/api/user/onboarding",
+        "id": "79jdbh"
+    },
+    {
+        "path": "/api/subscription/confirm",
+        "id": "7awswh"
+    },
+    {
+        "path": "/api/embed-code/{reportId}",
+        "id": "7axwfu"
+    },
+    {
+        "path": "/api/subscription/cancel",
+        "id": "7kw0lt"
+    },
+    {
+        "path": "/api/settings",
+        "id": "7lrc4j"
+    },
+    {
+        "path": "/api/paypal/capture",
+        "id": "7mrvnk"
+    },
+    {
+        "path": "/api/settings/categories",
+        "id": "7phhb9"
+    },
+    {
+        "path": "/api/auth/github/status",
+        "id": "7s5s0b"
+    },
+    {
+        "path": "/api/billing/coupons/validate",
+        "id": "7xc450"
+    },
+    {
+        "path": "/api/embed-code",
+        "id": "8ho4i8"
+    },
+    {
+        "path": "/api/paypal/plans",
+        "id": "99fx2t"
+    },
+    {
+        "path": "/api/billing/sync",
+        "id": "9pz58j"
+    },
+    {
+        "path": "/api/support/create-ticket",
+        "id": "a4iom0"
+    },
+    {
+        "path": "/api/paypal/webhook",
+        "id": "a8tj7g"
+    },
+    {
+        "path": "/api/addons",
+        "id": "amqpqh"
+    },
+    {
+        "path": "/api/subscription/webhook",
+        "id": "aoz2q7"
+    },
+    {
+        "path": "/api/auth/register",
+        "id": "bnyg9o"
+    },
+    {
+        "path": "/api/subscription/invoices",
+        "id": "boy4kb"
+    },
+    {
+        "path": "/api/plans",
+        "id": "c3eres"
+    },
+    {
+        "path": "/api/paypal/activate-subscription",
+        "id": "cchzio"
+    },
+    {
+        "path": "/api/badge/{certificateNumber}/embed",
+        "id": "ck0blr"
+    },
+    {
+        "path": "/api/credits",
+        "id": "cxbd6z"
+    },
+    {
+        "path": "/api/credits/purchase",
+        "id": "cznee8"
+    },
+    {
+        "path": "/api/pdf/{reportId}/download-link",
+        "id": "dv5ol3"
+    },
+    {
+        "path": "/api/paypal/credits",
+        "id": "dvs8v0"
+    },
+    {
+        "path": "/api/settings/category/{category}",
+        "id": "eq4ffb"
+    },
+    {
+        "path": "/api/billing",
+        "id": "eqms8v"
+    },
+    {
+        "path": "/api/blogs/{slug}",
+        "id": "f5mdgg"
+    },
+    {
+        "path": "/url-validator/validate",
+        "id": "ftm543"
+    },
+    {
+        "path": "/api/subscription/account/delete",
+        "id": "g0vbwm"
+    },
+    {
+        "path": "/api/paypal/create-subscription",
+        "id": "grmzu9"
+    },
+    {
+        "path": "/api/subscription/account",
+        "id": "gsch2e"
+    },
+    {
+        "path": "/api/auth",
+        "id": "gtm00w"
+    },
+    {
+        "path": "/api/cicd/audit",
+        "id": "h7ssg7"
+    },
+    {
+        "path": "/api/settings/update",
+        "id": "hfpklf"
+    },
+    {
+        "path": "/api/pdf/{reportId}",
+        "id": "hhsops"
+    },
+    {
+        "path": "/api",
+        "id": "hx3m5r"
+    },
+    {
+        "path": "/api/billing/plans",
+        "id": "ikxtg2"
+    },
+    {
+        "path": "/api/blogs/comment/like",
+        "id": "ilyasq"
+    },
+    {
+        "path": "/api/settings/test-connection",
+        "id": "iu228a"
+    },
+    {
+        "path": "/api/subscription/upgrade",
+        "id": "ivrlxk"
+    },
+    {
+        "path": "/api/paypal/sync-user",
+        "id": "izozcj"
+    },
+    {
+        "path": "/api/blogs/view",
+        "id": "j51u8p"
+    },
+    {
+        "path": "/api/subscription",
+        "id": "jey8r9"
+    },
+    {
+        "path": "/api/newsletter",
+        "id": "jsscwk"
+    },
+    {
+        "path": "/api/settings/export",
+        "id": "jwsrs1"
+    },
+    {
+        "path": "/api/subscription/reactivate",
+        "id": "kdayng"
+    },
+    {
+        "path": "/api/paypal/cancel-subscription",
+        "id": "kh1lm5"
+    },
+    {
+        "path": "/api/billing/addons/public",
+        "id": "kkpxbs"
+    },
+    {
+        "path": "/api/coupons/validate",
+        "id": "kstixm"
+    },
+    {
+        "path": "/api/referral/validate",
+        "id": "kw7gex"
+    },
+    {
+        "path": "/api/subscription/sync",
+        "id": "mi23xs"
+    },
+    {
+        "path": "/api/customer",
+        "id": "mn5ik3"
+    },
+    {
+        "path": "/url-validator",
+        "id": "nfuepw"
+    },
+    {
+        "path": "/api/startup",
+        "id": "noeo0a"
+    },
+    {
+        "path": "/api/cicd",
+        "id": "nrx6m3"
+    },
+    {
+        "path": "/api/addons/purchase",
+        "id": "nslpsy"
+    },
+    {
+        "path": "/api/pdf",
+        "id": "nuqef9"
+    },
+    {
+        "path": "/api/paypal/capture-order",
+        "id": "oalono"
+    },
+    {
+        "path": "/api/customer/onboarding",
+        "id": "oxdeub"
+    },
+    {
+        "path": "/api/certificate/{certificateNumber}",
+        "id": "p2u3o8"
+    },
+    {
+        "path": "/api/user",
+        "id": "p9mbm8"
+    },
+    {
+        "path": "/api/badge/{certificateNumber}",
+        "id": "pdg97n"
+    },
+    {
+        "path": "/api/paypal/validate-coupon",
+        "id": "ph0kfh"
+    },
+    {
+        "path": "/api/coupons",
+        "id": "pu0by4"
+    },
+    {
+        "path": "/api/user/credits",
+        "id": "pwo9h1"
+    },
+    {
+        "path": "/api/subscription/activate",
+        "id": "q2znhu"
+    },
+    {
+        "path": "/api/subscription/status",
+        "id": "qgo28y"
+    },
+    {
+        "path": "/api/billing/coupons",
+        "id": "qmsaob"
+    },
+    {
+        "path": "/api/paypal",
+        "id": "qvusnt"
+    },
+    {
+        "path": "/api/api-keys/create",
+        "id": "qx7uee"
+    },
+    {
+        "path": "/api/audit/status/{reportId}",
+        "id": "qxdiqy"
+    },
+    {
+        "path": "/api/paypal/transactions",
+        "id": "r05ieh"
+    },
+    {
+        "path": "/api/audit/status",
+        "id": "r5atgv"
+    },
+    {
+        "path": "/api/recaptcha/verify",
+        "id": "rctdrm"
+    },
+    {
+        "path": "/api/audit",
+        "id": "rm5v4b"
+    },
+    {
+        "path": "/api/referral/stats",
+        "id": "s8ilvs"
+    },
+    {
+        "path": "/api/url-validator",
+        "id": "so0hd4"
+    },
+    {
+        "path": "/api/download/{reportId}",
+        "id": "t7p59a"
+    },
+    {
+        "path": "/api/blogs/rate",
+        "id": "t9wqzo"
+    },
+    {
+        "path": "/api/url-validator/validate",
+        "id": "tcgb2s"
+    },
+    {
+        "path": "/api/referral/activate",
+        "id": "tt3cwa"
+    },
+    {
+        "path": "/api/referral/share-content",
+        "id": "ttul5x"
+    },
+    {
+        "path": "/api/user/profile",
+        "id": "u1hkgq"
+    },
+    {
+        "path": "/api/badge",
+        "id": "u8llbk"
+    },
+    {
+        "path": "/api/billing/plans/public",
+        "id": "uixlv0"
+    },
+    {
+        "path": "/api/cert/{reportId}",
+        "id": "uuzol3"
+    },
+    {
+        "path": "/api/auth/login",
+        "id": "uvwqj8"
+    },
+    {
+        "path": "/api/blogs",
+        "id": "ver96r"
+    },
+    {
+        "path": "/api/badge/{certificateNumber}/script",
+        "id": "vnqutk"
+    },
+    {
+        "path": "/api/subscription/plans",
+        "id": "vq9e1j"
+    },
+    {
+        "path": "/api/support/check-ticket",
+        "id": "w2p6ci"
+    },
+    {
+        "path": "/api/auth/github",
+        "id": "wdkzdj"
+    },
+    {
+        "path": "/api/subscription/checkout",
+        "id": "wew4iu"
+    },
+    {
+        "path": "/api/user/delete-account",
+        "id": "wg60s2"
+    },
+    {
+        "path": "/api/email",
+        "id": "wyeh2g"
+    },
+    {
+        "path": "/api/subscription/portal-token",
+        "id": "x43qce"
+    },
+    {
+        "path": "/api/newsletter/subscribe",
+        "id": "xalx4r"
+    },
+    {
+        "path": "/api/api-keys/list",
+        "id": "xgf3d0"
+    },
+    {
+        "path": "/api/user/addons",
+        "id": "xiphsu"
+    },
+    {
+        "path": "/api/verify/{certificateNumber}",
+        "id": "xvilbj"
+    },
+    {
+        "path": "/api/paypal/credit-packs",
+        "id": "y2dt1g"
+    },
+    {
+        "path": "/api/blogs/comment",
+        "id": "ycfg0v"
+    },
+    {
+        "path": "/api/subscription/account/check-deletion",
+        "id": "ysg3yx"
+    },
+    {
+        "path": "/api/billing/addons",
+        "id": "zj41x7"
+    },
+    {
+        "path": "/api/api-keys",
+        "id": "zxija5"
+    }
+]

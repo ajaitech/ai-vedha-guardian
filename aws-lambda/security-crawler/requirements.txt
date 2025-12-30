@@ -1,0 +1,96 @@
+# ╔══════════════════════════════════════════════════════════════════════════════╗
+# ║  AiVedha Guard - Enterprise Security Audit Lambda Dependencies               ║
+# ║  Version: 5.1.0 "QUANTUM FORTRESS PRO"                                       ║
+# ║  Last Updated: 2025-01-15                                                    ║
+# ║                                                                              ║
+# ║  Owner: Aravind Jayamohan                                                    ║
+# ║  Company: AiVibe Software Services Pvt Ltd                                   ║
+# ╚══════════════════════════════════════════════════════════════════════════════╝
+
+# ============================================================================
+# CORE HTTP & NETWORKING (Latest Stable - Jan 2025)
+# ============================================================================
+requests>=2.32.3              # HTTP client with retry support
+urllib3>=2.2.3                # HTTP library for connection pooling
+certifi>=2024.12.14           # CA certificate bundle
+
+# ============================================================================
+# HTML/XML PARSING
+# ============================================================================
+beautifulsoup4>=4.12.3        # HTML/XML parser
+lxml>=5.3.0                   # Fast XML/HTML processing
+html5lib>=1.1                 # HTML5 parsing for edge cases
+
+# ============================================================================
+# AWS SDK (Latest Jan 2025)
+# ============================================================================
+boto3>=1.35.99                # AWS SDK for Python
+botocore>=1.35.99             # Core AWS functionality
+
+# ============================================================================
+# PDF GENERATION (Professional Reports)
+# ============================================================================
+reportlab>=4.2.5              # PDF generation library
+svglib>=1.5.1                 # SVG support for logos
+pillow>=11.1.0                # Image processing for PDF
+
+# ============================================================================
+# DNS ANALYSIS
+# ============================================================================
+dnspython>=2.7.0              # DNS toolkit for security analysis
+
+# ============================================================================
+# CRYPTOGRAPHY & SSL/TLS ANALYSIS
+# ============================================================================
+cryptography>=44.0.0          # Cryptographic primitives
+pyOpenSSL>=24.3.0             # OpenSSL bindings for advanced SSL analysis
+
+# ============================================================================
+# DATE/TIME HANDLING
+# ============================================================================
+python-dateutil>=2.9.0.post0  # Flexible date/time parsing
+
+# ============================================================================
+# DATA VALIDATION & SERIALIZATION
+# ============================================================================
+pydantic>=2.10.4              # Data validation with type hints
+orjson>=3.10.12               # Fast JSON serialization
+
+# ============================================================================
+# ASYNC SUPPORT (For concurrent scanning)
+# ============================================================================
+aiohttp>=3.11.11              # Async HTTP client
+aiodns>=3.2.0                 # Async DNS resolver
+anyio>=4.8.0                  # Async compatibility layer
+
+# ============================================================================
+# RATE LIMITING & RETRY LOGIC
+# ============================================================================
+tenacity>=9.0.0               # Retry library with backoff strategies
+ratelimit>=2.2.1              # Rate limiting decorator
+
+# ============================================================================
+# LOGGING & MONITORING
+# ============================================================================
+structlog>=24.4.0             # Structured logging
+aws-lambda-powertools>=3.4.1  # AWS Lambda observability toolkit
+
+# ============================================================================
+# SECURITY SPECIFIC
+# ============================================================================
+validators>=0.34.0            # URL and data validation
+tldextract>=5.1.3             # Domain extraction for security analysis
+publicsuffixlist>=1.0.2.20250103  # Public suffix list for domain validation
+
+# ============================================================================
+# PERFORMANCE & UTILITIES
+# ============================================================================
+cachetools>=5.5.0             # Caching utilities
+more-itertools>=10.5.0        # Extended iteration tools
+
+# ============================================================================
+# STANDARD LIBRARY NOTES (Built-in, no installation needed)
+# ============================================================================
+# json, ssl, socket, concurrent.futures, re, urllib.parse,
+# typing, decimal, uuid, io, base64, hashlib, asyncio,
+# dataclasses, functools, collections, threading, queue

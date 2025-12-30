@@ -1,0 +1,336 @@
+# AiVedha Guard - GitHub Actions Security Audit Integration
+# =========================================================
+# This workflow integrates AiVedha Guard security audits into your CI/CD pipeline.
+# After every deployment, it automatically scans your website for vulnerabilities.
+#
+# Setup Instructions:
+# 1. Generate an API key from your AiVedha dashboard (Settings > API Keys)
+# 2. Add the API key as a GitHub secret: AIVEDHA_API_KEY
+# 3. Configure the TARGET_URL for your production site (or let it auto-detect)
+# 4. Copy this file to your repository: .github/workflows/aivedha-security-audit.yml
+#
+# Features:
+# - Post-deployment security scanning
+# - Auto-detects deployment URL from common platforms (Vercel, Netlify, etc.)
+# - URL validation before audit (detects error pages)
+# - Non-blocking (doesn't fail your deployment)
+# - Email alerts for failures and insufficient credits
+# - Detailed security reports
+#
+# Copyright 2024-2025 AiVibe Software Services Pvt Ltd
+# https://aivedha.ai
+
+name: AiVedha Security Audit
+
+on:
+  # Trigger after deployment workflows
+  workflow_run:
+    workflows: ["Deploy", "Build and Deploy", "Production Deploy", "deploy", "Vercel", "Netlify"]
+    types:
+      - completed
+    branches:
+      - main
+      - master
+      - production
+
+  # Manual trigger with URL input
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'URL to audit (leave empty for auto-detect)'
+        required: false
+        type: string
+      skip_url_validation:
+        description: 'Skip URL validation (audit even if error page detected)'
+        required: false
+        type: boolean
+        default: false
+
+  # Scheduled audits (optional - uncomment to enable)
+  # schedule:
+  #   - cron: '0 0 * * 0'  # Weekly on Sunday at midnight
+
+env:
+  AIVEDHA_API_URL: https://api.aivedha.ai/api
+  # Configure your production URL here (or use auto-detection)
+  TARGET_URL: ${{ vars.AIVEDHA_TARGET_URL || '' }}
+
+jobs:
+  security-audit:
+    name: Run Security Audit
+    runs-on: ubuntu-latest
+    # Only run if the deployment was successful (for workflow_run triggers)
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Detect Deployment URL
+        id: detect-url
+        run: |
+          # Priority: Manual input > Environment variable > Auto-detection
+
+          MANUAL_URL="${{ github.event.inputs.target_url }}"
+          ENV_URL="${{ env.TARGET_URL }}"
+
+          if [ -n "$MANUAL_URL" ]; then
+            echo "Using manually provided URL: $MANUAL_URL"
+            echo "url=$MANUAL_URL" >> $GITHUB_OUTPUT
+            echo "source=manual" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          if [ -n "$ENV_URL" ]; then
+            echo "Using environment variable URL: $ENV_URL"
+            echo "url=$ENV_URL" >> $GITHUB_OUTPUT
+            echo "source=environment" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Auto-detection based on deployment platform
+          echo "Attempting auto-detection..."
+
+          # Check for Vercel deployment URL
+          if [ -f "vercel.json" ] || [ -n "$VERCEL_URL" ]; then
+            # Try to get from Vercel API or use standard naming
+            REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+            DETECTED_URL="https://${REPO_NAME}.vercel.app"
+            echo "Detected Vercel project: $DETECTED_URL"
+            echo "url=$DETECTED_URL" >> $GITHUB_OUTPUT
+            echo "source=vercel-auto" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check for Netlify deployment
+          if [ -f "netlify.toml" ]; then
+            REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+            DETECTED_URL="https://${REPO_NAME}.netlify.app"
+            echo "Detected Netlify project: $DETECTED_URL"
+            echo "url=$DETECTED_URL" >> $GITHUB_OUTPUT
+            echo "source=netlify-auto" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check for GitHub Pages
+          if [ -f "_config.yml" ] || [ -d "docs" ] && [ -f "docs/index.html" ]; then
+            REPO_OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1)
+            REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+            DETECTED_URL="https://${REPO_OWNER}.github.io/${REPO_NAME}"
+            echo "Detected GitHub Pages: $DETECTED_URL"
+            echo "url=$DETECTED_URL" >> $GITHUB_OUTPUT
+            echo "source=github-pages-auto" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check package.json for homepage
+          if [ -f "package.json" ]; then
+            HOMEPAGE=$(jq -r '.homepage // empty' package.json)
+            if [ -n "$HOMEPAGE" ] && [[ "$HOMEPAGE" =~ ^https?:// ]]; then
+              echo "Detected from package.json homepage: $HOMEPAGE"
+              echo "url=$HOMEPAGE" >> $GITHUB_OUTPUT
+              echo "source=package-json" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          fi
+
+          echo "::warning::Could not auto-detect deployment URL. Please set AIVEDHA_TARGET_URL in repository variables."
+          echo "url=" >> $GITHUB_OUTPUT
+          echo "source=none" >> $GITHUB_OUTPUT
+
+      - name: Validate API Key
+        id: validate
+        if: steps.detect-url.outputs.url != ''
+        run: |
+          echo "Validating AiVedha API key..."
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.AIVEDHA_API_KEY }}" \
+            "${{ env.AIVEDHA_API_URL }}/api-keys/validate")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          if [ "$HTTP_CODE" = "200" ]; then
+            echo "API key validated successfully"
+            VALID=$(echo "$BODY" | jq -r '.valid // false')
+            if [ "$VALID" = "true" ]; then
+              echo "valid=true" >> $GITHUB_OUTPUT
+              KEY_NAME=$(echo "$BODY" | jq -r '.name // "Unknown"')
+              EXPIRES=$(echo "$BODY" | jq -r '.expires_at // "Unknown"')
+              echo "key_name=$KEY_NAME" >> $GITHUB_OUTPUT
+              echo "expires_at=$EXPIRES" >> $GITHUB_OUTPUT
+            else
+              echo "::warning::API key is invalid or expired. Please generate a new one."
+              echo "valid=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "::warning::API key validation failed (HTTP $HTTP_CODE). Please check your AIVEDHA_API_KEY secret."
+            echo "valid=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Pre-validate Target URL
+        id: prevalidate
+        if: steps.validate.outputs.valid == 'true' && github.event.inputs.skip_url_validation != 'true'
+        run: |
+          TARGET="${{ steps.detect-url.outputs.url }}"
+          echo "Pre-validating URL: $TARGET"
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d "{\"url\": \"$TARGET\", \"source\": \"github\"}" \
+            "${{ env.AIVEDHA_API_URL }}/url-validator/validate")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Validation response: $BODY"
+
+          URL_VALID=$(echo "$BODY" | jq -r '.valid // false')
+          IS_ERROR=$(echo "$BODY" | jq -r '.validation.is_error_page // false')
+          ERROR_MSG=$(echo "$BODY" | jq -r '.message // "No message"')
+
+          if [ "$URL_VALID" = "true" ]; then
+            echo "URL validation passed"
+            echo "url_valid=true" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::URL validation failed: $ERROR_MSG"
+            echo "url_valid=false" >> $GITHUB_OUTPUT
+            echo "error_message=$ERROR_MSG" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Initiate Security Audit
+        id: audit
+        if: steps.validate.outputs.valid == 'true' && (steps.prevalidate.outputs.url_valid == 'true' || github.event.inputs.skip_url_validation == 'true')
+        run: |
+          TARGET="${{ steps.detect-url.outputs.url }}"
+          SKIP_VALIDATION="${{ github.event.inputs.skip_url_validation }}"
+
+          echo "Starting AiVedha security audit for: $TARGET"
+          echo "==========================================="
+          echo "URL Source: ${{ steps.detect-url.outputs.source }}"
+          echo "API Key: ${{ steps.validate.outputs.key_name }}"
+          echo "Skip URL Validation: $SKIP_VALIDATION"
+
+          # Build request payload
+          PAYLOAD="{\"url\": \"$TARGET\""
+          if [ "$SKIP_VALIDATION" = "true" ]; then
+            PAYLOAD="$PAYLOAD, \"skip_url_validation\": true"
+          fi
+          PAYLOAD="$PAYLOAD}"
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.AIVEDHA_API_KEY }}" \
+            -d "$PAYLOAD" \
+            "${{ env.AIVEDHA_API_URL }}/cicd/audit")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Response: $BODY"
+
+          # Parse response
+          SUCCESS=$(echo "$BODY" | jq -r '.success // false')
+          AUDIT_SKIPPED=$(echo "$BODY" | jq -r '.audit_skipped // false')
+          MESSAGE=$(echo "$BODY" | jq -r '.message // "No message"')
+          CREDITS=$(echo "$BODY" | jq -r '.credits_remaining // "unknown"')
+          REASON=$(echo "$BODY" | jq -r '.reason // ""')
+
+          if [ "$AUDIT_SKIPPED" = "true" ]; then
+            # Audit was skipped (insufficient credits, URL error, etc.)
+            echo "::notice::Security audit skipped: $MESSAGE"
+            if [ -n "$REASON" ]; then
+              echo "::notice::Reason: $REASON"
+            fi
+            echo "audit_status=skipped" >> $GITHUB_OUTPUT
+            echo "audit_reason=$REASON" >> $GITHUB_OUTPUT
+            echo "audit_message=$MESSAGE" >> $GITHUB_OUTPUT
+          elif [ "$SUCCESS" = "true" ]; then
+            echo "Security audit initiated successfully!"
+            echo "Credits remaining: $CREDITS"
+            echo "Results will be sent to your email."
+            echo "audit_status=initiated" >> $GITHUB_OUTPUT
+            echo "credits_remaining=$CREDITS" >> $GITHUB_OUTPUT
+            AUDIT_ID=$(echo "$BODY" | jq -r '.audit_id // ""')
+            echo "audit_id=$AUDIT_ID" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::Audit request returned unexpected response"
+            echo "audit_status=unknown" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate Audit Summary
+        if: always()
+        run: |
+          echo "## 🛡️ AiVedha Security Audit Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Repository:** \`${{ github.repository }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # URL Detection
+          if [ "${{ steps.detect-url.outputs.url }}" = "" ]; then
+            echo "### ⚠️ URL Not Detected" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Could not detect deployment URL. Please set \`AIVEDHA_TARGET_URL\` in your repository variables." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Configure Variables](https://github.com/${{ github.repository }}/settings/variables/actions)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.validate.outputs.valid }}" != "true" ]; then
+            echo "### ❌ API Key Invalid" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Your API key is invalid or missing. Please ensure \`AIVEDHA_API_KEY\` secret is set correctly." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Generate API Key](https://aivedha.ai/dashboard/subscription) | [Configure Secrets](https://github.com/${{ github.repository }}/settings/secrets/actions)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.prevalidate.outputs.url_valid }}" = "false" ] && [ "${{ github.event.inputs.skip_url_validation }}" != "true" ]; then
+            echo "### ⚠️ URL Validation Failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Error:** ${{ steps.prevalidate.outputs.error_message }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "> The target URL appears to be returning an error page. Security audit was skipped to prevent wasted credits." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Options:**" >> $GITHUB_STEP_SUMMARY
+            echo "- Fix the error on your site and re-run the workflow" >> $GITHUB_STEP_SUMMARY
+            echo "- Manually trigger with 'Skip URL Validation' enabled" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[View Dashboard](https://aivedha.ai/dashboard)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.audit.outputs.audit_status }}" = "skipped" ]; then
+            echo "### ⏭️ Audit Skipped" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Reason:** ${{ steps.audit.outputs.audit_reason }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Message:** ${{ steps.audit.outputs.audit_message }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "> Your deployment completed successfully. The security audit was skipped." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Add Credits](https://aivedha.ai/pricing) | [View Dashboard](https://aivedha.ai/dashboard)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.audit.outputs.audit_status }}" = "initiated" ]; then
+            echo "### ✅ Audit Initiated Successfully" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**URL Source:** ${{ steps.detect-url.outputs.source }}" >> $GITHUB_STEP_SUMMARY
+            echo "**API Key:** ${{ steps.validate.outputs.key_name }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Credits Remaining:** ${{ steps.audit.outputs.credits_remaining }}" >> $GITHUB_STEP_SUMMARY
+            if [ -n "${{ steps.audit.outputs.audit_id }}" ]; then
+              echo "**Audit ID:** \`${{ steps.audit.outputs.audit_id }}\`" >> $GITHUB_STEP_SUMMARY
+            fi
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "🔍 Security audit is running in the background. Results will be sent to your email and available in your dashboard." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[View Results](https://aivedha.ai/dashboard)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ❓ Unknown Status" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Please check the workflow logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Powered by [AiVedha Guard](https://aivedha.ai) - AI-Powered Security Auditing*" >> $GITHUB_STEP_SUMMARY

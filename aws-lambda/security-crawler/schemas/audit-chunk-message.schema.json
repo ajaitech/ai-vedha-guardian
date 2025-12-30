@@ -1,0 +1,148 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aivedha.ai/schemas/audit-chunk-message.json",
+  "title": "AuditChunkMessage",
+  "description": "Schema for audit chunk messages sent to SQS for distributed crawling",
+  "type": "object",
+  "required": ["auditId", "chunkId", "seedUrl", "idempotencyKey", "schemaVersion"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0",
+      "description": "Schema version for backward compatibility"
+    },
+    "auditId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Unique identifier for the audit session"
+    },
+    "chunkId": {
+      "type": "string",
+      "pattern": "^chunk-[0-9]{4}$",
+      "description": "Chunk identifier within the audit (chunk-0001, chunk-0002, ...)"
+    },
+    "seedUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "Starting URL for this chunk's crawl operation"
+    },
+    "depthLimit": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 3,
+      "description": "Maximum crawl depth from seed URL"
+    },
+    "maxUrls": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 100,
+      "default": 50,
+      "description": "Maximum number of URLs to crawl in this chunk"
+    },
+    "includePatterns": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": ["*"],
+      "description": "URL patterns to include (glob syntax)"
+    },
+    "excludePatterns": {
+      "type": "array",
+      "items": { "type": "string" },
+      "default": ["*.pdf", "*.zip", "*.exe", "*.dmg", "*.iso"],
+      "description": "URL patterns to exclude from crawling"
+    },
+    "idempotencyKey": {
+      "type": "string",
+      "pattern": "^idemp:[a-f0-9]{8}:chunk:[0-9]{4}:[a-f0-9]{8}$",
+      "description": "Unique key for idempotent processing"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 5,
+      "description": "Processing priority (1=highest priority)"
+    },
+    "attemptCount": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Number of processing attempts (incremented on retry)"
+    },
+    "parentChunkId": {
+      "type": "string",
+      "description": "Parent chunk that spawned this chunk (for hierarchical crawls)"
+    },
+    "detectorConfig": {
+      "type": "object",
+      "properties": {
+        "enableDynamicJS": {
+          "type": "boolean",
+          "default": false,
+          "description": "Enable dynamic JavaScript execution for detection"
+        },
+        "enableCVELookup": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable CVE database correlation for dependencies"
+        },
+        "enableWHOIS": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable WHOIS queries for domain intelligence"
+        },
+        "enableIPLookup": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable IP/ASN lookup"
+        },
+        "enableMalwareCheck": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable passive malware reputation checks"
+        }
+      },
+      "additionalProperties": false
+    },
+    "throttleConfig": {
+      "type": "object",
+      "properties": {
+        "requestsPerSecond": {
+          "type": "number",
+          "minimum": 0.1,
+          "maximum": 10,
+          "default": 2,
+          "description": "Maximum requests per second to target domain"
+        },
+        "respectRobotsTxt": {
+          "type": "boolean",
+          "default": true,
+          "description": "Whether to respect robots.txt directives"
+        },
+        "delayBetweenRequests": {
+          "type": "integer",
+          "minimum": 100,
+          "maximum": 5000,
+          "default": 500,
+          "description": "Minimum delay between requests in milliseconds"
+        }
+      }
+    },
+    "userId": {
+      "type": "string",
+      "description": "User ID who initiated the audit"
+    },
+    "userEmail": {
+      "type": "string",
+      "format": "email",
+      "description": "User email for notifications"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when chunk was created"
+    }
+  },
+  "additionalProperties": false
+}

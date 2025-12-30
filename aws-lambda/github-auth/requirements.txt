@@ -1,0 +1,4 @@
+# AiVedha Guard - GitHub OAuth Lambda Dependencies
+# Uses standard library and AWS SDK (boto3) only
+
+boto3>=1.35.0              # AWS SDK (available in Lambda runtime)

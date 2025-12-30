@@ -1,0 +1,141 @@
+{
+  "description": "DynamoDB Web Parameters for AiVedha Guardian",
+  "region": "us-east-1",
+  "tables": {
+    "users": {
+      "tableName": "aivedha-guardian-users",
+      "primaryKey": "user_id",
+      "gsi": [
+        {
+          "indexName": "email-index",
+          "keySchema": "email"
+        }
+      ],
+      "attributes": [
+        "user_id",
+        "email",
+        "fullName",
+        "plan",
+        "credits",
+        "subscription_id",
+        "subscription_status",
+        "subscription_plan",
+        "subscription_activated_at",
+        "next_billing_date",
+        "created_at",
+        "updated_at"
+      ]
+    },
+    "subscriptions": {
+      "tableName": "aivedha-guardian-subscriptions",
+      "primaryKey": "subscription_id",
+      "gsi": [
+        {
+          "indexName": "email-index",
+          "keySchema": "email"
+        },
+        {
+          "indexName": "user-index",
+          "keySchema": "user_id"
+        }
+      ],
+      "attributes": [
+        "subscription_id",
+        "user_id",
+        "email",
+        "plan",
+        "plan_name",
+        "amount",
+        "currency",
+        "payment_method",
+        "status",
+        "credits_added",
+        "activated_at",
+        "cancelled_at",
+        "created_at"
+      ]
+    },
+    "auditReports": {
+      "tableName": "aivedha-guardian-audit-reports",
+      "primaryKey": "report_id",
+      "gsi": [
+        {
+          "indexName": "user-index",
+          "keySchema": "user_email"
+        },
+        {
+          "indexName": "certificate-index",
+          "keySchema": "certificate_number"
+        }
+      ],
+      "attributes": [
+        "report_id",
+        "user_email",
+        "url",
+        "status",
+        "security_score",
+        "vulnerabilities_count",
+        "certificate_number",
+        "pdf_url",
+        "created_at",
+        "completed_at"
+      ]
+    },
+    "credits": {
+      "tableName": "aivedha-guardian-credits",
+      "primaryKey": "transaction_id",
+      "gsi": [
+        {
+          "indexName": "user-index",
+          "keySchema": "user_email"
+        }
+      ],
+      "attributes": [
+        "transaction_id",
+        "user_email",
+        "type",
+        "amount",
+        "plan",
+        "subscription_id",
+        "timestamp"
+      ]
+    }
+  },
+  "api": {
+    "baseUrl": "https://api.aivedha.ai/api",
+    "endpoints": {
+      "auth": {
+        "login": "POST /auth/login",
+        "register": "POST /auth/register",
+        "github": "POST /auth/github"
+      },
+      "audit": {
+        "start": "POST /audit/start",
+        "status": "GET /audit/status/{reportId}"
+      },
+      "user": {
+        "dashboard": "GET /user/dashboard?userId={email}",
+        "credits": "GET /user/credits?userId={email}"
+      },
+      "subscription": {
+        "activate": "POST /subscription/activate",
+        "syncUser": "POST /subscription/sync-user",
+        "cancel": "POST /subscription/cancel"
+      },
+      "email": {
+        "send": "POST /email"
+      }
+    }
+  },
+  "wixIntegration": {
+    "allowedOrigins": [
+      "https://aivedha.ai",
+      "https://www.aivedha.ai",
+      "*.wix.com",
+      "*.wixsite.com",
+      "*.editorx.io"
+    ],
+    "corsEnabled": true,
+    "credentialsAllowed": true
+  }
+}

@@ -1,0 +1,493 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: |
+  AiVedha Guard - Audit Lambda Augmentation Infrastructure
+  Version: 4.0.0
+  Owner: Aravind Jayamohan
+  Company: AiVibe Software Services Pvt Ltd, Chennai, TN, India
+
+  This template creates the additional AWS resources required for the
+  enterprise-grade audit augmentation. All resources are additive and
+  do not modify existing infrastructure.
+
+Parameters:
+  Environment:
+    Type: String
+    Default: production
+    AllowedValues:
+      - production
+      - staging
+    Description: Deployment environment
+
+  ProcessedEventsTTLDays:
+    Type: Number
+    Default: 30
+    MinValue: 7
+    MaxValue: 90
+    Description: TTL in days for processed events (idempotency records)
+
+Resources:
+  # ============================================================================
+  # DynamoDB Tables
+  # ============================================================================
+
+  AuditFindingsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'aivedha-guardian-audit-findings'
+      BillingMode: PAY_PER_REQUEST
+      PointInTimeRecoverySpecification:
+        PointInTimeRecoveryEnabled: true
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+      AttributeDefinitions:
+        - AttributeName: auditId
+          AttributeType: S
+        - AttributeName: findingId
+          AttributeType: S
+        - AttributeName: severity
+          AttributeType: S
+        - AttributeName: userId
+          AttributeType: S
+        - AttributeName: createdAt
+          AttributeType: S
+        - AttributeName: detector
+          AttributeType: S
+      KeySchema:
+        - AttributeName: auditId
+          KeyType: HASH
+        - AttributeName: findingId
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: auditId-severity-index
+          KeySchema:
+            - AttributeName: auditId
+              KeyType: HASH
+            - AttributeName: severity
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+        - IndexName: userId-createdAt-index
+          KeySchema:
+            - AttributeName: userId
+              KeyType: HASH
+            - AttributeName: createdAt
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+        - IndexName: detector-createdAt-index
+          KeySchema:
+            - AttributeName: detector
+              KeyType: HASH
+            - AttributeName: createdAt
+              KeyType: RANGE
+          Projection:
+            ProjectionType: ALL
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+        - Key: Component
+          Value: Audit Augmentation
+        - Key: Owner
+          Value: Aravind Jayamohan
+
+  ProcessedEventsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'aivedha-guardian-processed-events'
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+      AttributeDefinitions:
+        - AttributeName: idempotencyKey
+          AttributeType: S
+      KeySchema:
+        - AttributeName: idempotencyKey
+          KeyType: HASH
+      TimeToLiveSpecification:
+        AttributeName: expiresAt
+        Enabled: true
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+        - Key: Component
+          Value: Idempotency
+
+  ScanWorkersTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'aivedha-guardian-scan-workers'
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+      AttributeDefinitions:
+        - AttributeName: workerId
+          AttributeType: S
+        - AttributeName: auditId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: workerId
+          KeyType: HASH
+        - AttributeName: auditId
+          KeyType: RANGE
+      GlobalSecondaryIndexes:
+        - IndexName: auditId-index
+          KeySchema:
+            - AttributeName: auditId
+              KeyType: HASH
+          Projection:
+            ProjectionType: ALL
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+        - Key: Component
+          Value: Worker Tracking
+
+  AuditCheckpointsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'aivedha-guardian-audit-checkpoints'
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+      AttributeDefinitions:
+        - AttributeName: auditId
+          AttributeType: S
+        - AttributeName: chunkId
+          AttributeType: S
+      KeySchema:
+        - AttributeName: auditId
+          KeyType: HASH
+        - AttributeName: chunkId
+          KeyType: RANGE
+      TimeToLiveSpecification:
+        AttributeName: expiresAt
+        Enabled: true
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+        - Key: Component
+          Value: Checkpointing
+
+  FeatureFlagsTable:
+    Type: AWS::DynamoDB::Table
+    Properties:
+      TableName: !Sub 'aivedha-guardian-feature-flags'
+      BillingMode: PAY_PER_REQUEST
+      SSESpecification:
+        SSEEnabled: true
+        SSEType: KMS
+      AttributeDefinitions:
+        - AttributeName: flagName
+          AttributeType: S
+      KeySchema:
+        - AttributeName: flagName
+          KeyType: HASH
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+        - Key: Component
+          Value: Feature Flags
+
+  # ============================================================================
+  # SQS Queues
+  # ============================================================================
+
+  AuditChunksDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub 'aivedha-audit-chunks-dlq'
+      MessageRetentionPeriod: 1209600  # 14 days
+      VisibilityTimeout: 300
+      KmsMasterKeyId: alias/aws/sqs
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+
+  AuditChunksQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub 'aivedha-audit-chunks'
+      VisibilityTimeout: 150
+      MessageRetentionPeriod: 1209600  # 14 days
+      KmsMasterKeyId: alias/aws/sqs
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt AuditChunksDLQ.Arn
+        maxReceiveCount: 5
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+
+  DetectorTasksDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub 'aivedha-detector-tasks-dlq'
+      MessageRetentionPeriod: 1209600
+      VisibilityTimeout: 300
+      KmsMasterKeyId: alias/aws/sqs
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+
+  DetectorTasksQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub 'aivedha-detector-tasks'
+      VisibilityTimeout: 75
+      MessageRetentionPeriod: 1209600
+      KmsMasterKeyId: alias/aws/sqs
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt DetectorTasksDLQ.Arn
+        maxReceiveCount: 3
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+
+  PdfGenerationDLQ:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub 'aivedha-pdf-generation-dlq'
+      MessageRetentionPeriod: 1209600
+      VisibilityTimeout: 600
+      KmsMasterKeyId: alias/aws/sqs
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+
+  PdfGenerationQueue:
+    Type: AWS::SQS::Queue
+    Properties:
+      QueueName: !Sub 'aivedha-pdf-generation'
+      VisibilityTimeout: 300
+      MessageRetentionPeriod: 1209600
+      KmsMasterKeyId: alias/aws/sqs
+      RedrivePolicy:
+        deadLetterTargetArn: !GetAtt PdfGenerationDLQ.Arn
+        maxReceiveCount: 3
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+
+  # ============================================================================
+  # SNS Topics
+  # ============================================================================
+
+  AuditEventsTopic:
+    Type: AWS::SNS::Topic
+    Properties:
+      TopicName: !Sub 'aivedha-audit-events'
+      KmsMasterKeyId: alias/aws/sns
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+
+  # ============================================================================
+  # KMS Key for Artifact Encryption
+  # ============================================================================
+
+  AuditArtifactsKey:
+    Type: AWS::KMS::Key
+    Properties:
+      Description: KMS key for encrypting audit artifacts in S3
+      EnableKeyRotation: true
+      KeyPolicy:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: Enable IAM User Permissions
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:root'
+            Action: kms:*
+            Resource: '*'
+          - Sid: Allow Lambda Role
+            Effect: Allow
+            Principal:
+              AWS: !Sub 'arn:aws:iam::${AWS::AccountId}:role/aivedha-audit-lambda-role'
+            Action:
+              - kms:Encrypt
+              - kms:Decrypt
+              - kms:GenerateDataKey
+            Resource: '*'
+      Tags:
+        - Key: Project
+          Value: AiVedha Guardian
+
+  AuditArtifactsKeyAlias:
+    Type: AWS::KMS::Alias
+    Properties:
+      AliasName: alias/aivedha-audit-artifacts
+      TargetKeyId: !Ref AuditArtifactsKey
+
+  # ============================================================================
+  # CloudWatch Alarms
+  # ============================================================================
+
+  ChunksDLQAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'aivedha-audit-chunks-dlq-messages'
+      AlarmDescription: Alert when messages appear in chunks DLQ
+      MetricName: ApproximateNumberOfMessagesVisible
+      Namespace: AWS/SQS
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: QueueName
+          Value: !GetAtt AuditChunksDLQ.QueueName
+      TreatMissingData: notBreaching
+
+  DetectorsDLQAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'aivedha-detector-tasks-dlq-messages'
+      AlarmDescription: Alert when messages appear in detector tasks DLQ
+      MetricName: ApproximateNumberOfMessagesVisible
+      Namespace: AWS/SQS
+      Statistic: Sum
+      Period: 300
+      EvaluationPeriods: 1
+      Threshold: 1
+      ComparisonOperator: GreaterThanOrEqualToThreshold
+      Dimensions:
+        - Name: QueueName
+          Value: !GetAtt DetectorTasksDLQ.QueueName
+      TreatMissingData: notBreaching
+
+  AuditErrorRateAlarm:
+    Type: AWS::CloudWatch::Alarm
+    Properties:
+      AlarmName: !Sub 'aivedha-audit-error-rate-high'
+      AlarmDescription: Alert when audit error rate exceeds 5%
+      ComparisonOperator: GreaterThanThreshold
+      EvaluationPeriods: 3
+      Threshold: 5
+      MetricName: AuditErrors
+      Namespace: AiVedha/Audit
+      Statistic: Average
+      Period: 300
+      TreatMissingData: notBreaching
+
+  # ============================================================================
+  # IAM Policy for Lambda (to be attached to existing role)
+  # ============================================================================
+
+  AuditAugmentationPolicy:
+    Type: AWS::IAM::ManagedPolicy
+    Properties:
+      ManagedPolicyName: !Sub 'aivedha-audit-augmentation-policy'
+      Description: Additional permissions for audit augmentation
+      PolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Sid: DynamoDBNewTables
+            Effect: Allow
+            Action:
+              - dynamodb:PutItem
+              - dynamodb:GetItem
+              - dynamodb:Query
+              - dynamodb:UpdateItem
+              - dynamodb:DeleteItem
+              - dynamodb:Scan
+            Resource:
+              - !GetAtt AuditFindingsTable.Arn
+              - !Sub '${AuditFindingsTable.Arn}/index/*'
+              - !GetAtt ProcessedEventsTable.Arn
+              - !GetAtt ScanWorkersTable.Arn
+              - !Sub '${ScanWorkersTable.Arn}/index/*'
+              - !GetAtt AuditCheckpointsTable.Arn
+              - !GetAtt FeatureFlagsTable.Arn
+          - Sid: SQSPermissions
+            Effect: Allow
+            Action:
+              - sqs:SendMessage
+              - sqs:ReceiveMessage
+              - sqs:DeleteMessage
+              - sqs:GetQueueAttributes
+              - sqs:ChangeMessageVisibility
+            Resource:
+              - !GetAtt AuditChunksQueue.Arn
+              - !GetAtt DetectorTasksQueue.Arn
+              - !GetAtt PdfGenerationQueue.Arn
+          - Sid: SNSPermissions
+            Effect: Allow
+            Action:
+              - sns:Publish
+            Resource:
+              - !Ref AuditEventsTopic
+          - Sid: KMSPermissions
+            Effect: Allow
+            Action:
+              - kms:Encrypt
+              - kms:Decrypt
+              - kms:GenerateDataKey
+            Resource:
+              - !GetAtt AuditArtifactsKey.Arn
+          - Sid: CloudWatchMetrics
+            Effect: Allow
+            Action:
+              - cloudwatch:PutMetricData
+            Resource: '*'
+            Condition:
+              StringEquals:
+                cloudwatch:namespace: AiVedha/Audit
+
+Outputs:
+  AuditFindingsTableArn:
+    Description: ARN of the audit findings table
+    Value: !GetAtt AuditFindingsTable.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-AuditFindingsTableArn'
+
+  ProcessedEventsTableArn:
+    Description: ARN of the processed events table
+    Value: !GetAtt ProcessedEventsTable.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-ProcessedEventsTableArn'
+
+  AuditChunksQueueUrl:
+    Description: URL of the audit chunks queue
+    Value: !Ref AuditChunksQueue
+    Export:
+      Name: !Sub '${AWS::StackName}-AuditChunksQueueUrl'
+
+  AuditChunksQueueArn:
+    Description: ARN of the audit chunks queue
+    Value: !GetAtt AuditChunksQueue.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-AuditChunksQueueArn'
+
+  DetectorTasksQueueUrl:
+    Description: URL of the detector tasks queue
+    Value: !Ref DetectorTasksQueue
+    Export:
+      Name: !Sub '${AWS::StackName}-DetectorTasksQueueUrl'
+
+  PdfGenerationQueueUrl:
+    Description: URL of the PDF generation queue
+    Value: !Ref PdfGenerationQueue
+    Export:
+      Name: !Sub '${AWS::StackName}-PdfGenerationQueueUrl'
+
+  AuditEventsTopicArn:
+    Description: ARN of the audit events SNS topic
+    Value: !Ref AuditEventsTopic
+    Export:
+      Name: !Sub '${AWS::StackName}-AuditEventsTopicArn'
+
+  AuditArtifactsKeyArn:
+    Description: ARN of the KMS key for artifact encryption
+    Value: !GetAtt AuditArtifactsKey.Arn
+    Export:
+      Name: !Sub '${AWS::StackName}-AuditArtifactsKeyArn'
+
+  AuditAugmentationPolicyArn:
+    Description: ARN of the IAM policy for audit augmentation
+    Value: !Ref AuditAugmentationPolicy
+    Export:
+      Name: !Sub '${AWS::StackName}-AuditAugmentationPolicyArn'

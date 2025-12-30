@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<!--
+  AiVedha Guard - हिंदी साइटमैप
+  वेबसाइट सुरक्षा ऑडिट | एआई साइबर सुरक्षा स्कैनर
+-->
+<url>
+  <loc>https://aivedha.ai/?lang=hi</loc>
+  <lastmod>2025-12-03</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+    <image:loc>https://aivedha.ai/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png</image:loc>
+    <image:title>AiVedha Guardian - एआई-संचालित साइबर सुरक्षा ऑडिट प्लेटफॉर्म</image:title>
+  </image:image>
+</url>
+<url><loc>https://aivedha.ai/security-audit?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.98</priority></url>
+<url><loc>https://aivedha.ai/pricing?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.95</priority></url>
+<url><loc>https://aivedha.ai/login?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.85</priority></url>
+<url><loc>https://aivedha.ai/signup?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.85</priority></url>
+<url><loc>https://aivedha.ai/faq?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.80</priority></url>
+<url><loc>https://aivedha.ai/website-security-audit?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.92</priority></url>
+<url><loc>https://aivedha.ai/vulnerability-scanner?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.92</priority></url>
+<url><loc>https://aivedha.ai/penetration-testing?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.90</priority></url>
+<url><loc>https://aivedha.ai/security-audit-india?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.85</priority></url>
+<url><loc>https://aivedha.ai/free-security-scan?lang=hi</loc><lastmod>2025-12-03</lastmod><priority>0.88</priority></url>
+</urlset>

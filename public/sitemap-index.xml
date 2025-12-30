@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!--
+    AiVedha Guard - Sitemap Index
+    Enterprise Multi-Language Sitemap Collection
+    Last Updated: 2025-12-03
+
+    This index contains sitemaps for 12 languages covering global markets.
+    All sitemaps follow Google's multilingual/multiregional SEO best practices.
+  -->
+
+  <!-- Main Sitemap (English - Default) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Spanish (Español) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-es.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Chinese (中文) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-zh.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Arabic (العربية) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-ar.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Hindi (हिन्दी) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-hi.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- French (Français) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-fr.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Irish (Gaeilge) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-ga.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- German (Deutsch) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-de.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Russian (Русский) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-ru.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Polish (Polski) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-pl.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Swedish (Svenska) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-sv.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+
+  <!-- Urdu (اردو) -->
+  <sitemap>
+    <loc>https://aivedha.ai/sitemap-ur.xml</loc>
+    <lastmod>2025-12-03</lastmod>
+  </sitemap>
+</sitemapindex>

@@ -1,0 +1,538 @@
+# AiVedha Guard - GitHub Actions Security Audit Integration v2.0
+# =================================================================
+# Enhanced workflow with:
+# - Smart region routing (US/India based on user location and target URL)
+# - Live streaming progress updates in GitHub Actions logs
+# - Detailed vulnerability summary in job output
+# - Email notification with PDF report
+#
+# Setup Instructions:
+# 1. Generate an API key from your AiVedha dashboard (Settings > API Keys)
+# 2. Add the API key as a GitHub secret: AIVEDHA_API_KEY
+# 3. Configure the TARGET_URL for your production site (or let it auto-detect)
+# 4. Copy this file to your repository: .github/workflows/aivedha-security-audit.yml
+#
+# Copyright 2024-2025 AiVibe Software Services Pvt Ltd
+# https://aivedha.ai
+
+name: AiVedha Security Audit
+
+on:
+  # Trigger after deployment workflows
+  workflow_run:
+    workflows: ["Deploy", "Build and Deploy", "Production Deploy", "deploy", "Vercel", "Netlify"]
+    types:
+      - completed
+    branches:
+      - main
+      - master
+      - production
+
+  # Manual trigger with URL input
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'URL to audit (leave empty for auto-detect)'
+        required: false
+        type: string
+      skip_url_validation:
+        description: 'Skip URL validation (audit even if error page detected)'
+        required: false
+        type: boolean
+        default: false
+      preferred_region:
+        description: 'Preferred scan region (auto/us-east-1/ap-south-1)'
+        required: false
+        type: choice
+        options:
+          - auto
+          - us-east-1
+          - ap-south-1
+        default: auto
+      wait_for_results:
+        description: 'Wait for audit results (enables live streaming)'
+        required: false
+        type: boolean
+        default: true
+
+  # Scheduled audits (optional - uncomment to enable)
+  # schedule:
+  #   - cron: '0 0 * * 0'  # Weekly on Sunday at midnight
+
+env:
+  # API URLs for region routing
+  AIVEDHA_API_US: https://api.aivedha.ai/api
+  AIVEDHA_API_INDIA: https://api-india.aivedha.ai/api
+  # Configure your production URL here (or use auto-detection)
+  TARGET_URL: ${{ vars.AIVEDHA_TARGET_URL || '' }}
+  # Default poll interval for live streaming (seconds)
+  POLL_INTERVAL: 5
+
+jobs:
+  security-audit:
+    name: Run Security Audit
+    runs-on: ubuntu-latest
+    # Only run if the deployment was successful (for workflow_run triggers)
+    if: ${{ github.event.workflow_run.conclusion == 'success' || github.event_name == 'workflow_dispatch' || github.event_name == 'schedule' }}
+
+    outputs:
+      audit_status: ${{ steps.audit.outputs.audit_status }}
+      report_id: ${{ steps.audit.outputs.report_id }}
+      security_score: ${{ steps.stream.outputs.security_score }}
+      grade: ${{ steps.stream.outputs.grade }}
+      critical_issues: ${{ steps.stream.outputs.critical_issues }}
+      high_issues: ${{ steps.stream.outputs.high_issues }}
+      medium_issues: ${{ steps.stream.outputs.medium_issues }}
+      low_issues: ${{ steps.stream.outputs.low_issues }}
+      scan_region: ${{ steps.audit.outputs.scan_region }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Detect Deployment URL
+        id: detect-url
+        run: |
+          # Priority: Manual input > Environment variable > Auto-detection
+
+          MANUAL_URL="${{ github.event.inputs.target_url }}"
+          ENV_URL="${{ env.TARGET_URL }}"
+
+          if [ -n "$MANUAL_URL" ]; then
+            echo "Using manually provided URL: $MANUAL_URL"
+            echo "url=$MANUAL_URL" >> $GITHUB_OUTPUT
+            echo "source=manual" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          if [ -n "$ENV_URL" ]; then
+            echo "Using environment variable URL: $ENV_URL"
+            echo "url=$ENV_URL" >> $GITHUB_OUTPUT
+            echo "source=environment" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Auto-detection based on deployment platform
+          echo "Attempting auto-detection..."
+
+          # Check for Vercel deployment URL
+          if [ -f "vercel.json" ] || [ -n "$VERCEL_URL" ]; then
+            REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+            DETECTED_URL="https://${REPO_NAME}.vercel.app"
+            echo "Detected Vercel project: $DETECTED_URL"
+            echo "url=$DETECTED_URL" >> $GITHUB_OUTPUT
+            echo "source=vercel-auto" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check for Netlify deployment
+          if [ -f "netlify.toml" ]; then
+            REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+            DETECTED_URL="https://${REPO_NAME}.netlify.app"
+            echo "Detected Netlify project: $DETECTED_URL"
+            echo "url=$DETECTED_URL" >> $GITHUB_OUTPUT
+            echo "source=netlify-auto" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check for GitHub Pages
+          if [ -f "_config.yml" ] || [ -d "docs" ] && [ -f "docs/index.html" ]; then
+            REPO_OWNER=$(echo "${{ github.repository }}" | cut -d'/' -f1)
+            REPO_NAME=$(echo "${{ github.repository }}" | cut -d'/' -f2)
+            DETECTED_URL="https://${REPO_OWNER}.github.io/${REPO_NAME}"
+            echo "Detected GitHub Pages: $DETECTED_URL"
+            echo "url=$DETECTED_URL" >> $GITHUB_OUTPUT
+            echo "source=github-pages-auto" >> $GITHUB_OUTPUT
+            exit 0
+          fi
+
+          # Check package.json for homepage
+          if [ -f "package.json" ]; then
+            HOMEPAGE=$(jq -r '.homepage // empty' package.json)
+            if [ -n "$HOMEPAGE" ] && [[ "$HOMEPAGE" =~ ^https?:// ]]; then
+              echo "Detected from package.json homepage: $HOMEPAGE"
+              echo "url=$HOMEPAGE" >> $GITHUB_OUTPUT
+              echo "source=package-json" >> $GITHUB_OUTPUT
+              exit 0
+            fi
+          fi
+
+          echo "::warning::Could not auto-detect deployment URL. Please set AIVEDHA_TARGET_URL in repository variables."
+          echo "url=" >> $GITHUB_OUTPUT
+          echo "source=none" >> $GITHUB_OUTPUT
+
+      - name: Determine Optimal Region
+        id: region
+        if: steps.detect-url.outputs.url != ''
+        run: |
+          TARGET="${{ steps.detect-url.outputs.url }}"
+          PREFERRED="${{ github.event.inputs.preferred_region }}"
+          
+          # Function to determine region from URL TLD
+          determine_region() {
+            local url=$1
+            local hostname=$(echo "$url" | sed -e 's|^[^/]*//||' -e 's|/.*$||' | tr '[:upper:]' '[:lower:]')
+            
+            # India region TLDs
+            if [[ "$hostname" =~ \.(in|co\.in|org\.in|gov\.in|pk|bd|lk|np|sg|my|th|id|ph|vn|ae|sa|qa|kw)$ ]]; then
+              echo "ap-south-1"
+            else
+              echo "us-east-1"
+            fi
+          }
+          
+          if [ "$PREFERRED" = "auto" ] || [ -z "$PREFERRED" ]; then
+            SELECTED_REGION=$(determine_region "$TARGET")
+            echo "Auto-detected region based on URL: $SELECTED_REGION"
+          else
+            SELECTED_REGION="$PREFERRED"
+            echo "Using preferred region: $SELECTED_REGION"
+          fi
+          
+          # Set API URL based on region
+          if [ "$SELECTED_REGION" = "ap-south-1" ]; then
+            API_URL="${{ env.AIVEDHA_API_INDIA }}"
+            REGION_NAME="India"
+          else
+            API_URL="${{ env.AIVEDHA_API_US }}"
+            REGION_NAME="USA"
+          fi
+          
+          echo "region=$SELECTED_REGION" >> $GITHUB_OUTPUT
+          echo "region_name=$REGION_NAME" >> $GITHUB_OUTPUT
+          echo "api_url=$API_URL" >> $GITHUB_OUTPUT
+          echo "?? Selected scan region: $REGION_NAME ($SELECTED_REGION)"
+
+      - name: Validate API Key
+        id: validate
+        if: steps.detect-url.outputs.url != ''
+        run: |
+          echo "?? Validating AiVedha API key..."
+          
+          API_URL="${{ steps.region.outputs.api_url }}"
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.AIVEDHA_API_KEY }}" \
+            "${API_URL}/api-keys/validate")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          if [ "$HTTP_CODE" = "200" ]; then
+            VALID=$(echo "$BODY" | jq -r '.valid // false')
+            if [ "$VALID" = "true" ]; then
+              echo "? API key validated successfully"
+              echo "valid=true" >> $GITHUB_OUTPUT
+              KEY_NAME=$(echo "$BODY" | jq -r '.name // "Unknown"')
+              EXPIRES=$(echo "$BODY" | jq -r '.expires_at // "Unknown"')
+              DEFAULT_REGION=$(echo "$BODY" | jq -r '.default_region // "us-east-1"')
+              echo "key_name=$KEY_NAME" >> $GITHUB_OUTPUT
+              echo "expires_at=$EXPIRES" >> $GITHUB_OUTPUT
+              echo "default_region=$DEFAULT_REGION" >> $GITHUB_OUTPUT
+              echo "   Key name: $KEY_NAME"
+              echo "   Expires: $EXPIRES"
+            else
+              echo "::warning::API key is invalid or expired. Please generate a new one."
+              echo "valid=false" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "::warning::API key validation failed (HTTP $HTTP_CODE). Please check your AIVEDHA_API_KEY secret."
+            echo "valid=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Pre-validate Target URL
+        id: prevalidate
+        if: steps.validate.outputs.valid == 'true' && github.event.inputs.skip_url_validation != 'true'
+        run: |
+          TARGET="${{ steps.detect-url.outputs.url }}"
+          API_URL="${{ steps.region.outputs.api_url }}"
+          
+          echo "?? Pre-validating URL: $TARGET"
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -d "{\"url\": \"$TARGET\", \"source\": \"github\"}" \
+            "${API_URL}/url-validator/validate")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          URL_VALID=$(echo "$BODY" | jq -r '.valid // false')
+          IS_ERROR=$(echo "$BODY" | jq -r '.validation.is_error_page // false')
+          ERROR_MSG=$(echo "$BODY" | jq -r '.message // "No message"')
+
+          if [ "$URL_VALID" = "true" ]; then
+            echo "? URL validation passed"
+            echo "url_valid=true" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::URL validation failed: $ERROR_MSG"
+            echo "url_valid=false" >> $GITHUB_OUTPUT
+            echo "error_message=$ERROR_MSG" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Initiate Security Audit
+        id: audit
+        if: steps.validate.outputs.valid == 'true' && (steps.prevalidate.outputs.url_valid == 'true' || github.event.inputs.skip_url_validation == 'true')
+        run: |
+          TARGET="${{ steps.detect-url.outputs.url }}"
+          SKIP_VALIDATION="${{ github.event.inputs.skip_url_validation }}"
+          SELECTED_REGION="${{ steps.region.outputs.region }}"
+          API_URL="${{ steps.region.outputs.api_url }}"
+          REGION_NAME="${{ steps.region.outputs.region_name }}"
+
+          echo ""
+          echo "????????????????????????????????????????????????????????????????"
+          echo "?         ???  AiVedha Guard Security Audit                      ?"
+          echo "????????????????????????????????????????????????????????????????"
+          echo "?  Target URL: $TARGET"
+          echo "?  Scan Region: $REGION_NAME ($SELECTED_REGION)"
+          echo "?  URL Source: ${{ steps.detect-url.outputs.source }}"
+          echo "?  API Key: ${{ steps.validate.outputs.key_name }}"
+          echo "????????????????????????????????????????????????????????????????"
+          echo ""
+
+          # Build request payload with region preference
+          PAYLOAD=$(jq -n \
+            --arg url "$TARGET" \
+            --arg region "$SELECTED_REGION" \
+            --arg skip "$SKIP_VALIDATION" \
+            --arg run_id "${{ github.run_id }}" \
+            --arg repo "${{ github.repository }}" \
+            '{
+              url: $url,
+              preferred_region: $region,
+              skip_url_validation: ($skip == "true"),
+              github_run_id: $run_id,
+              github_repository: $repo
+            }')
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.AIVEDHA_API_KEY }}" \
+            -d "$PAYLOAD" \
+            "${API_URL}/cicd/audit")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          echo "Response: $BODY"
+
+          # Parse response
+          SUCCESS=$(echo "$BODY" | jq -r '.success // false')
+          AUDIT_SKIPPED=$(echo "$BODY" | jq -r '.audit_skipped // false')
+          MESSAGE=$(echo "$BODY" | jq -r '.message // "No message"')
+          CREDITS=$(echo "$BODY" | jq -r '.credits_remaining // "unknown"')
+          REASON=$(echo "$BODY" | jq -r '.reason // ""')
+          REPORT_ID=$(echo "$BODY" | jq -r '.report_id // ""')
+          SCAN_REGION=$(echo "$BODY" | jq -r '.scan_region // "us-east-1"')
+          SCAN_REGION_NAME=$(echo "$BODY" | jq -r '.region_name // "USA"')
+
+          if [ "$AUDIT_SKIPPED" = "true" ]; then
+            echo ""
+            echo "??  Security audit skipped: $MESSAGE"
+            if [ -n "$REASON" ]; then
+              echo "   Reason: $REASON"
+            fi
+            echo "audit_status=skipped" >> $GITHUB_OUTPUT
+            echo "audit_reason=$REASON" >> $GITHUB_OUTPUT
+            echo "audit_message=$MESSAGE" >> $GITHUB_OUTPUT
+          elif [ "$SUCCESS" = "true" ]; then
+            echo ""
+            echo "? Security audit initiated successfully!"
+            echo "   Report ID: $REPORT_ID"
+            echo "   Scan Region: $SCAN_REGION_NAME ($SCAN_REGION)"
+            echo "   Credits Remaining: $CREDITS"
+            echo ""
+            echo "audit_status=initiated" >> $GITHUB_OUTPUT
+            echo "credits_remaining=$CREDITS" >> $GITHUB_OUTPUT
+            echo "report_id=$REPORT_ID" >> $GITHUB_OUTPUT
+            echo "scan_region=$SCAN_REGION" >> $GITHUB_OUTPUT
+            echo "scan_region_name=$SCAN_REGION_NAME" >> $GITHUB_OUTPUT
+          else
+            echo "::warning::Audit request returned unexpected response"
+            echo "audit_status=unknown" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Stream Audit Progress
+        id: stream
+        if: steps.audit.outputs.audit_status == 'initiated' && github.event.inputs.wait_for_results == 'true'
+        run: |
+          REPORT_ID="${{ steps.audit.outputs.report_id }}"
+          API_URL="${{ steps.region.outputs.api_url }}"
+          REGION_NAME="${{ steps.audit.outputs.scan_region_name }}"
+          
+          echo ""
+          echo "?? Streaming audit progress (Region: $REGION_NAME)..."
+          echo ""
+          
+          MAX_WAIT=600  # 10 minutes max
+          POLL_INTERVAL=${{ env.POLL_INTERVAL }}
+          ELAPSED=0
+          LAST_PROGRESS=0
+          LAST_PHASE=""
+          
+          while [ $ELAPSED -lt $MAX_WAIT ]; do
+            RESPONSE=$(curl -s "${API_URL}/cicd/status/${REPORT_ID}")
+            
+            STATUS=$(echo "$RESPONSE" | jq -r '.status // "unknown"')
+            PROGRESS=$(echo "$RESPONSE" | jq -r '.percentage // .progress // 0')
+            PHASE=$(echo "$RESPONSE" | jq -r '.current_phase // .current_activity // ""')
+            FINDINGS=$(echo "$RESPONSE" | jq -r '.findings_count // 0')
+            
+            # Only print if progress or phase changed
+            if [ "$PROGRESS" != "$LAST_PROGRESS" ] || [ "$PHASE" != "$LAST_PHASE" ]; then
+              # Create progress bar
+              FILLED=$((PROGRESS / 5))
+              EMPTY=$((20 - FILLED))
+              BAR=$(printf "?%.0s" $(seq 1 $FILLED 2>/dev/null) || echo "")
+              BAR="${BAR}$(printf "?%.0s" $(seq 1 $EMPTY 2>/dev/null) || echo "")"
+              
+              echo "[${BAR}] ${PROGRESS}% - ${PHASE} (${FINDINGS} issues found)"
+              
+              LAST_PROGRESS="$PROGRESS"
+              LAST_PHASE="$PHASE"
+            fi
+            
+            if [ "$STATUS" = "completed" ]; then
+              echo ""
+              echo "????????????????????????????????????????????????????????????"
+              echo "? AUDIT COMPLETED"
+              echo "????????????????????????????????????????????????????????????"
+              
+              # Extract results
+              SCORE=$(echo "$RESPONSE" | jq -r '.security_score // 0')
+              GRADE=$(echo "$RESPONSE" | jq -r '.grade // "N/A"')
+              CRITICAL=$(echo "$RESPONSE" | jq -r '.critical_issues // 0')
+              HIGH=$(echo "$RESPONSE" | jq -r '.high_issues // 0')
+              MEDIUM=$(echo "$RESPONSE" | jq -r '.medium_issues // 0')
+              LOW=$(echo "$RESPONSE" | jq -r '.low_issues // 0')
+              PDF_URL=$(echo "$RESPONSE" | jq -r '.pdf_url // ""')
+              CERT=$(echo "$RESPONSE" | jq -r '.certificate_number // ""')
+              
+              echo ""
+              echo "?? Security Score: $SCORE/10 (Grade: $GRADE)"
+              echo ""
+              echo "?? Vulnerability Summary:"
+              echo "   ?? Critical: $CRITICAL"
+              echo "   ?? High: $HIGH"
+              echo "   ?? Medium: $MEDIUM"
+              echo "   ?? Low: $LOW"
+              echo ""
+              if [ -n "$CERT" ] && [ "$CERT" != "null" ]; then
+                echo "?? Certificate: $CERT"
+              fi
+              echo ""
+              
+              # Set outputs
+              echo "security_score=$SCORE" >> $GITHUB_OUTPUT
+              echo "grade=$GRADE" >> $GITHUB_OUTPUT
+              echo "critical_issues=$CRITICAL" >> $GITHUB_OUTPUT
+              echo "high_issues=$HIGH" >> $GITHUB_OUTPUT
+              echo "medium_issues=$MEDIUM" >> $GITHUB_OUTPUT
+              echo "low_issues=$LOW" >> $GITHUB_OUTPUT
+              echo "pdf_url=$PDF_URL" >> $GITHUB_OUTPUT
+              echo "certificate=$CERT" >> $GITHUB_OUTPUT
+              echo "stream_status=completed" >> $GITHUB_OUTPUT
+              
+              break
+            elif [ "$STATUS" = "failed" ]; then
+              echo ""
+              echo "? Audit failed"
+              echo "stream_status=failed" >> $GITHUB_OUTPUT
+              break
+            fi
+            
+            sleep $POLL_INTERVAL
+            ELAPSED=$((ELAPSED + POLL_INTERVAL))
+          done
+          
+          if [ $ELAPSED -ge $MAX_WAIT ]; then
+            echo ""
+            echo "?? Timeout waiting for results. Check your email for the complete report."
+            echo "stream_status=timeout" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Generate Audit Summary
+        if: always()
+        run: |
+          echo "## ??? AiVedha Security Audit Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "**Repository:** \`${{ github.repository }}\`" >> $GITHUB_STEP_SUMMARY
+          echo "**Trigger:** ${{ github.event_name }}" >> $GITHUB_STEP_SUMMARY
+          echo "**Timestamp:** $(date -u '+%Y-%m-%d %H:%M:%S UTC')" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          # URL Detection
+          if [ "${{ steps.detect-url.outputs.url }}" = "" ]; then
+            echo "### ?? URL Not Detected" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Could not detect deployment URL. Please set \`AIVEDHA_TARGET_URL\` in your repository variables." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Configure Variables](https://github.com/${{ github.repository }}/settings/variables/actions)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.validate.outputs.valid }}" != "true" ]; then
+            echo "### ? API Key Invalid" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Your API key is invalid or missing. Please ensure \`AIVEDHA_API_KEY\` secret is set correctly." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Generate API Key](https://aivedha.ai/dashboard/subscription) | [Configure Secrets](https://github.com/${{ github.repository }}/settings/secrets/actions)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.prevalidate.outputs.url_valid }}" = "false" ] && [ "${{ github.event.inputs.skip_url_validation }}" != "true" ]; then
+            echo "### ?? URL Validation Failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Error:** ${{ steps.prevalidate.outputs.error_message }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "> The target URL appears to be returning an error page. Security audit was skipped to prevent wasted credits." >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.audit.outputs.audit_status }}" = "skipped" ]; then
+            echo "### ?? Audit Skipped" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Reason:** ${{ steps.audit.outputs.audit_reason }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[Add Credits](https://aivedha.ai/pricing) | [View Dashboard](https://aivedha.ai/dashboard)" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.stream.outputs.stream_status }}" = "completed" ]; then
+            echo "### ? Audit Completed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Report ID:** \`${{ steps.audit.outputs.report_id }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Scan Region:** ${{ steps.audit.outputs.scan_region_name }} (\`${{ steps.audit.outputs.scan_region }}\`)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| Security Score | **${{ steps.stream.outputs.security_score }}/10** |" >> $GITHUB_STEP_SUMMARY
+            echo "| Grade | **${{ steps.stream.outputs.grade }}** |" >> $GITHUB_STEP_SUMMARY
+            echo "| ?? Critical | ${{ steps.stream.outputs.critical_issues }} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ?? High | ${{ steps.stream.outputs.high_issues }} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ?? Medium | ${{ steps.stream.outputs.medium_issues }} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ?? Low | ${{ steps.stream.outputs.low_issues }} |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            if [ -n "${{ steps.stream.outputs.certificate }}" ] && [ "${{ steps.stream.outputs.certificate }}" != "null" ]; then
+              echo "**Certificate:** [\`${{ steps.stream.outputs.certificate }}\`](https://aivedha.ai/certificate/${{ steps.stream.outputs.certificate }})" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+            fi
+            echo "[View Full Report](https://aivedha.ai/audit-results?reportId=${{ steps.audit.outputs.report_id }}) | [Download PDF](${{ steps.stream.outputs.pdf_url }})" >> $GITHUB_STEP_SUMMARY
+          elif [ "${{ steps.audit.outputs.audit_status }}" = "initiated" ]; then
+            echo "### ?? Audit Initiated" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Target URL:** \`${{ steps.detect-url.outputs.url }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Report ID:** \`${{ steps.audit.outputs.report_id }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "**Scan Region:** ${{ steps.audit.outputs.scan_region_name }}" >> $GITHUB_STEP_SUMMARY
+            echo "**Credits Remaining:** ${{ steps.audit.outputs.credits_remaining }}" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "?? Security audit is running in the background. Results will be sent to your email." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[View Results](https://aivedha.ai/dashboard)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "### ? Unknown Status" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Please check the workflow logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "*Powered by [AiVedha Guard](https://aivedha.ai) - AI-Powered Security Auditing*" >> $GITHUB_STEP_SUMMARY

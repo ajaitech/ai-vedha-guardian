@@ -1,0 +1,105 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aivedha.ai/schemas/detector-task-message.json",
+  "title": "DetectorTaskMessage",
+  "description": "Schema for detector task messages sent to SQS for heavy/queued detectors",
+  "type": "object",
+  "required": ["auditId", "taskId", "detector", "targetUrl", "idempotencyKey", "schemaVersion"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0",
+      "description": "Schema version for backward compatibility"
+    },
+    "auditId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Parent audit identifier"
+    },
+    "taskId": {
+      "type": "string",
+      "pattern": "^task-[a-z]+-[0-9]{3,}$",
+      "description": "Unique task identifier (e.g., task-dep-cve-001)"
+    },
+    "detector": {
+      "type": "string",
+      "enum": [
+        "ssl_tls_intelligence",
+        "http_security_headers",
+        "cors_exposure",
+        "cookie_hygiene",
+        "open_directory",
+        "js_secrets",
+        "dependency_cve",
+        "server_fingerprint",
+        "admin_endpoint",
+        "input_validation",
+        "session_exposure",
+        "cloud_misconfig",
+        "dns_mail_security",
+        "redirect_chain",
+        "subdomain_takeover",
+        "robots_sitemap",
+        "performance_metrics",
+        "behavioral_anomaly",
+        "malware_scripts",
+        "third_party_risk",
+        "attack_chain"
+      ],
+      "description": "Detector to execute"
+    },
+    "targetUrl": {
+      "type": "string",
+      "format": "uri",
+      "description": "Primary URL to analyze"
+    },
+    "inputData": {
+      "type": "object",
+      "description": "Detector-specific input data",
+      "additionalProperties": true
+    },
+    "idempotencyKey": {
+      "type": "string",
+      "pattern": "^idemp:[a-f0-9]{8}:detector:[a-z_]+:[^:]+:[a-f0-9]{8}$",
+      "description": "Unique key for idempotent processing"
+    },
+    "priority": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 10,
+      "default": 5,
+      "description": "Processing priority (1=highest)"
+    },
+    "timeoutMs": {
+      "type": "integer",
+      "minimum": 1000,
+      "maximum": 300000,
+      "default": 30000,
+      "description": "Task timeout in milliseconds"
+    },
+    "attemptCount": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Number of processing attempts"
+    },
+    "chunkId": {
+      "type": "string",
+      "description": "Chunk that generated this task (if applicable)"
+    },
+    "parentFindingId": {
+      "type": "string",
+      "description": "Finding that triggered this task (for follow-up analysis)"
+    },
+    "userId": {
+      "type": "string",
+      "description": "User ID for audit ownership"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when task was created"
+    }
+  },
+  "additionalProperties": false
+}

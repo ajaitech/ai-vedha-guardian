@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AiVedha Guardian - Aarambh Plan Icon (The Beginning) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <defs>
+    <linearGradient id="sunGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fbbf24"/>
+      <stop offset="100%" stop-color="#f59e0b"/>
+    </linearGradient>
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#34d399"/>
+      <stop offset="100%" stop-color="#10b981"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background circle -->
+  <circle cx="50" cy="50" r="45" fill="#d1fae5"/>
+
+  <!-- Ground -->
+  <ellipse cx="50" cy="75" rx="35" ry="8" fill="rgba(16, 185, 129, 0.3)"/>
+
+  <!-- Sprout stem -->
+  <path d="M50 70 C50 70 45 55 50 40 C55 55 50 70 50 70" fill="#10b981"/>
+
+  <!-- Left leaf -->
+  <path d="M50 55 C40 50 35 45 40 38 C48 42 50 50 50 55" fill="url(#leafGradient)"/>
+
+  <!-- Right leaf -->
+  <path d="M50 50 C60 45 65 40 60 33 C52 37 50 45 50 50" fill="url(#leafGradient)"/>
+
+  <!-- Sun -->
+  <circle cx="50" cy="25" r="12" fill="url(#sunGradient)"/>
+
+  <!-- Sun rays -->
+  <g stroke="#fbbf24" stroke-width="2" stroke-linecap="round">
+    <line x1="50" y1="25" x2="70" y2="25"/>
+    <line x1="50" y1="25" x2="64.14" y2="39.14"/>
+    <line x1="50" y1="25" x2="50" y2="45"/>
+    <line x1="50" y1="25" x2="35.86" y2="39.14"/>
+    <line x1="50" y1="25" x2="30" y2="25"/>
+    <line x1="50" y1="25" x2="35.86" y2="10.86"/>
+    <line x1="50" y1="25" x2="50" y2="5"/>
+    <line x1="50" y1="25" x2="64.14" y2="10.86"/>
+  </g>
+</svg>

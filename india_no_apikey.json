@@ -1,0 +1,7 @@
+[
+  {
+    "path": "/api/health",
+    "method": "GET",
+    "resource_id": "0xrdzm"
+  }
+]

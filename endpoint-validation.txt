@@ -1,0 +1,39 @@
+═══════════════════════════════════════════════════════════
+  AiVedha Guardian - Endpoint Validator
+  Environment: production
+═══════════════════════════════════════════════════════════
+
+📡 Validating US API Endpoints (https://api.aivedha.ai/api)...
+
+  ❌ GET /health → Got 403, expected 200 [CRITICAL]
+  ❌ GET /audit/status/test-report-id → Got 403, expected 200,404
+  ✅ GET /certificate/verify/test → 403
+  ✅ GET /credits/balance?userId=test → 403
+
+🇮🇳 Validating India API Endpoints (https://api-india.aivedha.ai/api)...
+
+  ✅ GET /health → 403 (India API Health (may not be deployed))
+
+🌐 Validating Website Pages (https://aivedha.ai)...
+
+  ✅ GET / → 200
+  ✅ GET /login → 200
+  ✅ GET /signup → 200
+  ✅ GET /pricing → 200
+  ✅ GET /dashboard → 200
+  ✅ GET /audit → 200
+  ✅ GET /faq → 200
+  ✅ GET /terms → 200
+  ✅ GET /certificate/TEST-12345 → 200
+  ✅ GET /non-existent-page-test-404 → 200
+
+═══════════════════════════════════════════════════════════
+  VALIDATION RESULTS
+═══════════════════════════════════════════════════════════
+  Total:    15
+  Passed:   13
+  Failed:   2
+  Critical: 1
+═══════════════════════════════════════════════════════════
+
+❌ Critical endpoint failures detected!

@@ -1,0 +1,620 @@
+[
+  {
+    "path": "/api/addons",
+    "method": "GET",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/api-keys/create",
+    "method": "POST",
+    "lambda": "aivedha-api-key-manager",
+    "india_lambda": "aivedha-guardian-api-key-manager"
+  },
+  {
+    "path": "/api/api-keys/list",
+    "method": "GET",
+    "lambda": "aivedha-api-key-manager",
+    "india_lambda": "aivedha-guardian-api-key-manager"
+  },
+  {
+    "path": "/api/api-keys/revoke",
+    "method": "POST",
+    "lambda": "aivedha-api-key-manager",
+    "india_lambda": "aivedha-guardian-api-key-manager"
+  },
+  {
+    "path": "/api/api-keys/validate",
+    "method": "POST",
+    "lambda": "aivedha-api-key-manager",
+    "india_lambda": "aivedha-guardian-api-key-manager"
+  },
+  {
+    "path": "/api/auth/github/status",
+    "method": "GET",
+    "lambda": "aivedha-guardian-github-auth",
+    "india_lambda": "aivedha-guardian-github-auth"
+  },
+  {
+    "path": "/api/auth/github/status",
+    "method": "POST",
+    "lambda": "aivedha-guardian-github-auth",
+    "india_lambda": "aivedha-guardian-github-auth"
+  },
+  {
+    "path": "/api/badge/{certificateNumber}",
+    "method": "GET",
+    "lambda": "aivedha-guardian-secure-badge",
+    "india_lambda": "aivedha-guardian-secure-badge"
+  },
+  {
+    "path": "/api/badge/{certificateNumber}/embed",
+    "method": "GET",
+    "lambda": "aivedha-guardian-secure-badge",
+    "india_lambda": "aivedha-guardian-secure-badge"
+  },
+  {
+    "path": "/api/badge/{certificateNumber}/script",
+    "method": "GET",
+    "lambda": "aivedha-guardian-secure-badge",
+    "india_lambda": "aivedha-guardian-secure-badge"
+  },
+  {
+    "path": "/api/billing/addons",
+    "method": "GET",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/addons",
+    "method": "POST",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/addons",
+    "method": "PUT",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/addons",
+    "method": "DELETE",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/addons/public",
+    "method": "GET",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/coupons",
+    "method": "GET",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/coupons",
+    "method": "POST",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/coupons",
+    "method": "PUT",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/coupons",
+    "method": "DELETE",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/coupons/validate",
+    "method": "POST",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/plans",
+    "method": "GET",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/plans",
+    "method": "POST",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/plans",
+    "method": "PUT",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/plans",
+    "method": "DELETE",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/plans/public",
+    "method": "GET",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/billing/sync",
+    "method": "POST",
+    "lambda": "aivedha-zoho-billing",
+    "india_lambda": "aivedha-zoho-billing"
+  },
+  {
+    "path": "/api/blogs",
+    "method": "GET",
+    "lambda": "aivedha-guardian-blog-manager",
+    "india_lambda": "aivedha-guardian-blog-manager"
+  },
+  {
+    "path": "/api/blogs/categories",
+    "method": "GET",
+    "lambda": "aivedha-guardian-blog-manager",
+    "india_lambda": "aivedha-guardian-blog-manager"
+  },
+  {
+    "path": "/api/blogs/comment",
+    "method": "POST",
+    "lambda": "aivedha-guardian-blog-manager",
+    "india_lambda": "aivedha-guardian-blog-manager"
+  },
+  {
+    "path": "/api/blogs/comment/like",
+    "method": "POST",
+    "lambda": "aivedha-guardian-blog-manager",
+    "india_lambda": "aivedha-guardian-blog-manager"
+  },
+  {
+    "path": "/api/blogs/rate",
+    "method": "POST",
+    "lambda": "aivedha-guardian-blog-manager",
+    "india_lambda": "aivedha-guardian-blog-manager"
+  },
+  {
+    "path": "/api/blogs/view",
+    "method": "POST",
+    "lambda": "aivedha-guardian-blog-manager",
+    "india_lambda": "aivedha-guardian-blog-manager"
+  },
+  {
+    "path": "/api/blogs/{slug}",
+    "method": "GET",
+    "lambda": "aivedha-guardian-blog-manager",
+    "india_lambda": "aivedha-guardian-blog-manager"
+  },
+  {
+    "path": "/api/cert/{reportId}",
+    "method": "GET",
+    "lambda": "aivedha-guardian-secure-badge",
+    "india_lambda": "aivedha-guardian-secure-badge"
+  },
+  {
+    "path": "/api/certificate/{certificateNumber}",
+    "method": "GET",
+    "lambda": "aivedha-guardian-report-generator",
+    "india_lambda": "aivedha-guardian-report-generator"
+  },
+  {
+    "path": "/api/cicd/audit",
+    "method": "POST",
+    "lambda": "aivedha-api-key-manager",
+    "india_lambda": "aivedha-guardian-api-key-manager"
+  },
+  {
+    "path": "/api/coupons/validate",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/credits/purchase",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/customer/onboarding",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/download/{reportId}",
+    "method": "GET",
+    "lambda": "aivedha-guardian-report-generator",
+    "india_lambda": "aivedha-guardian-report-generator"
+  },
+  {
+    "path": "/api/email",
+    "method": "POST",
+    "lambda": "aivedha-guardian-email-notification",
+    "india_lambda": "aivedha-guardian-email-notification"
+  },
+  {
+    "path": "/api/embed-code/{reportId}",
+    "method": "GET",
+    "lambda": "aivedha-guardian-secure-badge",
+    "india_lambda": "aivedha-guardian-secure-badge"
+  },
+  {
+    "path": "/api/newsletter/subscribe",
+    "method": "POST",
+    "lambda": "aivedha-guardian-blog-manager",
+    "india_lambda": "aivedha-guardian-blog-manager"
+  },
+  {
+    "path": "/api/paypal/activate-subscription",
+    "method": "POST",
+    "lambda": "aivedha-paypal-handler",
+    "india_lambda": "aivedha-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/cancel",
+    "method": "POST",
+    "lambda": "aivedha-guardian-paypal-handler",
+    "india_lambda": "aivedha-guardian-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/cancel-subscription",
+    "method": "POST",
+    "lambda": "aivedha-paypal-handler",
+    "india_lambda": "aivedha-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/capture-order",
+    "method": "POST",
+    "lambda": "aivedha-paypal-handler",
+    "india_lambda": "aivedha-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/coupons",
+    "method": "GET",
+    "lambda": "aivedha-guardian-paypal-handler",
+    "india_lambda": "aivedha-guardian-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/create-order",
+    "method": "POST",
+    "lambda": "aivedha-paypal-handler",
+    "india_lambda": "aivedha-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/create-subscription",
+    "method": "POST",
+    "lambda": "aivedha-paypal-handler",
+    "india_lambda": "aivedha-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/credit-packs",
+    "method": "GET",
+    "lambda": "aivedha-guardian-paypal-handler",
+    "india_lambda": "aivedha-guardian-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/plans",
+    "method": "GET",
+    "lambda": "aivedha-guardian-paypal-handler",
+    "india_lambda": "aivedha-guardian-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/status",
+    "method": "POST",
+    "lambda": "aivedha-guardian-paypal-handler",
+    "india_lambda": "aivedha-guardian-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/sync-user",
+    "method": "POST",
+    "lambda": "aivedha-paypal-handler",
+    "india_lambda": "aivedha-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/transactions",
+    "method": "GET",
+    "lambda": "aivedha-paypal-handler",
+    "india_lambda": "aivedha-paypal-handler"
+  },
+  {
+    "path": "/api/paypal/validate-coupon",
+    "method": "POST",
+    "lambda": "aivedha-guardian-paypal-handler",
+    "india_lambda": "aivedha-guardian-paypal-handler"
+  },
+  {
+    "path": "/api/pdf/{reportId}",
+    "method": "GET",
+    "lambda": "aivedha-guardian-secure-badge",
+    "india_lambda": "aivedha-guardian-secure-badge"
+  },
+  {
+    "path": "/api/pdf/{reportId}/download-link",
+    "method": "POST",
+    "lambda": "aivedha-guardian-secure-badge",
+    "india_lambda": "aivedha-guardian-secure-badge"
+  },
+  {
+    "path": "/api/plans",
+    "method": "GET",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/recaptcha/verify",
+    "method": "POST",
+    "lambda": "aivedha-guardian-recaptcha-verify",
+    "india_lambda": "aivedha-guardian-recaptcha-verify"
+  },
+  {
+    "path": "/api/referral",
+    "method": "GET",
+    "lambda": "aivedha-referral-manager",
+    "india_lambda": "aivedha-referral-manager"
+  },
+  {
+    "path": "/api/referral/activate",
+    "method": "POST",
+    "lambda": "aivedha-referral-manager",
+    "india_lambda": "aivedha-referral-manager"
+  },
+  {
+    "path": "/api/referral/generate",
+    "method": "POST",
+    "lambda": "aivedha-referral-manager",
+    "india_lambda": "aivedha-referral-manager"
+  },
+  {
+    "path": "/api/referral/share-content",
+    "method": "GET",
+    "lambda": "aivedha-referral-manager",
+    "india_lambda": "aivedha-referral-manager"
+  },
+  {
+    "path": "/api/referral/share-content",
+    "method": "POST",
+    "lambda": "aivedha-referral-manager",
+    "india_lambda": "aivedha-referral-manager"
+  },
+  {
+    "path": "/api/referral/stats",
+    "method": "GET",
+    "lambda": "aivedha-referral-manager",
+    "india_lambda": "aivedha-referral-manager"
+  },
+  {
+    "path": "/api/referral/stats",
+    "method": "POST",
+    "lambda": "aivedha-referral-manager",
+    "india_lambda": "aivedha-referral-manager"
+  },
+  {
+    "path": "/api/referral/validate",
+    "method": "POST",
+    "lambda": "aivedha-referral-manager",
+    "india_lambda": "aivedha-referral-manager"
+  },
+  {
+    "path": "/api/settings/bulk-update",
+    "method": "POST",
+    "lambda": "aivedha-admin-settings",
+    "india_lambda": "aivedha-admin-settings"
+  },
+  {
+    "path": "/api/settings/categories",
+    "method": "GET",
+    "lambda": "aivedha-admin-settings",
+    "india_lambda": "aivedha-admin-settings"
+  },
+  {
+    "path": "/api/settings/category/{category}",
+    "method": "GET",
+    "lambda": "aivedha-admin-settings",
+    "india_lambda": "aivedha-admin-settings"
+  },
+  {
+    "path": "/api/settings/export",
+    "method": "GET",
+    "lambda": "aivedha-admin-settings",
+    "india_lambda": "aivedha-admin-settings"
+  },
+  {
+    "path": "/api/settings/import",
+    "method": "POST",
+    "lambda": "aivedha-admin-settings",
+    "india_lambda": "aivedha-admin-settings"
+  },
+  {
+    "path": "/api/settings/test-connection",
+    "method": "POST",
+    "lambda": "aivedha-admin-settings",
+    "india_lambda": "aivedha-admin-settings"
+  },
+  {
+    "path": "/api/settings/update",
+    "method": "POST",
+    "lambda": "aivedha-admin-settings",
+    "india_lambda": "aivedha-admin-settings"
+  },
+  {
+    "path": "/api/startup/register",
+    "method": "POST",
+    "lambda": "aivedha-guardian-user-auth",
+    "india_lambda": "aivedha-guardian-user-auth"
+  },
+  {
+    "path": "/api/subscription/account/check-deletion",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/account/delete",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/activate",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/auto-renew",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/cancel",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/confirm",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/invoices",
+    "method": "GET",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/plans",
+    "method": "GET",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/portal-token",
+    "method": "GET",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/portal-token",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/reactivate",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/sync",
+    "method": "POST",
+    "lambda": "aivedha-zoho-sync",
+    "india_lambda": "aivedha-zoho-sync"
+  },
+  {
+    "path": "/api/subscription/update-payment",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/subscription/upgrade",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/support/check-ticket",
+    "method": "GET",
+    "lambda": "aivedha-support-ticket-manager",
+    "india_lambda": "aivedha-support-ticket-manager"
+  },
+  {
+    "path": "/api/support/create-ticket",
+    "method": "POST",
+    "lambda": "aivedha-support-ticket-manager",
+    "india_lambda": "aivedha-support-ticket-manager"
+  },
+  {
+    "path": "/api/url-validator/validate",
+    "method": "POST",
+    "lambda": "aivedha-guardian-url-validator",
+    "india_lambda": "aivedha-guardian-url-validator"
+  },
+  {
+    "path": "/api/user/addons",
+    "method": "GET",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/user/credits",
+    "method": "GET",
+    "lambda": "aivedha-guardian-credit-manager",
+    "india_lambda": "aivedha-guardian-credit-manager"
+  },
+  {
+    "path": "/api/user/dashboard",
+    "method": "GET",
+    "lambda": "aivedha-guardian-credit-manager",
+    "india_lambda": "aivedha-guardian-credit-manager"
+  },
+  {
+    "path": "/api/user/delete-account",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/user/onboarding",
+    "method": "GET",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/user/onboarding",
+    "method": "POST",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/user/profile",
+    "method": "GET",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/user/profile",
+    "method": "PUT",
+    "lambda": "aivedha-guardian-subscription-manager",
+    "india_lambda": "aivedha-guardian-subscription-manager"
+  },
+  {
+    "path": "/api/verify/{certificateNumber}",
+    "method": "GET",
+    "lambda": "aivedha-guardian-report-generator",
+    "india_lambda": "aivedha-guardian-report-generator"
+  },
+  {
+    "path": "/url-validator/validate",
+    "method": "POST",
+    "lambda": "aivedha-guardian-url-validator",
+    "india_lambda": "aivedha-guardian-url-validator"
+  }
+]

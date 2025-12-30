@@ -1,0 +1,41 @@
+{
+  "description": "CORS Configuration for AiVedha Guardian API - Wix Compatible",
+  "allowedOrigins": [
+    "https://aivedha.ai",
+    "https://www.aivedha.ai",
+    "https://*.wix.com",
+    "https://*.wixsite.com",
+    "https://*.editorx.io",
+    "https://*.wix-user-site.com",
+    "https://editor.wix.com",
+    "https://manage.wix.com",
+    "https://www.wix.com",
+    "http://localhost:8080",
+    "http://localhost:3000",
+    "http://localhost:5173"
+  ],
+  "allowedMethods": [
+    "GET",
+    "POST",
+    "PUT",
+    "DELETE",
+    "OPTIONS"
+  ],
+  "allowedHeaders": [
+    "Content-Type",
+    "Authorization",
+    "X-Requested-With",
+    "Accept",
+    "Origin",
+    "X-Api-Key",
+    "X-Wix-Client-Id",
+    "X-Wix-Instance"
+  ],
+  "exposeHeaders": [
+    "Content-Length",
+    "Content-Type",
+    "X-Request-Id"
+  ],
+  "maxAge": 86400,
+  "allowCredentials": true
+}

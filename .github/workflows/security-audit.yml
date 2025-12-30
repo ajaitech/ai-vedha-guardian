@@ -1,0 +1,414 @@
+# AiVedha Guard - Self Security Audit Workflow
+# =============================================
+# This workflow runs a security audit on https://aivedha.ai after every deployment.
+# It uses the AiVedha Guard API key to trigger the audit and streams live progress.
+#
+# Authentication Flow:
+# 1. API Key stored in AIVEDHA_API_KEY secret
+# 2. Key validates against user account (aravind@aivibe.in)
+# 3. Credits checked before audit
+# 4. 1 credit deducted per audit
+# 5. If no credits: Skip audit, send sales email
+#
+# Setup:
+# 1. Generate API key from https://aivedha.ai/profile
+# 2. Add AIVEDHA_API_KEY secret to repository
+#
+# Copyright 2024-2025 AiVibe Software Services Pvt Ltd
+
+name: Security Audit
+
+on:
+  # Run after deployment completes
+  workflow_run:
+    workflows: ["Deploy AiVedha Guardian to Production"]
+    types:
+      - completed
+    branches:
+      - main
+
+  # Manual trigger
+  workflow_dispatch:
+    inputs:
+      target_url:
+        description: 'URL to audit (default: https://aivedha.ai)'
+        required: false
+        default: 'https://aivedha.ai'
+        type: string
+      skip_url_validation:
+        description: 'Skip URL validation'
+        required: false
+        default: false
+        type: boolean
+
+  # Weekly scheduled audit
+  schedule:
+    - cron: '0 2 * * 1'  # Monday 2 AM UTC
+
+env:
+  TARGET_URL: https://aivedha.ai
+  API_BASE_URL: https://api.aivedha.ai/api
+
+jobs:
+  security-audit:
+    name: ??? Run AiVedha Security Audit
+    runs-on: ubuntu-latest
+    # Only run if deployment succeeded, or if manually triggered, or scheduled
+    if: |
+      github.event.workflow_run.conclusion == 'success' ||
+      github.event_name == 'workflow_dispatch' ||
+      github.event_name == 'schedule'
+
+    steps:
+      - name: ?? Checkout
+        uses: actions/checkout@v4
+
+      - name: ?? Check API Key Configuration
+        id: check_key
+        run: |
+          if [ -z "${{ secrets.AIVEDHA_API_KEY }}" ]; then
+            echo "?? AIVEDHA_API_KEY secret not configured"
+            echo "configured=false" >> $GITHUB_OUTPUT
+            echo ""
+            echo "To enable security audits:"
+            echo "1. Go to https://aivedha.ai/profile"
+            echo "2. Generate an API key"
+            echo "3. Add it as AIVEDHA_API_KEY in repository secrets"
+            exit 0
+          fi
+          echo "configured=true" >> $GITHUB_OUTPUT
+
+      - name: ?? Validate API Key
+        id: validate
+        if: steps.check_key.outputs.configured == 'true'
+        run: |
+          echo "?? Validating AiVedha API key..."
+          echo ""
+          
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.AIVEDHA_API_KEY }}" \
+            "${{ env.API_BASE_URL }}/api-keys/validate")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          if [ "$HTTP_CODE" = "200" ]; then
+            VALID=$(echo "$BODY" | jq -r '.valid // false')
+            if [ "$VALID" = "true" ]; then
+              KEY_NAME=$(echo "$BODY" | jq -r '.name // "Unknown"')
+              EXPIRES=$(echo "$BODY" | jq -r '.expires_at // "Unknown"')
+              REGION=$(echo "$BODY" | jq -r '.default_region // "us-east-1"')
+              
+              echo "? API key validated successfully"
+              echo "   Name: $KEY_NAME"
+              echo "   Expires: $EXPIRES"
+              echo "   Default Region: $REGION"
+              echo ""
+              
+              echo "valid=true" >> $GITHUB_OUTPUT
+              echo "key_name=$KEY_NAME" >> $GITHUB_OUTPUT
+              echo "default_region=$REGION" >> $GITHUB_OUTPUT
+            else
+              ERROR=$(echo "$BODY" | jq -r '.error // "Invalid API key"')
+              echo "? API key validation failed: $ERROR"
+              echo "valid=false" >> $GITHUB_OUTPUT
+              exit 1
+            fi
+          else
+            echo "? Validation request failed (HTTP $HTTP_CODE)"
+            echo "valid=false" >> $GITHUB_OUTPUT
+            exit 1
+          fi
+
+      - name: ?? Run Security Audit
+        id: audit
+        if: steps.validate.outputs.valid == 'true'
+        run: |
+          TARGET="${{ github.event.inputs.target_url || env.TARGET_URL }}"
+          SKIP_VALIDATION="${{ github.event.inputs.skip_url_validation || 'false' }}"
+          
+          echo ""
+          echo "????????????????????????????????????????????????????????????????????"
+          echo "?              ???  AiVedha Guard Security Audit                     ?"
+          echo "????????????????????????????????????????????????????????????????????"
+          echo "?  Target URL:    $TARGET"
+          echo "?  API Key:       ${{ steps.validate.outputs.key_name }}"
+          echo "?  Region:        ${{ steps.validate.outputs.default_region }}"
+          echo "?  Triggered By:  ${{ github.event_name }}"
+          echo "?  Run ID:        ${{ github.run_id }}"
+          echo "????????????????????????????????????????????????????????????????????"
+          echo ""
+
+          # Build request payload
+          PAYLOAD=$(jq -n \
+            --arg url "$TARGET" \
+            --arg run_id "${{ github.run_id }}" \
+            --arg repo "${{ github.repository }}" \
+            --argjson skip_validation "$SKIP_VALIDATION" \
+            '{
+              url: $url,
+              github_run_id: $run_id,
+              github_repository: $repo,
+              skip_url_validation: $skip_validation
+            }')
+
+          echo "?? Sending audit request..."
+          echo ""
+
+          RESPONSE=$(curl -s -w "\n%{http_code}" \
+            -X POST \
+            -H "Content-Type: application/json" \
+            -H "X-API-Key: ${{ secrets.AIVEDHA_API_KEY }}" \
+            -d "$PAYLOAD" \
+            "${{ env.API_BASE_URL }}/cicd/audit")
+
+          HTTP_CODE=$(echo "$RESPONSE" | tail -n1)
+          BODY=$(echo "$RESPONSE" | sed '$d')
+
+          # Parse response
+          SUCCESS=$(echo "$BODY" | jq -r '.success // false')
+          AUDIT_SKIPPED=$(echo "$BODY" | jq -r '.audit_skipped // false')
+          MESSAGE=$(echo "$BODY" | jq -r '.message // "No message"')
+          REPORT_ID=$(echo "$BODY" | jq -r '.report_id // ""')
+          CREDITS=$(echo "$BODY" | jq -r '.credits_remaining // "unknown"')
+          SCAN_REGION=$(echo "$BODY" | jq -r '.region_name // "USA"')
+          EMAIL_SENT=$(echo "$BODY" | jq -r '.email_sent // false')
+
+          if [ "$AUDIT_SKIPPED" = "true" ]; then
+            REASON=$(echo "$BODY" | jq -r '.reason // "unknown"')
+            
+            echo "??  AUDIT SKIPPED"
+            echo "   Reason: $REASON"
+            echo "   Message: $MESSAGE"
+            
+            if [ "$REASON" = "insufficient_credits" ]; then
+              echo ""
+              echo "?? No credits available!"
+              echo "   ? A reminder email has been sent"
+              echo "   ? Purchase credits at: https://aivedha.ai/pricing"
+            fi
+            
+            echo ""
+            echo "audit_status=skipped" >> $GITHUB_OUTPUT
+            echo "audit_reason=$REASON" >> $GITHUB_OUTPUT
+            echo "email_sent=$EMAIL_SENT" >> $GITHUB_OUTPUT
+            
+          elif [ "$SUCCESS" = "true" ]; then
+            echo "? AUDIT INITIATED SUCCESSFULLY"
+            echo ""
+            echo "   ?? Report ID:        $REPORT_ID"
+            echo "   ?? Scan Region:      $SCAN_REGION"
+            echo "   ?? Credits Used:     1"
+            echo "   ?? Credits Remaining: $CREDITS"
+            echo ""
+            echo "   ?? Results will be emailed after completion"
+            echo ""
+            
+            echo "audit_status=initiated" >> $GITHUB_OUTPUT
+            echo "report_id=$REPORT_ID" >> $GITHUB_OUTPUT
+            echo "credits=$CREDITS" >> $GITHUB_OUTPUT
+            echo "scan_region=$SCAN_REGION" >> $GITHUB_OUTPUT
+            
+          else
+            ERROR=$(echo "$BODY" | jq -r '.error // "Unknown error"')
+            echo "? AUDIT FAILED"
+            echo "   Error: $ERROR"
+            echo "   Message: $MESSAGE"
+            echo ""
+            
+            echo "audit_status=failed" >> $GITHUB_OUTPUT
+            echo "audit_error=$ERROR" >> $GITHUB_OUTPUT
+          fi
+
+      - name: ?? Stream Audit Progress
+        id: stream
+        if: steps.audit.outputs.audit_status == 'initiated'
+        run: |
+          REPORT_ID="${{ steps.audit.outputs.report_id }}"
+          
+          echo ""
+          echo "?? Streaming audit progress for report: $REPORT_ID"
+          echo "   This may take 2-5 minutes..."
+          echo ""
+          echo "????????????????????????????????????????????????????????????????????"
+          
+          MAX_WAIT=600  # 10 minutes max
+          POLL_INTERVAL=10
+          ELAPSED=0
+          LAST_PROGRESS=0
+          LAST_PHASE=""
+          
+          while [ $ELAPSED -lt $MAX_WAIT ]; do
+            RESPONSE=$(curl -s "${{ env.API_BASE_URL }}/cicd/status?reportId=${REPORT_ID}" 2>/dev/null || echo '{}')
+            
+            STATUS=$(echo "$RESPONSE" | jq -r '.status // "unknown"')
+            PROGRESS=$(echo "$RESPONSE" | jq -r '.percentage // .progress // 0')
+            PHASE=$(echo "$RESPONSE" | jq -r '.current_phase // .current_activity // ""')
+            FINDINGS=$(echo "$RESPONSE" | jq -r '.findings_count // 0')
+            
+            # Only print if progress changed
+            if [ "$PROGRESS" != "$LAST_PROGRESS" ] || [ "$PHASE" != "$LAST_PHASE" ]; then
+              # Build progress bar
+              FILLED=$((PROGRESS / 5))
+              EMPTY=$((20 - FILLED))
+              BAR=""
+              for i in $(seq 1 $FILLED 2>/dev/null || echo ""); do BAR="${BAR}?"; done
+              for i in $(seq 1 $EMPTY 2>/dev/null || echo ""); do BAR="${BAR}?"; done
+              
+              printf "[%s] %3d%% ? %-30s ? %d issues\n" "$BAR" "$PROGRESS" "$PHASE" "$FINDINGS"
+              LAST_PROGRESS="$PROGRESS"
+              LAST_PHASE="$PHASE"
+            fi
+            
+            if [ "$STATUS" = "completed" ]; then
+              echo ""
+              echo "????????????????????????????????????????????????????????????????????"
+              echo ""
+              echo "? AUDIT COMPLETED SUCCESSFULLY"
+              echo ""
+              
+              SCORE=$(echo "$RESPONSE" | jq -r '.security_score // 0')
+              GRADE=$(echo "$RESPONSE" | jq -r '.grade // "N/A"')
+              CRITICAL=$(echo "$RESPONSE" | jq -r '.critical_issues // 0')
+              HIGH=$(echo "$RESPONSE" | jq -r '.high_issues // 0')
+              MEDIUM=$(echo "$RESPONSE" | jq -r '.medium_issues // 0')
+              LOW=$(echo "$RESPONSE" | jq -r '.low_issues // 0')
+              PDF_URL=$(echo "$RESPONSE" | jq -r '.pdf_url // ""')
+              
+              echo "????????????????????????????????????????????????????????????????????"
+              echo "?                      SECURITY AUDIT RESULTS                      ?"
+              echo "????????????????????????????????????????????????????????????????????"
+              printf "?  Security Score:  %-10s                                     ?\n" "$SCORE/10"
+              printf "?  Grade:           %-10s                                     ?\n" "$GRADE"
+              echo "?                                                                  ?"
+              echo "?  Vulnerabilities Found:                                          ?"
+              printf "?    ?? Critical:   %-5s                                          ?\n" "$CRITICAL"
+              printf "?    ?? High:       %-5s                                          ?\n" "$HIGH"
+              printf "?    ?? Medium:     %-5s                                          ?\n" "$MEDIUM"
+              printf "?    ?? Low:        %-5s                                          ?\n" "$LOW"
+              echo "????????????????????????????????????????????????????????????????????"
+              echo ""
+              
+              if [ -n "$PDF_URL" ] && [ "$PDF_URL" != "null" ]; then
+                echo "?? PDF Report: $PDF_URL"
+              fi
+              echo "?? Full Report: https://aivedha.ai/audit-results?reportId=$REPORT_ID"
+              echo ""
+              
+              echo "security_score=$SCORE" >> $GITHUB_OUTPUT
+              echo "grade=$GRADE" >> $GITHUB_OUTPUT
+              echo "critical=$CRITICAL" >> $GITHUB_OUTPUT
+              echo "high=$HIGH" >> $GITHUB_OUTPUT
+              echo "medium=$MEDIUM" >> $GITHUB_OUTPUT
+              echo "low=$LOW" >> $GITHUB_OUTPUT
+              echo "stream_status=completed" >> $GITHUB_OUTPUT
+              
+              break
+              
+            elif [ "$STATUS" = "failed" ]; then
+              echo ""
+              echo "? Audit failed"
+              echo "stream_status=failed" >> $GITHUB_OUTPUT
+              break
+            fi
+            
+            sleep $POLL_INTERVAL
+            ELAPSED=$((ELAPSED + POLL_INTERVAL))
+          done
+          
+          if [ $ELAPSED -ge $MAX_WAIT ]; then
+            echo ""
+            echo "?? Timeout reached - Check email for results"
+            echo "stream_status=timeout" >> $GITHUB_OUTPUT
+          fi
+
+      - name: ?? Generate Summary
+        if: always()
+        run: |
+          echo "## ??? AiVedha Guard Security Audit" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "| Property | Value |" >> $GITHUB_STEP_SUMMARY
+          echo "|----------|-------|" >> $GITHUB_STEP_SUMMARY
+          echo "| **Target** | \`${{ env.TARGET_URL }}\` |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Triggered** | ${{ github.event_name }} |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Timestamp** | $(date -u '+%Y-%m-%d %H:%M:%S UTC') |" >> $GITHUB_STEP_SUMMARY
+          echo "| **Run ID** | ${{ github.run_id }} |" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.check_key.outputs.configured }}" != "true" ]; then
+            echo "### ?? API Key Not Configured" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "To enable security audits:" >> $GITHUB_STEP_SUMMARY
+            echo "1. Generate API key at [aivedha.ai/profile](https://aivedha.ai/profile)" >> $GITHUB_STEP_SUMMARY
+            echo "2. Add \`AIVEDHA_API_KEY\` secret to this repository" >> $GITHUB_STEP_SUMMARY
+            
+          elif [ "${{ steps.validate.outputs.valid }}" != "true" ]; then
+            echo "### ? API Key Invalid" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Please regenerate your API key at [aivedha.ai/profile](https://aivedha.ai/profile)" >> $GITHUB_STEP_SUMMARY
+            
+          elif [ "${{ steps.audit.outputs.audit_status }}" = "skipped" ]; then
+            echo "### ?? Audit Skipped" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Reason:** ${{ steps.audit.outputs.audit_reason }}" >> $GITHUB_STEP_SUMMARY
+            
+            if [ "${{ steps.audit.outputs.audit_reason }}" = "insufficient_credits" ]; then
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "?? **No credits available**" >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "Your deployment continued successfully, but the security audit was skipped." >> $GITHUB_STEP_SUMMARY
+              echo "" >> $GITHUB_STEP_SUMMARY
+              echo "?? [Purchase Credits](https://aivedha.ai/pricing) to enable continuous security scanning" >> $GITHUB_STEP_SUMMARY
+            fi
+            
+          elif [ "${{ steps.stream.outputs.stream_status }}" = "completed" ]; then
+            echo "### ? Audit Completed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            
+            # Determine badge color based on grade
+            GRADE="${{ steps.stream.outputs.grade }}"
+            case "$GRADE" in
+              A+|A) COLOR="brightgreen" ;;
+              B) COLOR="green" ;;
+              C) COLOR="yellow" ;;
+              D) COLOR="orange" ;;
+              *) COLOR="red" ;;
+            esac
+            
+            echo "![Security Grade](https://img.shields.io/badge/Grade-$GRADE-$COLOR?style=for-the-badge)" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "| Metric | Value |" >> $GITHUB_STEP_SUMMARY
+            echo "|--------|-------|" >> $GITHUB_STEP_SUMMARY
+            echo "| **Security Score** | ${{ steps.stream.outputs.security_score }}/10 |" >> $GITHUB_STEP_SUMMARY
+            echo "| **Grade** | ${{ steps.stream.outputs.grade }} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ?? Critical | ${{ steps.stream.outputs.critical }} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ?? High | ${{ steps.stream.outputs.high }} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ?? Medium | ${{ steps.stream.outputs.medium }} |" >> $GITHUB_STEP_SUMMARY
+            echo "| ?? Low | ${{ steps.stream.outputs.low }} |" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "?? **Report ID:** \`${{ steps.audit.outputs.report_id }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[?? View Full Report](https://aivedha.ai/audit-results?reportId=${{ steps.audit.outputs.report_id }})" >> $GITHUB_STEP_SUMMARY
+            
+          elif [ "${{ steps.audit.outputs.audit_status }}" = "initiated" ]; then
+            echo "### ?? Audit In Progress" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "**Report ID:** \`${{ steps.audit.outputs.report_id }}\`" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Results will be emailed upon completion." >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "[View Dashboard](https://aivedha.ai/dashboard)" >> $GITHUB_STEP_SUMMARY
+            
+          else
+            echo "### ? Audit Failed" >> $GITHUB_STEP_SUMMARY
+            echo "" >> $GITHUB_STEP_SUMMARY
+            echo "Please check the workflow logs for details." >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "---" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "*Powered by [AiVedha Guard](https://aivedha.ai) - AI-Powered Security Auditing*" >> $GITHUB_STEP_SUMMARY
+

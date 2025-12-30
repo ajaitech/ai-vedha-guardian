@@ -1,0 +1,776 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+<!--
+  AiVedha Guard - Enterprise Multi-Language Sitemap
+  Last Updated: 2025-12-03
+
+  Supported Languages (22):
+  - en: English (Default)
+  - es: Spanish (Español)
+  - fr: French (Français)
+  - de: German (Deutsch)
+  - ar: Arabic (العربية)
+  - hi: Hindi (हिन्दी)
+  - ta: Tamil (தமிழ்)
+  - ur: Urdu (اردو)
+  - zh: Chinese (中文)
+  - ja: Japanese (日本語)
+  - ko: Korean (한국어)
+  - ru: Russian (Русский)
+  - el: Greek (Ελληνικά)
+  - da: Danish (Dansk)
+  - fi: Finnish (Suomi)
+  - pt: Portuguese (Português)
+  - it: Italian (Italiano)
+  - nl: Dutch (Nederlands)
+  - tr: Turkish (Türkçe)
+  - pl: Polish (Polski)
+  - sv: Swedish (Svenska)
+  - ga: Irish (Gaeilge)
+
+  Primary Keywords (Global SEO):
+  - Website security audit / Auditoría de seguridad web / Audit de sécurité
+  - AI cybersecurity scanner / Escáner de ciberseguridad IA
+  - Vulnerability assessment / Evaluación de vulnerabilidades
+  - OWASP Top 10 compliance / Conformité OWASP
+  - Penetration testing / Test de pénétration / Penetrationstest
+  - SSL certificate checker / Vérificateur de certificat SSL
+  - XSS vulnerability scanner / Scanner de vulnérabilité XSS
+  - SQL injection detection / Détection d'injection SQL
+  - Security headers analysis / Analyse des en-têtes de sécurité
+  - Web application firewall / Pare-feu d'application web
+  - Malware detection / Détection de logiciels malveillants
+  - API security testing / Test de sécurité API
+-->
+
+<!-- ==================== HOMEPAGE ==================== -->
+<url>
+  <loc>https://aivedha.ai/</loc>
+  <lastmod>2025-12-03</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+    <image:loc>https://aivedha.ai/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png</image:loc>
+    <image:title>AiVedha Guardian - AI-Powered Cybersecurity Audit Platform</image:title>
+  </image:image>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/?lang=ar"/>
+  <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/?lang=hi"/>
+  <xhtml:link rel="alternate" hreflang="ta" href="https://aivedha.ai/?lang=ta"/>
+  <xhtml:link rel="alternate" hreflang="ur" href="https://aivedha.ai/?lang=ur"/>
+  <xhtml:link rel="alternate" hreflang="zh" href="https://aivedha.ai/?lang=zh"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://aivedha.ai/?lang=ja"/>
+  <xhtml:link rel="alternate" hreflang="ko" href="https://aivedha.ai/?lang=ko"/>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://aivedha.ai/?lang=ru"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://aivedha.ai/?lang=sv"/>
+  <xhtml:link rel="alternate" hreflang="ga" href="https://aivedha.ai/?lang=ga"/>
+  <xhtml:link rel="alternate" hreflang="pl" href="https://aivedha.ai/?lang=pl"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/"/>
+</url>
+
+<!-- ==================== SECURITY AUDIT (Core Feature) ==================== -->
+<url>
+  <loc>https://aivedha.ai/security-audit</loc>
+  <lastmod>2025-12-03</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.98</priority>
+  <image:image>
+    <image:loc>https://aivedha.ai/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png</image:loc>
+    <image:title>AiVedha Guardian - Security Audit Scanner</image:title>
+  </image:image>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/security-audit?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/security-audit?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/security-audit?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/security-audit?lang=ar"/>
+  <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/security-audit?lang=hi"/>
+  <xhtml:link rel="alternate" hreflang="ta" href="https://aivedha.ai/security-audit?lang=ta"/>
+  <xhtml:link rel="alternate" hreflang="ur" href="https://aivedha.ai/security-audit?lang=ur"/>
+  <xhtml:link rel="alternate" hreflang="zh" href="https://aivedha.ai/security-audit?lang=zh"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://aivedha.ai/security-audit?lang=ja"/>
+  <xhtml:link rel="alternate" hreflang="ko" href="https://aivedha.ai/security-audit?lang=ko"/>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://aivedha.ai/security-audit?lang=ru"/>
+  <xhtml:link rel="alternate" hreflang="sv" href="https://aivedha.ai/security-audit?lang=sv"/>
+  <xhtml:link rel="alternate" hreflang="ga" href="https://aivedha.ai/security-audit?lang=ga"/>
+  <xhtml:link rel="alternate" hreflang="pl" href="https://aivedha.ai/security-audit?lang=pl"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit"/>
+</url>
+
+<!-- ==================== PRICING & PURCHASE ==================== -->
+<url>
+  <loc>https://aivedha.ai/pricing</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.95</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/pricing"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/pricing?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/pricing?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/pricing?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/pricing?lang=ar"/>
+  <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/pricing?lang=hi"/>
+  <xhtml:link rel="alternate" hreflang="ta" href="https://aivedha.ai/pricing?lang=ta"/>
+  <xhtml:link rel="alternate" hreflang="ur" href="https://aivedha.ai/pricing?lang=ur"/>
+  <xhtml:link rel="alternate" hreflang="zh" href="https://aivedha.ai/pricing?lang=zh"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://aivedha.ai/pricing?lang=ja"/>
+  <xhtml:link rel="alternate" hreflang="ko" href="https://aivedha.ai/pricing?lang=ko"/>
+  <xhtml:link rel="alternate" hreflang="ru" href="https://aivedha.ai/pricing?lang=ru"/>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/pricing?lang=pt"/>
+  <xhtml:link rel="alternate" hreflang="it" href="https://aivedha.ai/pricing?lang=it"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/pricing"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/purchase</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/purchase"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/purchase?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/purchase?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/purchase?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/purchase"/>
+</url>
+
+<!-- ==================== USER AUTHENTICATION ==================== -->
+<url>
+  <loc>https://aivedha.ai/login</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/login"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/login?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/login?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/login?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/login?lang=hi"/>
+  <xhtml:link rel="alternate" hreflang="zh" href="https://aivedha.ai/login?lang=zh"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://aivedha.ai/login?lang=ja"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/login"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/signup</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/signup"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/signup?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/signup?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/signup?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/signup?lang=hi"/>
+  <xhtml:link rel="alternate" hreflang="zh" href="https://aivedha.ai/signup?lang=zh"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://aivedha.ai/signup?lang=ja"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/signup"/>
+</url>
+
+<!-- ==================== USER DASHBOARD ==================== -->
+<url>
+  <loc>https://aivedha.ai/dashboard</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/profile</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
+
+<!-- ==================== SUPPORT & HELP ==================== -->
+<url>
+  <loc>https://aivedha.ai/faq</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/faq"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/faq?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/faq?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/faq?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/faq?lang=hi"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/faq"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/support</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.75</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/support"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/support?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/support?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/support"/>
+</url>
+
+<!-- ==================== LEGAL PAGES ==================== -->
+<url>
+  <loc>https://aivedha.ai/terms</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.60</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/privacy</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.60</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/account-deletion</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.50</priority>
+</url>
+
+<!-- ==================== SECURITY SERVICES (SEO Landing Pages) ==================== -->
+<url>
+  <loc>https://aivedha.ai/website-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.92</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/website-security-audit"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/website-security-audit?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/website-security-audit?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/website-security-audit?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/website-security-audit?lang=hi"/>
+  <xhtml:link rel="alternate" hreflang="zh" href="https://aivedha.ai/website-security-audit?lang=zh"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://aivedha.ai/website-security-audit?lang=ja"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/website-security-audit"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/vulnerability-scanner</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.92</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/vulnerability-scanner"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/vulnerability-scanner?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/vulnerability-scanner?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/vulnerability-scanner?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/vulnerability-scanner"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/penetration-testing</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/penetration-testing"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/penetration-testing?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/penetration-testing?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/penetration-testing?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/penetration-testing"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/owasp-compliance</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/owasp-compliance"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/owasp-compliance?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/owasp-compliance?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/owasp-compliance?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/owasp-compliance"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/ssl-certificate-checker</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.88</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/ssl-certificate-checker"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/ssl-certificate-checker?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/ssl-certificate-checker?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/ssl-certificate-checker"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/xss-vulnerability-scanner</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.88</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/sql-injection-scanner</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.88</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-headers-checker</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/malware-scanner</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.88</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/api-security-testing</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/web-application-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.88</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/cybersecurity-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/cybersecurity-audit"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/cybersecurity-audit?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/cybersecurity-audit?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/cybersecurity-audit?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/cybersecurity-audit"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/ai-security-scanner</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/automated-security-testing</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-assessment</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/enterprise-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<!-- ==================== COMPLIANCE & STANDARDS ==================== -->
+<url>
+  <loc>https://aivedha.ai/iso-27001-compliance</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/pci-dss-compliance</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/gdpr-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/hipaa-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/soc2-compliance</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<!-- ==================== INDUSTRY-SPECIFIC PAGES ==================== -->
+<url>
+  <loc>https://aivedha.ai/ecommerce-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/ecommerce-security-audit"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/ecommerce-security-audit?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/ecommerce-security-audit?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/ecommerce-security-audit"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/fintech-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/healthcare-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/banking-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/saas-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/startup-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/government-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/education-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.78</priority>
+</url>
+
+<!-- ==================== TECHNOLOGY/FRAMEWORK PAGES ==================== -->
+<url>
+  <loc>https://aivedha.ai/wordpress-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/shopify-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/woocommerce-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/magento-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/react-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.78</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/nodejs-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.78</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/php-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.78</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/python-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.78</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/laravel-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.78</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/django-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.78</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/aws-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/azure-security-audit</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/google-cloud-security</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<!-- ==================== REGIONAL/GLOBAL PAGES ==================== -->
+<url>
+  <loc>https://aivedha.ai/security-audit-usa</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-uk</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-canada</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-australia</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-india</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-india"/>
+  <xhtml:link rel="alternate" hreflang="hi" href="https://aivedha.ai/security-audit-india?lang=hi"/>
+  <xhtml:link rel="alternate" hreflang="ta" href="https://aivedha.ai/security-audit-india?lang=ta"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-india"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-europe</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-europe"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/security-audit-europe?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/security-audit-europe?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/security-audit-europe?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-europe"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-germany</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-germany"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/security-audit-germany?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-germany"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-france</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-france"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/security-audit-france?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-france"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-spain</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-spain"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/security-audit-spain?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-spain"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-uae</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-uae"/>
+  <xhtml:link rel="alternate" hreflang="ar" href="https://aivedha.ai/security-audit-uae?lang=ar"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-uae"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-singapore</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-japan</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-japan"/>
+  <xhtml:link rel="alternate" hreflang="ja" href="https://aivedha.ai/security-audit-japan?lang=ja"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-japan"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-brazil</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-brazil"/>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://aivedha.ai/security-audit-brazil?lang=pt"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-brazil"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-audit-mexico</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.80</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/security-audit-mexico"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/security-audit-mexico?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/security-audit-mexico"/>
+</url>
+
+<!-- ==================== RESOURCES & TOOLS ==================== -->
+<url>
+  <loc>https://aivedha.ai/free-security-scan</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.88</priority>
+  <xhtml:link rel="alternate" hreflang="en" href="https://aivedha.ai/free-security-scan"/>
+  <xhtml:link rel="alternate" hreflang="es" href="https://aivedha.ai/free-security-scan?lang=es"/>
+  <xhtml:link rel="alternate" hreflang="fr" href="https://aivedha.ai/free-security-scan?lang=fr"/>
+  <xhtml:link rel="alternate" hreflang="de" href="https://aivedha.ai/free-security-scan?lang=de"/>
+  <xhtml:link rel="alternate" hreflang="x-default" href="https://aivedha.ai/free-security-scan"/>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-certificate</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.85</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-reports</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.82</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-blog</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>0.75</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/security-guides</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.70</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/api-documentation</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.65</priority>
+</url>
+
+<!-- ==================== COMPANY PAGES ==================== -->
+<url>
+  <loc>https://aivedha.ai/about</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/contact</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.65</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/careers</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.55</priority>
+</url>
+
+<url>
+  <loc>https://aivedha.ai/partners</loc>
+  <lastmod>2025-12-02</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.60</priority>
+</url>
+
+</urlset>

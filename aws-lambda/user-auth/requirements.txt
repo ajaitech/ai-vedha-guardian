@@ -1,0 +1,6 @@
+# AiVedha Guard - User Authentication Lambda Dependencies
+# These packages are required for local development/testing
+# In production, they are packaged in the 'package' directory
+
+PyJWT>=2.10.1              # JWT token handling
+boto3>=1.35.0              # AWS SDK (available in Lambda runtime)

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<!--
+  AiVedha Guard - Léarscáil Suímh Gaeilge
+  Iniúchadh slándála gréasáin | Scanóir cibearshlándála AI
+-->
+<url>
+  <loc>https://aivedha.ai/?lang=ga</loc>
+  <lastmod>2025-12-03</lastmod>
+  <changefreq>daily</changefreq>
+  <priority>1.0</priority>
+  <image:image>
+    <image:loc>https://aivedha.ai/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png</image:loc>
+    <image:title>AiVedha Guardian - Ardán Iniúchta Cibearshlándála le hIntleacht Shaorga</image:title>
+  </image:image>
+</url>
+<url><loc>https://aivedha.ai/security-audit?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.98</priority></url>
+<url><loc>https://aivedha.ai/pricing?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.95</priority></url>
+<url><loc>https://aivedha.ai/login?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.85</priority></url>
+<url><loc>https://aivedha.ai/signup?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.85</priority></url>
+<url><loc>https://aivedha.ai/faq?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.80</priority></url>
+<url><loc>https://aivedha.ai/website-security-audit?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.92</priority></url>
+<url><loc>https://aivedha.ai/vulnerability-scanner?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.92</priority></url>
+<url><loc>https://aivedha.ai/penetration-testing?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.90</priority></url>
+<url><loc>https://aivedha.ai/free-security-scan?lang=ga</loc><lastmod>2025-12-03</lastmod><priority>0.88</priority></url>
+</urlset>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- AiVedha Guardian - Raksha Plan Icon (Protection) -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="200" height="200">
+  <defs>
+    <linearGradient id="shieldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#60a5fa"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+    <linearGradient id="shieldInnerGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#93c5fd"/>
+      <stop offset="100%" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Protective aura rings -->
+  <circle cx="50" cy="50" r="42" stroke="#93c5fd" stroke-width="1" fill="none" opacity="0.5"/>
+  <circle cx="50" cy="50" r="38" stroke="#60a5fa" stroke-width="1.5" fill="none" opacity="0.6"/>
+
+  <!-- Shield body -->
+  <path d="M50 15 L75 25 L75 50 C75 70 50 85 50 85 C50 85 25 70 25 50 L25 25 Z" fill="url(#shieldGradient)"/>
+
+  <!-- Shield inner -->
+  <path d="M50 22 L70 30 L70 48 C70 65 50 77 50 77 C50 77 30 65 30 48 L30 30 Z" fill="url(#shieldInnerGradient)"/>
+
+  <!-- Checkmark -->
+  <path d="M38 50 L47 59 L62 40" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+</svg>

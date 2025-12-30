@@ -1,0 +1,447 @@
+# AiVedha Guard - 195+ Country URLs for Google Search Console Indexing
+# All URLs point to homepage with country parameter
+# Format: URL | Country Name | Local Language Text
+
+# ============================================
+# ASIA (25 countries)
+# ============================================
+https://aivedha.ai/?country=india | India | भारत का सर्वश्रेष्ठ साइबर सुरक्षा ऑडिट और प्रमाणपत्र
+https://aivedha.ai/?country=china | China | 中国最佳网络安全审计与证书
+https://aivedha.ai/?country=japan | Japan | 日本最高のサイバーセキュリティ監査と証明書
+https://aivedha.ai/?country=south-korea | South Korea | 대한민국 최고의 사이버 보안 감사 및 인증서
+https://aivedha.ai/?country=indonesia | Indonesia | Audit Keamanan Siber dan Sertifikat Terbaik Indonesia
+https://aivedha.ai/?country=thailand | Thailand | การตรวจสอบความปลอดภัยไซเบอร์และใบรับรองที่ดีที่สุดของประเทศไทย
+https://aivedha.ai/?country=vietnam | Vietnam | Kiểm Toán và Chứng Nhận An Ninh Mạng Tốt Nhất Việt Nam
+https://aivedha.ai/?country=philippines | Philippines | Pinakamahusay na Cybersecurity Audit at Sertipiko ng Pilipinas
+https://aivedha.ai/?country=malaysia | Malaysia | Audit Keselamatan Siber dan Sijil Terbaik Malaysia
+https://aivedha.ai/?country=singapore | Singapore | Singapore's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=pakistan | Pakistan | پاکستان کا بہترین سائبر سیکیورٹی آڈٹ اور سرٹیفکیٹ
+https://aivedha.ai/?country=bangladesh | Bangladesh | বাংলাদেশের সেরা সাইবার নিরাপত্তা অডিট এবং সার্টিফিকেট
+https://aivedha.ai/?country=sri-lanka | Sri Lanka | ශ්‍රී ලංකාවේ හොඳම සයිබර් ආරක්ෂණ විගණනය සහ සහතිකය
+https://aivedha.ai/?country=nepal | Nepal | नेपालको उत्कृष्ट साइबर सुरक्षा अडिट र प्रमाणपत्र
+https://aivedha.ai/?country=myanmar | Myanmar | မြန်မာနိုင်ငံ၏ အကောင်းဆုံး ဆိုက်ဘာလုံခြုံရေး စာရင်းစစ်နှင့် လက်မှတ်
+https://aivedha.ai/?country=cambodia | Cambodia | សវនកម្មសុវត្ថិភាពអ៊ីនធឺណិត និងវិញ្ញាបនបត្រល្អបំផុតរបស់កម្ពុជា
+https://aivedha.ai/?country=laos | Laos | ການກວດສອບຄວາມປອດໄພທາງໄຊເບີ ແລະໃບຢັ້ງຢືນທີ່ດີທີ່ສຸດຂອງລາວ
+https://aivedha.ai/?country=mongolia | Mongolia | Монголын шилдэг кибер аюулгүй байдлын аудит ба гэрчилгээ
+https://aivedha.ai/?country=brunei | Brunei | Audit Keselamatan Siber dan Sijil Terbaik Brunei
+https://aivedha.ai/?country=bhutan | Bhutan | འབྲུག་གི་མཐོ་མཆོག་སྲུང་སྐྱོབ་ཞིབ་དཔྱད་དང་ལག་ཁྱེར།
+https://aivedha.ai/?country=maldives | Maldives | ދިވެހިރާއްޖޭގެ އެންމެ ރަނގަޅު ސައިބަރ ސެކިއުރިޓީ އޮޑިޓް އަދި ސެޓިފިކެޓް
+https://aivedha.ai/?country=taiwan | Taiwan | 台灣最佳網路安全稽核與憑證
+https://aivedha.ai/?country=hong-kong | Hong Kong | 香港最佳網絡安全審計與證書
+https://aivedha.ai/?country=macau | Macau | 澳門最佳網絡安全審計與證書
+https://aivedha.ai/?country=timor-leste | Timor-Leste | Auditoria e Certificado de Segurança Cibernética de Timor-Leste
+
+# ============================================
+# MIDDLE EAST (16 countries)
+# ============================================
+https://aivedha.ai/?country=uae | UAE | أفضل تدقيق وشهادة للأمن السيبراني في الإمارات
+https://aivedha.ai/?country=saudi-arabia | Saudi Arabia | أفضل تدقيق وشهادة للأمن السيبراني في السعودية
+https://aivedha.ai/?country=israel | Israel | הביקורת והתעודה הטובות ביותר לאבטחת סייבר בישראל
+https://aivedha.ai/?country=turkey | Turkey | Türkiye'nin En İyi Siber Güvenlik Denetimi ve Sertifikası
+https://aivedha.ai/?country=iran | Iran | بهترین ممیزی و گواهی امنیت سایبری ایران
+https://aivedha.ai/?country=iraq | Iraq | أفضل تدقيق وشهادة للأمن السيبراني في العراق
+https://aivedha.ai/?country=kuwait | Kuwait | أفضل تدقيق وشهادة للأمن السيبراني في الكويت
+https://aivedha.ai/?country=qatar | Qatar | أفضل تدقيق وشهادة للأمن السيبراني في قطر
+https://aivedha.ai/?country=bahrain | Bahrain | أفضل تدقيق وشهادة للأمن السيبراني في البحرين
+https://aivedha.ai/?country=oman | Oman | أفضل تدقيق وشهادة للأمن السيبراني في عُمان
+https://aivedha.ai/?country=jordan | Jordan | أفضل تدقيق وشهادة للأمن السيبراني في الأردن
+https://aivedha.ai/?country=lebanon | Lebanon | أفضل تدقيق وشهادة للأمن السيبراني في لبنان
+https://aivedha.ai/?country=syria | Syria | أفضل تدقيق وشهادة للأمن السيبراني في سوريا
+https://aivedha.ai/?country=yemen | Yemen | أفضل تدقيق وشهادة للأمن السيبراني في اليمن
+https://aivedha.ai/?country=palestine | Palestine | أفضل تدقيق وشهادة للأمن السيبراني في فلسطين
+https://aivedha.ai/?country=afghanistan | Afghanistan | د افغانستان غوره سایبر امنیت پلټنه او سند
+
+# ============================================
+# EUROPE (48 countries)
+# ============================================
+https://aivedha.ai/?country=united-kingdom | United Kingdom | United Kingdom's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=germany | Germany | Deutschlands bestes Cybersicherheits-Audit und Zertifikat
+https://aivedha.ai/?country=france | France | Meilleur audit et certificat de cybersécurité de France
+https://aivedha.ai/?country=italy | Italy | Il miglior audit e certificato di sicurezza informatica d'Italia
+https://aivedha.ai/?country=spain | Spain | La mejor auditoría y certificado de ciberseguridad de España
+https://aivedha.ai/?country=netherlands | Netherlands | Nederlands beste cybersecurity-audit en certificaat
+https://aivedha.ai/?country=belgium | Belgium | Belgiums beste cybersecurity-audit en certificaat
+https://aivedha.ai/?country=switzerland | Switzerland | Die beste Cybersicherheitsprüfung und Zertifikat der Schweiz
+https://aivedha.ai/?country=austria | Austria | Österreichs bestes Cybersicherheits-Audit und Zertifikat
+https://aivedha.ai/?country=sweden | Sweden | Sveriges bästa cybersäkerhetsgranskning och certifikat
+https://aivedha.ai/?country=norway | Norway | Norges beste cybersikkerhetsrevisjon og sertifikat
+https://aivedha.ai/?country=denmark | Denmark | Danmarks bedste cybersikkerhedsrevision og certifikat
+https://aivedha.ai/?country=finland | Finland | Suomen paras kyberturvallisuustarkastus ja sertifikaatti
+https://aivedha.ai/?country=iceland | Iceland | Besta netöryggisúttekt og vottorð Íslands
+https://aivedha.ai/?country=ireland | Ireland | Ireland's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=portugal | Portugal | A melhor auditoria e certificado de cibersegurança de Portugal
+https://aivedha.ai/?country=greece | Greece | Η καλύτερη επιθεώρηση και πιστοποίηση κυβερνοασφάλειας της Ελλάδας
+https://aivedha.ai/?country=poland | Poland | Najlepszy audyt i certyfikat cyberbezpieczeństwa w Polsce
+https://aivedha.ai/?country=czech-republic | Czech Republic | Nejlepší audit a certifikát kybernetické bezpečnosti v České republice
+https://aivedha.ai/?country=slovakia | Slovakia | Najlepší audit a certifikát kybernetickej bezpečnosti na Slovensku
+https://aivedha.ai/?country=hungary | Hungary | Magyarország legjobb kiberbiztonsági auditja és tanúsítványa
+https://aivedha.ai/?country=romania | Romania | Cel mai bun audit și certificat de securitate cibernetică din România
+https://aivedha.ai/?country=bulgaria | Bulgaria | Най-добрият одит и сертификат за киберсигурност в България
+https://aivedha.ai/?country=croatia | Croatia | Najbolja revizija i certifikat kibernetičke sigurnosti u Hrvatskoj
+https://aivedha.ai/?country=slovenia | Slovenia | Najboljši pregled in certifikat kibernetske varnosti v Sloveniji
+https://aivedha.ai/?country=serbia | Serbia | Најбоља ревизија и сертификат сајбер безбедности у Србији
+https://aivedha.ai/?country=bosnia-herzegovina | Bosnia | Najbolja revizija i certifikat cyber sigurnosti u BiH
+https://aivedha.ai/?country=montenegro | Montenegro | Najbolja revizija i certifikat sajber bezbjednosti u Crnoj Gori
+https://aivedha.ai/?country=north-macedonia | North Macedonia | Најдобра ревизија и сертификат за сајбер безбедност во Северна Македонија
+https://aivedha.ai/?country=albania | Albania | Auditimi dhe Certifikata më e Mirë e Sigurisë Kibernetike në Shqipëri
+https://aivedha.ai/?country=kosovo | Kosovo | Auditimi dhe Certifikata më e Mirë e Sigurisë Kibernetike në Kosovë
+https://aivedha.ai/?country=estonia | Estonia | Eesti parim küberturvalisuse audit ja sertifikaat
+https://aivedha.ai/?country=latvia | Latvia | Latvijas labākais kiberdrošības audits un sertifikāts
+https://aivedha.ai/?country=lithuania | Lithuania | Geriausias Lietuvos kibernetinio saugumo auditas ir sertifikatas
+https://aivedha.ai/?country=ukraine | Ukraine | Найкращий аудит та сертифікат кібербезпеки в Україні
+https://aivedha.ai/?country=belarus | Belarus | Лепшы аўдыт і сертыфікат кібербяспекі ў Беларусі
+https://aivedha.ai/?country=moldova | Moldova | Cel mai bun audit și certificat de securitate cibernetică din Moldova
+https://aivedha.ai/?country=russia | Russia | Лучший аудит и сертификат кибербезопасности России
+https://aivedha.ai/?country=luxembourg | Luxembourg | Meilleur audit et certificat de cybersécurité du Luxembourg
+https://aivedha.ai/?country=malta | Malta | L-Aħjar Awditjar u Ċertifikat tas-Sigurtà Ċibernetika ta' Malta
+https://aivedha.ai/?country=cyprus | Cyprus | Ο καλύτερος έλεγχος και πιστοποίηση κυβερνοασφάλειας της Κύπρου
+https://aivedha.ai/?country=monaco | Monaco | Meilleur audit et certificat de cybersécurité de Monaco
+https://aivedha.ai/?country=liechtenstein | Liechtenstein | Liechtensteins bestes Cybersicherheits-Audit und Zertifikat
+https://aivedha.ai/?country=andorra | Andorra | La millor auditoria i certificat de ciberseguretat d'Andorra
+https://aivedha.ai/?country=san-marino | San Marino | Il miglior audit e certificato di sicurezza informatica di San Marino
+https://aivedha.ai/?country=vatican-city | Vatican City | Il miglior audit e certificato di sicurezza informatica del Vaticano
+
+# ============================================
+# NORTH AMERICA (3 countries)
+# ============================================
+https://aivedha.ai/?country=united-states | United States | United States' Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=canada | Canada | Canada's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=mexico | Mexico | La mejor auditoría y certificado de ciberseguridad de México
+
+# ============================================
+# CENTRAL AMERICA & CARIBBEAN (21 countries)
+# ============================================
+https://aivedha.ai/?country=guatemala | Guatemala | La mejor auditoría y certificado de ciberseguridad de Guatemala
+https://aivedha.ai/?country=belize | Belize | Belize's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=honduras | Honduras | La mejor auditoría y certificado de ciberseguridad de Honduras
+https://aivedha.ai/?country=el-salvador | El Salvador | La mejor auditoría y certificado de ciberseguridad de El Salvador
+https://aivedha.ai/?country=nicaragua | Nicaragua | La mejor auditoría y certificado de ciberseguridad de Nicaragua
+https://aivedha.ai/?country=costa-rica | Costa Rica | La mejor auditoría y certificado de ciberseguridad de Costa Rica
+https://aivedha.ai/?country=panama | Panama | La mejor auditoría y certificado de ciberseguridad de Panamá
+https://aivedha.ai/?country=cuba | Cuba | La mejor auditoría y certificado de ciberseguridad de Cuba
+https://aivedha.ai/?country=jamaica | Jamaica | Jamaica's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=haiti | Haiti | Meilleur audit et certificat de cybersécurité d'Haïti
+https://aivedha.ai/?country=dominican-republic | Dominican Republic | La mejor auditoría y certificado de ciberseguridad de República Dominicana
+https://aivedha.ai/?country=puerto-rico | Puerto Rico | La mejor auditoría y certificado de ciberseguridad de Puerto Rico
+https://aivedha.ai/?country=trinidad-tobago | Trinidad and Tobago | Trinidad and Tobago's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=bahamas | Bahamas | Bahamas' Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=barbados | Barbados | Barbados' Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=saint-lucia | Saint Lucia | Saint Lucia's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=grenada | Grenada | Grenada's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=saint-vincent | Saint Vincent | Saint Vincent's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=antigua-barbuda | Antigua and Barbuda | Antigua and Barbuda's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=dominica | Dominica | Dominica's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=saint-kitts-nevis | Saint Kitts and Nevis | Saint Kitts and Nevis' Best Cybersecurity Audit and Certificate
+
+# ============================================
+# SOUTH AMERICA (12 countries)
+# ============================================
+https://aivedha.ai/?country=brazil | Brazil | A melhor auditoria e certificado de cibersegurança do Brasil
+https://aivedha.ai/?country=argentina | Argentina | La mejor auditoría y certificado de ciberseguridad de Argentina
+https://aivedha.ai/?country=colombia | Colombia | La mejor auditoría y certificado de ciberseguridad de Colombia
+https://aivedha.ai/?country=chile | Chile | La mejor auditoría y certificado de ciberseguridad de Chile
+https://aivedha.ai/?country=peru | Peru | La mejor auditoría y certificado de ciberseguridad de Perú
+https://aivedha.ai/?country=venezuela | Venezuela | La mejor auditoría y certificado de ciberseguridad de Venezuela
+https://aivedha.ai/?country=ecuador | Ecuador | La mejor auditoría y certificado de ciberseguridad de Ecuador
+https://aivedha.ai/?country=bolivia | Bolivia | La mejor auditoría y certificado de ciberseguridad de Bolivia
+https://aivedha.ai/?country=paraguay | Paraguay | La mejor auditoría y certificado de ciberseguridad de Paraguay
+https://aivedha.ai/?country=uruguay | Uruguay | La mejor auditoría y certificado de ciberseguridad de Uruguay
+https://aivedha.ai/?country=guyana | Guyana | Guyana's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=suriname | Suriname | Suriname's beste cybersecurity-audit en certificaat
+
+# ============================================
+# AFRICA (54 countries)
+# ============================================
+https://aivedha.ai/?country=south-africa | South Africa | South Africa's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=nigeria | Nigeria | Nigeria's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=egypt | Egypt | أفضل تدقيق وشهادة للأمن السيبراني في مصر
+https://aivedha.ai/?country=kenya | Kenya | Ukaguzi na Cheti Bora cha Usalama wa Mtandao wa Kenya
+https://aivedha.ai/?country=morocco | Morocco | أفضل تدقيق وشهادة للأمن السيبراني في المغرب
+https://aivedha.ai/?country=algeria | Algeria | أفضل تدقيق وشهادة للأمن السيبراني في الجزائر
+https://aivedha.ai/?country=tunisia | Tunisia | أفضل تدقيق وشهادة للأمن السيبراني في تونس
+https://aivedha.ai/?country=libya | Libya | أفضل تدقيق وشهادة للأمن السيبراني في ليبيا
+https://aivedha.ai/?country=ghana | Ghana | Ghana's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=ethiopia | Ethiopia | የኢትዮጵያ ምርጥ የሳይበር ደህንነት ኦዲት እና ሰርተፊኬት
+https://aivedha.ai/?country=tanzania | Tanzania | Ukaguzi na Cheti Bora cha Usalama wa Mtandao wa Tanzania
+https://aivedha.ai/?country=uganda | Uganda | Uganda's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=rwanda | Rwanda | Isuzuma n'Icyemezo Cyiza cya Cybersecurity cya Rwanda
+https://aivedha.ai/?country=senegal | Senegal | Meilleur audit et certificat de cybersécurité du Sénégal
+https://aivedha.ai/?country=ivory-coast | Ivory Coast | Meilleur audit et certificat de cybersécurité de Côte d'Ivoire
+https://aivedha.ai/?country=cameroon | Cameroon | Meilleur audit et certificat de cybersécurité du Cameroun
+https://aivedha.ai/?country=angola | Angola | A melhor auditoria e certificado de cibersegurança de Angola
+https://aivedha.ai/?country=mozambique | Mozambique | A melhor auditoria e certificado de cibersegurança de Moçambique
+https://aivedha.ai/?country=zimbabwe | Zimbabwe | Zimbabwe's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=zambia | Zambia | Zambia's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=botswana | Botswana | Botswana's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=namibia | Namibia | Namibia's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=mauritius | Mauritius | Mauritius' Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=madagascar | Madagascar | Ny audit sy certificat cybersecurity tsara indrindra ao Madagascar
+https://aivedha.ai/?country=seychelles | Seychelles | Seychelles' Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=sudan | Sudan | أفضل تدقيق وشهادة للأمن السيبراني في السودان
+https://aivedha.ai/?country=south-sudan | South Sudan | South Sudan's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=dr-congo | DR Congo | Meilleur audit et certificat de cybersécurité de la RD Congo
+https://aivedha.ai/?country=congo | Congo | Meilleur audit et certificat de cybersécurité du Congo
+https://aivedha.ai/?country=gabon | Gabon | Meilleur audit et certificat de cybersécurité du Gabon
+https://aivedha.ai/?country=mali | Mali | Meilleur audit et certificat de cybersécurité du Mali
+https://aivedha.ai/?country=burkina-faso | Burkina Faso | Meilleur audit et certificat de cybersécurité du Burkina Faso
+https://aivedha.ai/?country=niger | Niger | Meilleur audit et certificat de cybersécurité du Niger
+https://aivedha.ai/?country=chad | Chad | Meilleur audit et certificat de cybersécurité du Tchad
+https://aivedha.ai/?country=mauritania | Mauritania | أفضل تدقيق وشهادة للأمن السيبراني في موريتانيا
+https://aivedha.ai/?country=benin | Benin | Meilleur audit et certificat de cybersécurité du Bénin
+https://aivedha.ai/?country=togo | Togo | Meilleur audit et certificat de cybersécurité du Togo
+https://aivedha.ai/?country=sierra-leone | Sierra Leone | Sierra Leone's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=liberia | Liberia | Liberia's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=guinea | Guinea | Meilleur audit et certificat de cybersécurité de Guinée
+https://aivedha.ai/?country=guinea-bissau | Guinea-Bissau | A melhor auditoria e certificado de cibersegurança da Guiné-Bissau
+https://aivedha.ai/?country=gambia | Gambia | Gambia's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=cape-verde | Cape Verde | A melhor auditoria e certificado de cibersegurança de Cabo Verde
+https://aivedha.ai/?country=equatorial-guinea | Equatorial Guinea | La mejor auditoría y certificado de ciberseguridad de Guinea Ecuatorial
+https://aivedha.ai/?country=central-african-republic | Central African Republic | Meilleur audit et certificat de cybersécurité de la République centrafricaine
+https://aivedha.ai/?country=burundi | Burundi | Meilleur audit et certificat de cybersécurité du Burundi
+https://aivedha.ai/?country=eritrea | Eritrea | ናይ ኤርትራ ዝበለጸ ሳይበር ድሕነት ኦዲትን ምስክር ወረቐትን
+https://aivedha.ai/?country=djibouti | Djibouti | Meilleur audit et certificat de cybersécurité de Djibouti
+https://aivedha.ai/?country=somalia | Somalia | Baaritaanka iyo Shahaadada Amniga Cyber-ka ee ugu Fiican ee Soomaaliya
+https://aivedha.ai/?country=comoros | Comoros | أفضل تدقيق وشهادة للأمن السيبراني في جزر القمر
+https://aivedha.ai/?country=malawi | Malawi | Malawi's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=lesotho | Lesotho | Lesotho's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=eswatini | Eswatini | Eswatini's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=sao-tome-principe | Sao Tome and Principe | A melhor auditoria e certificado de cibersegurança de São Tomé e Príncipe
+
+# ============================================
+# OCEANIA (14 countries)
+# ============================================
+https://aivedha.ai/?country=australia | Australia | Australia's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=new-zealand | New Zealand | New Zealand's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=fiji | Fiji | Fiji's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=papua-new-guinea | Papua New Guinea | Papua New Guinea's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=solomon-islands | Solomon Islands | Solomon Islands' Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=vanuatu | Vanuatu | Vanuatu's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=samoa | Samoa | Le suesuega ma tusi pasi sili ona lelei o le Cybersecurity a Samoa
+https://aivedha.ai/?country=tonga | Tonga | Ko e sivi mo e tohi fakamo'oni 'o e Cybersecurity lelei taha 'a Tonga
+https://aivedha.ai/?country=kiribati | Kiribati | Kiribati's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=micronesia | Micronesia | Micronesia's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=marshall-islands | Marshall Islands | Marshall Islands' Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=palau | Palau | Palau's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=nauru | Nauru | Nauru's Best Cybersecurity Audit and Certificate
+https://aivedha.ai/?country=tuvalu | Tuvalu | Tuvalu's Best Cybersecurity Audit and Certificate
+
+# ============================================
+# CENTRAL ASIA (8 countries)
+# ============================================
+https://aivedha.ai/?country=kazakhstan | Kazakhstan | Қазақстанның ең үздік киберқауіпсіздік аудиті мен сертификаты
+https://aivedha.ai/?country=uzbekistan | Uzbekistan | O'zbekistonning eng yaxshi kiberxavfsizlik auditi va sertifikati
+https://aivedha.ai/?country=turkmenistan | Turkmenistan | Türkmenistanyň iň gowy kiberhowpsuzlyk auditi we şahadatnamasy
+https://aivedha.ai/?country=tajikistan | Tajikistan | Беҳтарин аудит ва сертификати амнияти киберӣ дар Тоҷикистон
+https://aivedha.ai/?country=kyrgyzstan | Kyrgyzstan | Кыргызстандын эң мыкты киберкоопсуздук аудити жана сертификаты
+https://aivedha.ai/?country=azerbaijan | Azerbaijan | Azərbaycanın ən yaxşı kibertəhlükəsizlik auditi və sertifikatı
+https://aivedha.ai/?country=georgia | Georgia | საქართველოს საუკეთესო კიბერუსაფრთხოების აუდიტი და სერტიფიკატი
+https://aivedha.ai/?country=armenia | Armenia | Հայաdelays լdelays delays delays delays delays delays
+
+# ============================================
+# TOTAL: 195+ COUNTRIES
+# ============================================
+
+# ============================================
+# URLS ONLY (For Google Search Console)
+# ============================================
+# Copy these URLs directly to Google Search Console for indexing:
+
+https://aivedha.ai/?country=india
+https://aivedha.ai/?country=china
+https://aivedha.ai/?country=japan
+https://aivedha.ai/?country=south-korea
+https://aivedha.ai/?country=indonesia
+https://aivedha.ai/?country=thailand
+https://aivedha.ai/?country=vietnam
+https://aivedha.ai/?country=philippines
+https://aivedha.ai/?country=malaysia
+https://aivedha.ai/?country=singapore
+https://aivedha.ai/?country=pakistan
+https://aivedha.ai/?country=bangladesh
+https://aivedha.ai/?country=sri-lanka
+https://aivedha.ai/?country=nepal
+https://aivedha.ai/?country=myanmar
+https://aivedha.ai/?country=cambodia
+https://aivedha.ai/?country=laos
+https://aivedha.ai/?country=mongolia
+https://aivedha.ai/?country=brunei
+https://aivedha.ai/?country=bhutan
+https://aivedha.ai/?country=maldives
+https://aivedha.ai/?country=taiwan
+https://aivedha.ai/?country=hong-kong
+https://aivedha.ai/?country=macau
+https://aivedha.ai/?country=timor-leste
+https://aivedha.ai/?country=uae
+https://aivedha.ai/?country=saudi-arabia
+https://aivedha.ai/?country=israel
+https://aivedha.ai/?country=turkey
+https://aivedha.ai/?country=iran
+https://aivedha.ai/?country=iraq
+https://aivedha.ai/?country=kuwait
+https://aivedha.ai/?country=qatar
+https://aivedha.ai/?country=bahrain
+https://aivedha.ai/?country=oman
+https://aivedha.ai/?country=jordan
+https://aivedha.ai/?country=lebanon
+https://aivedha.ai/?country=syria
+https://aivedha.ai/?country=yemen
+https://aivedha.ai/?country=palestine
+https://aivedha.ai/?country=afghanistan
+https://aivedha.ai/?country=united-kingdom
+https://aivedha.ai/?country=germany
+https://aivedha.ai/?country=france
+https://aivedha.ai/?country=italy
+https://aivedha.ai/?country=spain
+https://aivedha.ai/?country=netherlands
+https://aivedha.ai/?country=belgium
+https://aivedha.ai/?country=switzerland
+https://aivedha.ai/?country=austria
+https://aivedha.ai/?country=sweden
+https://aivedha.ai/?country=norway
+https://aivedha.ai/?country=denmark
+https://aivedha.ai/?country=finland
+https://aivedha.ai/?country=iceland
+https://aivedha.ai/?country=ireland
+https://aivedha.ai/?country=portugal
+https://aivedha.ai/?country=greece
+https://aivedha.ai/?country=poland
+https://aivedha.ai/?country=czech-republic
+https://aivedha.ai/?country=slovakia
+https://aivedha.ai/?country=hungary
+https://aivedha.ai/?country=romania
+https://aivedha.ai/?country=bulgaria
+https://aivedha.ai/?country=croatia
+https://aivedha.ai/?country=slovenia
+https://aivedha.ai/?country=serbia
+https://aivedha.ai/?country=bosnia-herzegovina
+https://aivedha.ai/?country=montenegro
+https://aivedha.ai/?country=north-macedonia
+https://aivedha.ai/?country=albania
+https://aivedha.ai/?country=kosovo
+https://aivedha.ai/?country=estonia
+https://aivedha.ai/?country=latvia
+https://aivedha.ai/?country=lithuania
+https://aivedha.ai/?country=ukraine
+https://aivedha.ai/?country=belarus
+https://aivedha.ai/?country=moldova
+https://aivedha.ai/?country=russia
+https://aivedha.ai/?country=luxembourg
+https://aivedha.ai/?country=malta
+https://aivedha.ai/?country=cyprus
+https://aivedha.ai/?country=monaco
+https://aivedha.ai/?country=liechtenstein
+https://aivedha.ai/?country=andorra
+https://aivedha.ai/?country=san-marino
+https://aivedha.ai/?country=vatican-city
+https://aivedha.ai/?country=united-states
+https://aivedha.ai/?country=canada
+https://aivedha.ai/?country=mexico
+https://aivedha.ai/?country=guatemala
+https://aivedha.ai/?country=belize
+https://aivedha.ai/?country=honduras
+https://aivedha.ai/?country=el-salvador
+https://aivedha.ai/?country=nicaragua
+https://aivedha.ai/?country=costa-rica
+https://aivedha.ai/?country=panama
+https://aivedha.ai/?country=cuba
+https://aivedha.ai/?country=jamaica
+https://aivedha.ai/?country=haiti
+https://aivedha.ai/?country=dominican-republic
+https://aivedha.ai/?country=puerto-rico
+https://aivedha.ai/?country=trinidad-tobago
+https://aivedha.ai/?country=bahamas
+https://aivedha.ai/?country=barbados
+https://aivedha.ai/?country=saint-lucia
+https://aivedha.ai/?country=grenada
+https://aivedha.ai/?country=saint-vincent
+https://aivedha.ai/?country=antigua-barbuda
+https://aivedha.ai/?country=dominica
+https://aivedha.ai/?country=saint-kitts-nevis
+https://aivedha.ai/?country=brazil
+https://aivedha.ai/?country=argentina
+https://aivedha.ai/?country=colombia
+https://aivedha.ai/?country=chile
+https://aivedha.ai/?country=peru
+https://aivedha.ai/?country=venezuela
+https://aivedha.ai/?country=ecuador
+https://aivedha.ai/?country=bolivia
+https://aivedha.ai/?country=paraguay
+https://aivedha.ai/?country=uruguay
+https://aivedha.ai/?country=guyana
+https://aivedha.ai/?country=suriname
+https://aivedha.ai/?country=south-africa
+https://aivedha.ai/?country=nigeria
+https://aivedha.ai/?country=egypt
+https://aivedha.ai/?country=kenya
+https://aivedha.ai/?country=morocco
+https://aivedha.ai/?country=algeria
+https://aivedha.ai/?country=tunisia
+https://aivedha.ai/?country=libya
+https://aivedha.ai/?country=ghana
+https://aivedha.ai/?country=ethiopia
+https://aivedha.ai/?country=tanzania
+https://aivedha.ai/?country=uganda
+https://aivedha.ai/?country=rwanda
+https://aivedha.ai/?country=senegal
+https://aivedha.ai/?country=ivory-coast
+https://aivedha.ai/?country=cameroon
+https://aivedha.ai/?country=angola
+https://aivedha.ai/?country=mozambique
+https://aivedha.ai/?country=zimbabwe
+https://aivedha.ai/?country=zambia
+https://aivedha.ai/?country=botswana
+https://aivedha.ai/?country=namibia
+https://aivedha.ai/?country=mauritius
+https://aivedha.ai/?country=madagascar
+https://aivedha.ai/?country=seychelles
+https://aivedha.ai/?country=sudan
+https://aivedha.ai/?country=south-sudan
+https://aivedha.ai/?country=dr-congo
+https://aivedha.ai/?country=congo
+https://aivedha.ai/?country=gabon
+https://aivedha.ai/?country=mali
+https://aivedha.ai/?country=burkina-faso
+https://aivedha.ai/?country=niger
+https://aivedha.ai/?country=chad
+https://aivedha.ai/?country=mauritania
+https://aivedha.ai/?country=benin
+https://aivedha.ai/?country=togo
+https://aivedha.ai/?country=sierra-leone
+https://aivedha.ai/?country=liberia
+https://aivedha.ai/?country=guinea
+https://aivedha.ai/?country=guinea-bissau
+https://aivedha.ai/?country=gambia
+https://aivedha.ai/?country=cape-verde
+https://aivedha.ai/?country=equatorial-guinea
+https://aivedha.ai/?country=central-african-republic
+https://aivedha.ai/?country=burundi
+https://aivedha.ai/?country=eritrea
+https://aivedha.ai/?country=djibouti
+https://aivedha.ai/?country=somalia
+https://aivedha.ai/?country=comoros
+https://aivedha.ai/?country=malawi
+https://aivedha.ai/?country=lesotho
+https://aivedha.ai/?country=eswatini
+https://aivedha.ai/?country=sao-tome-principe
+https://aivedha.ai/?country=australia
+https://aivedha.ai/?country=new-zealand
+https://aivedha.ai/?country=fiji
+https://aivedha.ai/?country=papua-new-guinea
+https://aivedha.ai/?country=solomon-islands
+https://aivedha.ai/?country=vanuatu
+https://aivedha.ai/?country=samoa
+https://aivedha.ai/?country=tonga
+https://aivedha.ai/?country=kiribati
+https://aivedha.ai/?country=micronesia
+https://aivedha.ai/?country=marshall-islands
+https://aivedha.ai/?country=palau
+https://aivedha.ai/?country=nauru
+https://aivedha.ai/?country=tuvalu
+https://aivedha.ai/?country=kazakhstan
+https://aivedha.ai/?country=uzbekistan
+https://aivedha.ai/?country=turkmenistan
+https://aivedha.ai/?country=tajikistan
+https://aivedha.ai/?country=kyrgyzstan
+https://aivedha.ai/?country=azerbaijan
+https://aivedha.ai/?country=georgia
+https://aivedha.ai/?country=armenia

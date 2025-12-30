@@ -1,0 +1,166 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aivedha.ai/schemas/finding-record.json",
+  "title": "FindingRecord",
+  "description": "Canonical schema for security findings produced by detectors",
+  "type": "object",
+  "required": ["auditId", "findingId", "detector", "issueCode", "title", "severity", "confidence", "detectionMethod", "createdAt"],
+  "properties": {
+    "auditId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Parent audit identifier"
+    },
+    "userId": {
+      "type": "string",
+      "description": "User who owns this audit"
+    },
+    "findingId": {
+      "type": "string",
+      "pattern": "^find-[a-z]+-[0-9]{3,}$",
+      "description": "Unique finding identifier (e.g., find-ssl-001)"
+    },
+    "detector": {
+      "type": "string",
+      "enum": [
+        "ssl_tls_intelligence",
+        "http_security_headers",
+        "cors_exposure",
+        "cookie_hygiene",
+        "open_directory",
+        "js_secrets",
+        "dependency_cve",
+        "server_fingerprint",
+        "admin_endpoint",
+        "input_validation",
+        "session_exposure",
+        "cloud_misconfig",
+        "dns_mail_security",
+        "redirect_chain",
+        "subdomain_takeover",
+        "robots_sitemap",
+        "performance_metrics",
+        "behavioral_anomaly",
+        "malware_scripts",
+        "third_party_risk",
+        "attack_chain"
+      ],
+      "description": "Detector that produced this finding"
+    },
+    "issueCode": {
+      "type": "string",
+      "pattern": "^[A-Z][A-Z0-9_]+$",
+      "description": "Machine-readable issue code (e.g., SSL_CERTIFICATE_EXPIRED)"
+    },
+    "title": {
+      "type": "string",
+      "maxLength": 200,
+      "description": "Human-readable finding title"
+    },
+    "severity": {
+      "type": "string",
+      "enum": ["CRITICAL", "HIGH", "MEDIUM", "LOW", "INFO"],
+      "description": "Severity classification"
+    },
+    "confidence": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Detection confidence score (0.0 to 1.0)"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 2000,
+      "description": "Detailed description of the finding"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "URL where the issue was detected"
+    },
+    "path": {
+      "type": "string",
+      "description": "URL path component"
+    },
+    "evidenceSnippet": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "Short evidence snippet (inline in finding)"
+    },
+    "evidenceS3Key": {
+      "type": "string",
+      "description": "S3 key for large evidence artifacts"
+    },
+    "detectionMethod": {
+      "type": "string",
+      "enum": ["static", "dynamic", "heuristic", "hybrid", "active_probe", "passive"],
+      "description": "How the finding was detected"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when finding was created"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when finding was last updated"
+    },
+    "remediationSummary": {
+      "type": "string",
+      "maxLength": 1000,
+      "description": "Brief remediation guidance"
+    },
+    "remediationCode": {
+      "type": "string",
+      "description": "Code snippet for remediation (e.g., server config)"
+    },
+    "exploitLikelihood": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 1.0,
+      "description": "Estimated likelihood of exploitation (0.0 to 1.0)"
+    },
+    "exploitComplexity": {
+      "type": "string",
+      "enum": ["LOW", "MEDIUM", "HIGH"],
+      "description": "Complexity required to exploit"
+    },
+    "owaspCategory": {
+      "type": "string",
+      "description": "OWASP Top 10 2021 category (e.g., A02:2021 - Cryptographic Failures)"
+    },
+    "cvssScore": {
+      "type": "number",
+      "minimum": 0.0,
+      "maximum": 10.0,
+      "description": "CVSS v3.1 base score"
+    },
+    "cve": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^CVE-[0-9]{4}-[0-9]+$"
+      },
+      "description": "Related CVE identifiers"
+    },
+    "dedupeFingerprint": {
+      "type": "string",
+      "pattern": "^sha256:[a-f0-9]{64}$",
+      "description": "SHA256 fingerprint for deduplication"
+    },
+    "aggregationCount": {
+      "type": "integer",
+      "minimum": 1,
+      "default": 1,
+      "description": "Number of identical findings aggregated into this record"
+    },
+    "affectedUrls": {
+      "type": "array",
+      "items": { "type": "string", "format": "uri" },
+      "maxItems": 5,
+      "description": "Sample URLs where this finding appears (if aggregated)"
+    }
+  },
+  "additionalProperties": false
+}

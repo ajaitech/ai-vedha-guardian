@@ -1,0 +1,36 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "AllowLambdaAccessFromAllRegions",
+      "Effect": "Allow",
+      "Principal": {
+        "AWS": "arn:aws:iam::783764610283:role/aivedha-guardian-lambda-role"
+      },
+      "Action": [
+        "s3:GetObject",
+        "s3:PutObject",
+        "s3:DeleteObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::aivedha-guardian-reports-us-east-1",
+        "arn:aws:s3:::aivedha-guardian-reports-us-east-1/*"
+      ]
+    },
+    {
+      "Sid": "AllowCloudFrontOACAccess",
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "cloudfront.amazonaws.com"
+      },
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::aivedha-guardian-reports-us-east-1/*",
+      "Condition": {
+        "StringEquals": {
+          "AWS:SourceArn": "arn:aws:cloudfront::783764610283:distribution/EDCUM1WH3G69U"
+        }
+      }
+    }
+  ]
+}

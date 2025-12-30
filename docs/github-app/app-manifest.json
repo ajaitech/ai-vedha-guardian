@@ -1,0 +1,26 @@
+{
+  "name": "AiVedha Guard",
+  "url": "https://aivedha.ai",
+  "hook_attributes": {
+    "url": "https://api.aivedha.ai/api/github/webhook"
+  },
+  "redirect_url": "https://aivedha.ai/github/callback",
+  "callback_urls": [
+    "https://aivedha.ai/github/callback"
+  ],
+  "setup_url": "https://aivedha.ai/dashboard/subscription?setup=github",
+  "description": "AI-powered security audits for your web applications. Automatically scan for vulnerabilities after every deployment.",
+  "public": true,
+  "default_events": [
+    "workflow_run",
+    "push",
+    "pull_request"
+  ],
+  "default_permissions": {
+    "actions": "read",
+    "checks": "write",
+    "contents": "read",
+    "metadata": "read",
+    "statuses": "write"
+  }
+}

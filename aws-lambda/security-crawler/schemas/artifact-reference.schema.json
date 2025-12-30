@@ -1,0 +1,81 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aivedha.ai/schemas/artifact-reference.json",
+  "title": "ArtifactReference",
+  "description": "Schema for references to large evidence artifacts stored in S3",
+  "type": "object",
+  "required": ["auditId", "artifactId", "s3Key", "contentType", "sha256Checksum", "createdAt"],
+  "properties": {
+    "auditId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Parent audit identifier"
+    },
+    "artifactId": {
+      "type": "string",
+      "pattern": "^art-[a-z]+-[a-f0-9]{8}$",
+      "description": "Unique artifact identifier"
+    },
+    "findingId": {
+      "type": "string",
+      "description": "Associated finding ID (if applicable)"
+    },
+    "detector": {
+      "type": "string",
+      "description": "Detector that produced this artifact"
+    },
+    "s3Bucket": {
+      "type": "string",
+      "default": "aivedha-guardian-reports-us-east-1",
+      "description": "S3 bucket name"
+    },
+    "s3Key": {
+      "type": "string",
+      "pattern": "^audits/[^/]+/[^/]+/evidence/[^/]+/[a-f0-9]+\\.[a-z]+$",
+      "description": "S3 object key",
+      "examples": [
+        "audits/user-12345/550e8400-e29b-41d4/evidence/ssl_tls/a1b2c3d4.pem"
+      ]
+    },
+    "contentType": {
+      "type": "string",
+      "description": "MIME type of the artifact",
+      "examples": [
+        "application/x-pem-file",
+        "application/json",
+        "text/plain",
+        "image/png"
+      ]
+    },
+    "sizeBytes": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Artifact size in bytes"
+    },
+    "sha256Checksum": {
+      "type": "string",
+      "pattern": "^[a-f0-9]{64}$",
+      "description": "SHA256 checksum for integrity verification"
+    },
+    "encryptionKeyId": {
+      "type": "string",
+      "description": "KMS key ID used for encryption"
+    },
+    "description": {
+      "type": "string",
+      "maxLength": 500,
+      "description": "Human-readable description of the artifact"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when artifact was created"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO 8601 timestamp when artifact expires (for lifecycle management)"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,67 @@
+{
+  "name": "AiVedha Guard - AI Security Audit Platform",
+  "short_name": "AiVedha Guard",
+  "description": "AI-powered website security audit platform. Scan for vulnerabilities, OWASP Top 10 compliance, SSL issues, XSS, SQL injection & more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#3b82f6",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en",
+  "dir": "ltr",
+  "categories": ["security", "utilities", "productivity"],
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "label": "AiVedha Guard Dashboard"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Start Security Audit",
+      "short_name": "Audit",
+      "description": "Run a new website security audit",
+      "url": "/security-audit",
+      "icons": [{ "src": "/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Dashboard",
+      "short_name": "Dashboard",
+      "description": "View your audit history",
+      "url": "/dashboard",
+      "icons": [{ "src": "/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Pricing",
+      "short_name": "Pricing",
+      "description": "View subscription plans",
+      "url": "/pricing",
+      "icons": [{ "src": "/aivibe/f3b0b32d-8f8e-4951-96d3-b02a7658a887.png", "sizes": "96x96" }]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false
+}

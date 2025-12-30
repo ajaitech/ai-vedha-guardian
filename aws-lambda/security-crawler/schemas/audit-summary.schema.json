@@ -1,0 +1,233 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://aivedha.ai/schemas/audit-summary.json",
+  "title": "AuditSummary",
+  "description": "Canonical schema for audit summary records stored in DynamoDB",
+  "type": "object",
+  "required": ["auditId", "userId", "url", "status", "schemaVersion", "createdAt"],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "1.0.0",
+      "description": "Schema version for backward compatibility"
+    },
+    "auditId": {
+      "type": "string",
+      "format": "uuid",
+      "description": "Primary audit identifier (same as report_id)"
+    },
+    "userId": {
+      "type": "string",
+      "description": "User who initiated the audit"
+    },
+    "userEmail": {
+      "type": "string",
+      "format": "email",
+      "description": "User email for notifications"
+    },
+    "userName": {
+      "type": "string",
+      "description": "User display name"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri",
+      "description": "Target URL being audited"
+    },
+    "hostname": {
+      "type": "string",
+      "description": "Extracted hostname from URL"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "initializing",
+        "processing",
+        "aggregating",
+        "ready_for_pdf",
+        "generating_pdf",
+        "sending_email",
+        "completed",
+        "failed",
+        "cancelled",
+        "superseded"
+      ],
+      "description": "Current audit status"
+    },
+    "securityScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Overall security score (0-100)"
+    },
+    "grade": {
+      "type": "string",
+      "enum": ["A+", "A", "B", "C", "D", "F"],
+      "description": "Letter grade based on security score"
+    },
+    "totalFindings": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Total number of findings"
+    },
+    "findingsBySeverity": {
+      "type": "object",
+      "properties": {
+        "CRITICAL": { "type": "integer", "minimum": 0 },
+        "HIGH": { "type": "integer", "minimum": 0 },
+        "MEDIUM": { "type": "integer", "minimum": 0 },
+        "LOW": { "type": "integer", "minimum": 0 },
+        "INFO": { "type": "integer", "minimum": 0 }
+      },
+      "description": "Finding counts by severity level"
+    },
+    "totalPagesScanned": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of pages crawled"
+    },
+    "totalChunks": {
+      "type": "integer",
+      "minimum": 1,
+      "description": "Total chunks created for this audit"
+    },
+    "completedChunks": {
+      "type": "integer",
+      "minimum": 0,
+      "description": "Number of chunks completed"
+    },
+    "scanDurationMs": {
+      "type": "integer",
+      "description": "Total scan duration in milliseconds"
+    },
+    "scanDepth": {
+      "type": "string",
+      "enum": ["standard", "deep", "comprehensive"],
+      "default": "standard",
+      "description": "Scan depth level"
+    },
+    "scanVersion": {
+      "type": "string",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "description": "Audit Lambda version (semver)"
+    },
+    "augmentationMode": {
+      "type": "string",
+      "enum": ["parallel-augment", "orchestrated-augment", "legacy-only"],
+      "description": "Which augmentation mode was used"
+    },
+    "technologyStack": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Detected technologies and frameworks"
+    },
+    "sslGrade": {
+      "type": "string",
+      "enum": ["A+", "A", "B", "C", "D", "F", "N/A"],
+      "description": "SSL/TLS configuration grade"
+    },
+    "headersScore": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Security headers score (0-100)"
+    },
+    "attackChains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "chainId": { "type": "string" },
+          "exploitabilityScore": { "type": "number" },
+          "steps": { "type": "array" },
+          "impact": { "type": "string" },
+          "remediationPriority": { "type": "integer" }
+        }
+      },
+      "description": "Synthesized attack chains"
+    },
+    "progressPercent": {
+      "type": "integer",
+      "minimum": 0,
+      "maximum": 100,
+      "description": "Current progress percentage (for UI progress bar)"
+    },
+    "certificateNumber": {
+      "type": "string",
+      "pattern": "^[A-Z]{10}[0-9]{5}$",
+      "description": "Generated certificate number"
+    },
+    "documentNumber": {
+      "type": "string",
+      "description": "Document reference number"
+    },
+    "pdfLocation": {
+      "type": "string",
+      "description": "S3 key for generated PDF"
+    },
+    "pdfGeneratedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When PDF was generated"
+    },
+    "emailSentAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When report email was sent"
+    },
+    "emailDeliveryStatus": {
+      "type": "string",
+      "enum": ["pending", "sent", "delivered", "bounced", "failed"],
+      "description": "Email delivery status"
+    },
+    "creditDeducted": {
+      "type": "boolean",
+      "default": false,
+      "description": "Whether credit has been deducted for this audit"
+    },
+    "creditDeductedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When credit was deducted"
+    },
+    "whiteLabelBrand": {
+      "type": "string",
+      "description": "Custom brand name for white label reports"
+    },
+    "createdAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When audit was created"
+    },
+    "updatedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When audit was last updated"
+    },
+    "completedAt": {
+      "type": "string",
+      "format": "date-time",
+      "description": "When audit completed (status=completed)"
+    },
+    "errorMessage": {
+      "type": "string",
+      "description": "Error message if status=failed"
+    },
+    "supersededBy": {
+      "type": "string",
+      "format": "uuid",
+      "description": "If superseded, the new audit ID"
+    },
+    "metadataInternal": {
+      "type": "object",
+      "properties": {
+        "owner": { "type": "string" },
+        "company": { "type": "string" },
+        "codeLicense": { "type": "string" },
+        "releaseChannel": { "type": "string" }
+      },
+      "description": "Internal ownership metadata - NOT shown in user-facing artifacts"
+    }
+  },
+  "additionalProperties": false
+}

@@ -1,0 +1,68 @@
+AiVedha Guard
+Copyright 2024-2025 AiVibe Software Services Pvt Ltd
+
+This product includes software developed by AiVibe Software Services Pvt Ltd.
+https://aivedha.ai
+
+================================================================================
+THIRD PARTY NOTICES
+================================================================================
+
+This software uses the following open source packages:
+
+React (MIT License)
+Copyright (c) Meta Platforms, Inc. and affiliates.
+
+Vite (MIT License)
+Copyright (c) 2019-present, Yuxi (Evan) You and Vite contributors
+
+Tailwind CSS (MIT License)
+Copyright (c) Tailwind Labs, Inc.
+
+shadcn/ui (MIT License)
+Copyright (c) 2023 shadcn
+
+Lucide Icons (ISC License)
+Copyright (c) 2020-present, Lucide Contributors
+
+Framer Motion (MIT License)
+Copyright (c) 2018-present, Framer B.V.
+
+Recharts (MIT License)
+Copyright (c) 2015-present, recharts
+
+TanStack Query (MIT License)
+Copyright (c) 2021-present, Tanner Linsley
+
+React Hook Form (MIT License)
+Copyright (c) 2019-present, React Hook Form
+
+Zod (MIT License)
+Copyright (c) 2020 Colin McDonnell
+
+date-fns (MIT License)
+Copyright (c) 2021 Sasha Koss and Lesha Koss
+
+AWS SDK (Apache License 2.0)
+Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+
+For a complete list of dependencies and their licenses, see package.json and
+the node_modules directory after installation.
+
+================================================================================
+PROPRIETARY COMPONENTS
+================================================================================
+
+The following components are proprietary to AiVibe Software Services Pvt Ltd
+and are NOT covered by the Apache License:
+
+1. AiVedha and AiVedha Guard brand assets (logos, icons, brand colors)
+2. Security vulnerability scanning algorithms
+3. AI-powered audit analysis engine
+4. Certificate generation and verification system
+5. Trust badge and seal designs
+
+These proprietary components may not be used, copied, or distributed without
+express written permission from AiVibe Software Services Pvt Ltd.
+
+Contact: legal@aivedha.ai

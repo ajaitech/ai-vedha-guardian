@@ -1,0 +1,58 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+.vs/
+
+# Temporary/development files
+temp/
+*.zip
+
+# Environment files with secrets
+.env
+.env.local
+.env.production
+.env.*.local
+*.env
+
+# AWS credentials
+aws-credentials.json
+credentials.json
+
+# Payment secrets
+paypal-*.json
+payment-*.json
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Lambda layers and packages
+aws-lambda/layers/
+layer-check/
+python-security-deps-linux/
+
+# Temporary files
+nul
+

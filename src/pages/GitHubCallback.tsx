@@ -12,7 +12,8 @@ import { AUTH_ERROR_REDIRECT_DELAY_MS } from "@/constants/subscription";
 import { getErrorMessage, hasStatus, getProperty } from "@/utils/type-guards";
 
 const FREE_CREDITS = APP_CONFIG.FREE_CREDITS;
-const GITHUB_REDIRECT_URI = OAUTH_CONFIG.GITHUB_REDIRECT_URI;
+// GitHub redirect URI must match what was sent in the authorization request
+const GITHUB_REDIRECT_URI = `${window.location.origin}/auth/github/callback`;
 
 // Send login notification email
 const sendLoginNotification = async (email: string, fullName: string, loginMethod: string) => {
